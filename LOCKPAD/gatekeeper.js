@@ -34,12 +34,35 @@ document.addEventListener('DOMContentLoaded', () => {
     let lockpadOverlayElement = null;
 
     let currentPagePath = window.location.pathname;
-    if (currentPagePath === '/' || currentPagePath === '') { currentPagePath = '/index.html'; }
-    else if (!currentPagePath.endsWith('.html')) { if (!currentPagePath.endsWith('/')) currentPagePath += '/'; currentPagePath += 'index.html'; }
+    // Adjust currentPagePath to consistently include /Expulsed/ if needed
+    if (!currentPagePath.startsWith('/Expulsed/')) {
+        if (currentPagePath === '/' || currentPagePath === '') {
+             currentPagePath = '/Expulsed/index.html';
+        } else {
+             // Handle cases where /Expulsed/ might be missing but it's not root
+             // This part might need refinement depending on edge cases, but let's start simple
+             if (currentPagePath.startsWith('/')) {
+                 currentPagePath = '/Expulsed' + currentPagePath;
+             } else {
+                 currentPagePath = '/Expulsed/' + currentPagePath;
+             }
+        }
+    }
+    // Ensure it ends with .html if it looks like a directory within Expulsed
+    if (currentPagePath.startsWith('/Expulsed/') && !currentPagePath.endsWith('.html') && currentPagePath.lastIndexOf('/') > 0) {
+         if (!currentPagePath.endsWith('/')) currentPagePath += '/';
+         currentPagePath += 'index.html'; // Assuming index.html for subdirs
+    }
+    // Standardize index.html mapping from root /Expulsed/
+    if (currentPagePath === '/Expulsed/' || currentPagePath === '/Expulsed') {
+        currentPagePath = '/Expulsed/index.html';
+    }
+
 
     async function fetchConfig() {
         try {
-            const response = await fetch('/LOCKPAD/gateconfig.json?t=' + Date.now());
+            // ***** CORRECTED PATH *****
+            const response = await fetch('/Expulsed/LOCKPAD/gateconfig.json?t=' + Date.now());
             if (!response.ok) throw new Error(`HTTP error ${response.status}`);
             return await response.json();
         } catch (error) { console.error("Gatekeeper: Failed to fetch config:", error); return null; }
@@ -47,7 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function fetchLockpadHtml() {
          try {
-            const response = await fetch('/LOCKPAD/lockpad.html?t=' + Date.now());
+            // ***** CORRECTED PATH *****
+            const response = await fetch('/Expulsed/LOCKPAD/lockpad.html?t=' + Date.now());
             if (!response.ok) throw new Error(`HTTP error ${response.status}`);
             return await response.text();
         } catch (error) { console.error("Gatekeeper: Failed to fetch lockpad HTML:", error); return null; }
@@ -142,7 +166,8 @@ document.addEventListener('DOMContentLoaded', () => {
         lockpadOverlayElement.innerHTML = htmlFragment;
         document.body.classList.add('lockpad-active');
 
-        fetch('/LOCKPAD/lockpad-ui.js?t=' + Date.now())
+        // ***** CORRECTED PATH *****
+        fetch('/Expulsed/LOCKPAD/lockpad-ui.js?t=' + Date.now())
             .then(response => response.ok ? response.text() : Promise.reject(`UI script fetch error ${response.status}`))
             .then(scriptText => {
                 try {
@@ -177,42 +202,48 @@ document.addEventListener('DOMContentLoaded', () => {
         }
      }
 
-    async function runGatekeeper() {
-        config = await fetchConfig();
-        if (!config) { console.warn("Gatekeeper: No config found. Revealing page."); revealPageContent(); return; }
+     async function runGatekeeper() {
+         config = await fetchConfig();
+         if (!config) { console.warn("Gatekeeper: No config found. Revealing page."); revealPageContent(); return; }
 
-        const pageConfig = config.pages[currentPagePath];
-        const globalPin = config.globalPin;
+         // Use the adjusted currentPagePath for lookup
+         const adjustedPathForLookup = currentPagePath; // Using the path adjusted at the beginning
+         const pageConfig = config.pages[adjustedPathForLookup];
+         const globalPin = config.globalPin;
 
-        if (pageConfig && pageConfig.protected) {
-            let pinForThisPage = globalPin;
-            if (pageConfig.pin && typeof pageConfig.pin === 'string' && pageConfig.pin.trim() !== "") {
-                pinForThisPage = pageConfig.pin.trim();
-            } else if (globalPin && typeof globalPin === 'string' && globalPin.trim() !== "") {
-                 // pinForThisPage is already set to globalPin
-            } else {
-                 pinForThisPage = null;
-            }
+         console.log(`Gatekeeper: Checking protection for adjusted path: ${adjustedPathForLookup}`); // Debug Log
 
-            if (!pinForThisPage) {
-                console.error(`Gatekeeper: Page ${currentPagePath} protected, but NO valid PIN found (page-specific or global)! Revealing page.`);
-                revealPageContent();
-                return;
-            }
+         if (pageConfig && pageConfig.protected) {
+             let pinForThisPage = globalPin;
+             if (pageConfig.pin && typeof pageConfig.pin === 'string' && pageConfig.pin.trim() !== "") {
+                 pinForThisPage = pageConfig.pin.trim();
+             } else if (globalPin && typeof globalPin === 'string' && globalPin.trim() !== "") {
+                  // pinForThisPage is already set to globalPin
+             } else {
+                  pinForThisPage = null;
+             }
 
-            const lockpadHtml = await fetchLockpadHtml();
-            if (lockpadHtml) {
-                const allowBg = pageConfig.showPageBackground === true;
-                showLockpad(lockpadHtml, pinForThisPage, allowBg);
-            } else {
-                console.error("Gatekeeper: Cannot show lockpad, HTML failed. Revealing page.");
-                revealPageContent();
-            }
-        } else {
-            document.body.classList.remove('lockpad-active');
-            revealPageContent();
-        }
-    }
+             if (!pinForThisPage) {
+                 console.error(`Gatekeeper: Page ${adjustedPathForLookup} protected, but NO valid PIN found (page-specific or global)! Revealing page.`);
+                 revealPageContent();
+                 return;
+             }
+
+             const lockpadHtml = await fetchLockpadHtml();
+             if (lockpadHtml) {
+                 const allowBg = pageConfig.showPageBackground === true;
+                 showLockpad(lockpadHtml, pinForThisPage, allowBg);
+             } else {
+                 console.error("Gatekeeper: Cannot show lockpad, HTML failed. Revealing page.");
+                 revealPageContent();
+             }
+         } else {
+             console.log(`Gatekeeper: Page ${adjustedPathForLookup} not configured as protected or config missing. Revealing page.`); // Debug Log
+             document.body.classList.remove('lockpad-active');
+             revealPageContent();
+         }
+     }
+
 
     runGatekeeper();
 

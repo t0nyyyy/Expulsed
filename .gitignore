@@ -29,7 +29,7 @@ public/ # Or whatever your build output folder is called
 .idea/
 *.sublime-project
 *.sublime-workspace
-*.code-workspace  
+*.code-workspace
 
 # Design Files (Add if you have them in the repo)
 *.psd
@@ -42,3 +42,6 @@ public/ # Or whatever your build output folder is called
 # config.secret.js
 # secrets.json
 # IMPORTANT: Add any file containing API keys or passwords here!
+
+# Personal Notes / Cheat Sheets (Do not upload to GitHub)
+my_github_commands.txt
