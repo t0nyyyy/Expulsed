@@ -3,34 +3,25 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Bogdan's Rest</title> <!-- Changed title for clarity -->
+        <title>Bogdan's Rest</title>
         <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../nprogress.css">
         <link rel="stylesheet" href="../loading.css">
-    
-        <!-- Link to Global Brightness Styles (NOW USING ROOT-RELATIVE PATH) -->
-        <link rel="stylesheet" href="/brightness-global.css">
-        <!-- END CHANGE -->
-    
-        <link rel="stylesheet" href="../navbar.css"> <!-- Includes dropdown styles -->
+        <link rel="stylesheet" href="../brightness-global.css">
+        <link rel="stylesheet" href="../navbar.css">
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="/LOCKPAD/lockpad.css">
-    
-        <!-- Preload links -->
+        <link rel="stylesheet" href="../LOCKPAD/lockpad.css">
+
         <link rel="preload" href="messages.json" as="fetch" crossorigin="anonymous">
         <link rel="preload" href="zone-info.json" as="fetch" crossorigin="anonymous">
         <link rel="preload" href="videos.json" as="fetch" crossorigin="anonymous">
-    
-        <!-- Favicon Links -->
+
         <link rel="icon" href="../favicon/favicon.ico" type="image/x-icon">
         <link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
         <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
-    
-        <!-- Link to Web App Manifest (NOW USING ROOT-RELATIVE PATH) -->
-        <link rel="manifest" href="/site.webmanifest">
-        <!-- END CHANGE -->
+        <link rel="manifest" href="../site.webmanifest">
     </head>
     <canvas id="backgroundCanvas"></canvas>
 
@@ -40,7 +31,7 @@
 
     <nav class="navbar">
         <div class="navbar-container">
-            <div></div> <!-- Left Spacer -->
+            <div></div>
             <div class="navbar-menu-wrapper">
                 <ul class="navbar-menu">
                     <li class="navbar-item"><a href="../index.html" class="navbar-link">HOME</a></li>
@@ -72,7 +63,6 @@
                 </div>
             </div>
             <div class="side-panel">
-                 <!-- Added 'your-shine-target' class here -->
                 <div class="info-panel-container your-shine-target">
                     <div class="button-container">
                         <button id="matrixRainToggle" class="matrix-rain-button">EFFECTS: ON</button>
@@ -113,12 +103,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
     <script src="../loading.js"></script>
     <script src="../navbar.js"></script>
-
-    <!-- Main script loaded as module - includes shine effect logic now -->
     <script src="script.js" type="module" defer></script>
 
     <script>
-        // Fallback setPageReady (for compatibility)
         if (typeof window.setPageReady !== 'function') {
             window.setPageReady = () => {
                 console.log("Fallback setPageReady called.");
@@ -132,17 +119,14 @@
 
          window.onload = () => {
              if (typeof window.setPageReady === 'function') {
-                window.setPageReady(); // Call the function needed by loading/lockpad
+                window.setPageReady();
              } else {
                 console.warn("setPageReady function not defined by window.onload.");
              }
-             // Removed updateBarPositions call from here
          };
     </script>
 
-    <script src="/LOCKPAD/gatekeeper.js"></script>
-
-    <!-- NO MORE INLINE SCRIPT FOR SHINE EFFECT -->
+    <script src="../LOCKPAD/gatekeeper.js"></script>
 
 </body>
 </html>
