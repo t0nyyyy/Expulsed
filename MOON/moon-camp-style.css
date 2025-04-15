@@ -1,0 +1,567 @@
+/* moon-camp-style.css (Corrected - Matching Bogdan Stacking) */
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+
+body {
+    background: #222; /* Base page background color */
+    color: #99ff99;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* === Styles for the new background canvas === */
+#backgroundCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    pointer-events: none; /* Crucial for background */
+    z-index: -1;         /* Place behind page content */
+    /* Ensure no unwanted background color from the canvas itself */
+    background-color: transparent; /* Explicitly set transparent */
+}
+/* =========================================== */
+
+
+#page-content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+    padding-bottom: 200px; /* Adjust as needed if layout changes */
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.map-area {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.map-container {
+    position: relative; /* Keep relative positioning */
+    width: 100%;
+    max-width: 720px; /* Keep max width if desired */
+    aspect-ratio: 1 / 1; /* Restore aspect ratio */
+    /* Restore background and circle shape */
+    background: radial-gradient(circle, rgba(50,50,50,0.8) 20%, #111 100%);
+    border: 2px solid #0f0; /* Keep border if desired */
+    box-shadow: 0px 0px 10px #0f0; /* Keep shadow if desired */
+    border-radius: 50%; /* Restore border radius */
+    overflow: hidden; /* Restore overflow hidden */
+    /* Remove height/min-height from previous attempt */
+}
+
+/* --- START: Styles for 3D Container & Labels --- */
+
+/* Wrapper remains relative for positioning canvas/labels */
+#render-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: block;
+    overflow: hidden; /* NEW: Clip canvas/labels within the map-container circle */
+}
+
+#three-canvas-container,
+#label-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Ensure canvas is visible */
+#three-canvas-container canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Make label container transparent to clicks */
+#label-container {
+    pointer-events: none; /* Allows clicks to go through to the OrbitControls */
+    overflow: hidden; /* Hide overflowing labels if any */
+}
+
+/* Style for the individual labels (if/when added) */
+.station-label {
+    color: #00ff00; /* Matrix green */
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    padding: 2px 5px;
+    border-radius: 3px;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+/* --- END: Styles for 3D Container & Labels --- */
+
+
+/* --- Side Panel and other styles remain the same as previous version --- */
+/* (Keep all the styles for .side-panel, .info-panel-container, .zones-box, etc.) */
+/* ... (rest of the CSS from the previous good version) ... */
+
+.side-panel {
+    position: fixed;
+    top: 60px; /* Adjust based on navbar height */
+    right: 10px;
+    width: 45%; /* Adjust width distribution if needed */
+    max-width: calc(100% - 55% - 20px - 10px); /* Adjust based on map-area width */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 500;
+    max-height: calc(100vh - 80px); /* Prevent panel from going off screen */
+    overflow-y: auto; /* Add scroll if content overflows vertically */
+     scrollbar-width: thin;
+    scrollbar-color: #0f0 #222;
+}
+.side-panel::-webkit-scrollbar { width: 8px; }
+.side-panel::-webkit-scrollbar-track { background-color: #222; border-radius: 10px; }
+.side-panel::-webkit-scrollbar-thumb { background-color: #0f0; border-radius: 10px; border: 2px solid #222; }
+.side-panel::-webkit-scrollbar-thumb:hover { background-color: #00bb00; }
+
+
+.info-panel-container {
+    border: 2px solid #0f0;
+    background-color: #000 !important;
+    box-shadow: 0px 0px 5px #0f0;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative; /* Added for shine effect */
+    overflow: hidden;   /* Added for shine effect */
+}
+
+/* Styles for inner content boxes */
+.zones-box, .info-box, .status-box, .video-box {
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #0f0;
+    background-color: #000;
+    box-shadow: 0px 0px 5px #0f0;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 100%;
+    /* === MODIFIED: Changed auto margins to fixed 5px === */
+    margin-left: 5px;
+    margin-right: 5px;
+    /* =============================================== */
+    /* position: relative; */ /* Keep original stacking method */
+    /* z-index: 2; */ /* Keep original stacking method */
+}
+
+
+.info-box, .status-box, .video-box {
+    flex-grow: 0; /* Prevent these boxes from growing excessively */
+}
+
+.info-box {
+    margin-top: 2px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #0f0;
+    border-radius: 5px;
+    background-color: #000;
+    box-shadow: 0px 0px 5px #0f0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-weight: bold;
+}
+
+.status-box {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #0f0;
+    border-radius: 5px;
+    background-color: #000;
+    box-shadow: 0px 0px 5px #0f0;
+    max-height: 150px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    scrollbar-width: thin;
+    scrollbar-color: #0f0 #222;
+    box-sizing: border-box;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.video-box {
+    padding-top: 5px;
+}
+
+#video-player-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    /* Maintain aspect ratio - adjust if needed */
+    padding-bottom: 25%; /* 16:9 aspect ratio */
+    height: 0;
+}
+
+
+#video-player-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.status-box::-webkit-scrollbar { width: 8px; }
+.status-box::-webkit-scrollbar-track { background-color: #222; border-radius: 10px; }
+.status-box::-webkit-scrollbar-thumb { background-color: #0f0; border-radius: 10px; border: 2px solid #222; }
+.status-box::-webkit-scrollbar-thumb:hover { background-color: #00bb00; }
+
+.info-box h2, .status-box h2, .video-box h2 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    position: relative;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-family: 'Electrolize', monospace;
+}
+
+.info-box h2::after, .status-box h2::after, .video-box h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: -5px;
+    height: 2px;
+    background-color: #0f0;
+}
+
+.legend {
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 0px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    padding: 5px;
+    border-radius: 3px;
+    width: 100%;
+    box-sizing: border-box;
+    /* === MODIFIED: Added position relative === */
+    position: relative;
+    /* ======================================== */
+}
+
+.legend-item:hover, .legend-item.highlighted-legend { /* Added .highlighted-legend */
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+/* === REMOVED: Old legend span direct styling === */
+/* .legend span {
+    font-size: 16px;
+    margin-right: 10px;
+    white-space: normal;
+    position: relative;
+} */
+/* ============================================= */
+
+/* === ADDED: Styles for the legend text wrapper to match Bogdan === */
+.legend-text-wrapper {
+    margin-right: auto; /* Pushes color bar to the right */
+    text-align: right;  /* Aligns text within the wrapper (less impactful now) */
+    padding-right: 10px; /* Space between text and color bar */
+    position: relative; /* Needed for potential future absolute positioning inside */
+}
+/* ============================================================== */
+
+
+#status-report {
+    min-height: 45px;
+}
+
+.color-bar {
+    height: 10px;
+    border: 1px solid #0f0;
+    animation: color-bar-glow-pulse 2s linear infinite;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0; /* Will be adjusted by JS */
+}
+
+.green  { color: #00ff00; }
+.yellow { color: #ffff00; }
+.red    { color: #ff0000; }
+.white  { color: #ffffff; }
+.blue   { color: #00c3fe; }
+.purple { color: #800080; }
+.gray   { color: #a9a9a9; }
+
+.bar-green  { background: #00ff00; }
+.bar-yellow { background: #ffff00; }
+.bar-red    { background: #ff0000; }
+.bar-white  { background: #ffffff; }
+.bar-blue   { background: #00c3fe; }
+.bar-purple { background: #800080; }
+.bar-gray   { background: #a9a9a9; }
+
+@keyframes color-bar-glow-pulse {
+    0%   { box-shadow: 0 0 5px rgba(0, 255, 0, 0.6); }
+    50%  { box-shadow: 0 0 15px rgba(0, 255, 0, 0.9); }
+    100% { box-shadow: 0 0 5px rgba(0, 255, 0, 0.6); }
+}
+
+/* === REMOVED ALL MATRIX RAIN STYLES === */
+
+/* Style for the button container */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    /* === MODIFIED: Changed auto margins to fixed 5px === */
+    margin: 10px 5px 20px 5px;
+    /* =============================================== */
+    flex-wrap: nowrap;
+    gap: 10px;
+     /* position: relative; */ /* Keep original stacking method */
+     /* z-index: 2; */ /* Keep original stacking method */
+}
+
+/* Button styles */
+.matrix-rain-button, .spin-button, .scan-button, .next-video-button {
+    display: inline-block;
+    /* === MODIFIED: Changed vertical padding === */
+    padding: 1px 15px; /* Adjusted padding */
+    /* ======================================== */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #0f0;
+    border: 2px solid #0f0;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    /* position: relative; */ /* Keep original stacking method */
+    /* z-index: 2; */         /* Keep original stacking method */
+    box-sizing: border-box;
+    text-align: center;
+    flex: 1 1 auto; /* Allow shrinking and growing */
+    min-width: 100px;
+    white-space: nowrap;
+}
+
+.matrix-rain-button:hover, .spin-button:hover, .scan-button:hover, .next-video-button:hover {
+    background-color: rgba(0, 255, 0, 0.2);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+}
+
+.matrix-rain-button:active, .spin-button:active, .scan-button:active, .next-video-button:active {
+    transform: scale(0.98);
+}
+
+#ascii-art-bottom-left {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10; /* Safe */
+    font-family: 'Courier New', monospace;
+    color: #00ff00;
+    white-space: pre;
+    font-size: 0.3vw;
+    line-height: 0.7;
+    opacity: 0.8;
+    pointer-events: none;
+    padding: 10px;
+}
+
+#background-moon-art { /* Keep this if it was in the original */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* <<< MODIFIED: Set behind canvas */
+    color: #008000;
+    font-family: 'Courier New', monospace;
+    white-space: pre;
+    pointer-events: none;
+    overflow: hidden;
+    opacity: 0.8;
+    font-size: 0.5vw;
+    line-height: 0.7;
+    text-align: left;
+}
+
+/* === KEEP ORIGINAL MEDIA QUERIES === */
+@media (max-width: 1200px) {
+    /* Adjust layout slightly earlier if needed */
+    .map-area {
+        width: 50%;
+    }
+    .side-panel {
+        width: 45%;
+         max-width: calc(100% - 50% - 20px - 10px);
+    }
+}
+
+
+@media (max-width: 900px) {
+    #page-content-wrapper {
+        padding-bottom: 20px; /* Reduce padding when stacked */
+         min-height: auto; /* Allow natural height */
+         height: auto;
+         overflow-y: auto; /* Allow scrolling on main wrapper */
+         overflow-x: hidden;
+    }
+     .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px; /* Reduce padding */
+    }
+    .map-area {
+        width: 95%; /* Take more width */
+        max-width: none;
+        padding: 10px 0; /* Adjust padding */
+    }
+    .map-container {
+         width: 90vw; /* Adjust width relative to viewport */
+         height: 90vw; /* Keep it square */
+         max-width: 500px; /* Optional max size */
+         max-height: 500px; /* Optional max size */
+         margin-left: auto;
+         margin-right: auto;
+         /* aspect-ratio: 1/1; // Already set */
+    }
+    .side-panel {
+        position: static; /* Unfix the side panel */
+        width: 95%; /* Take more width */
+        max-width: none;
+        margin: 20px auto 0 auto; /* Center and add top margin */
+        right: auto;
+        top: auto;
+        padding: 0;
+        max-height: none; /* Remove max-height */
+        overflow-y: visible; /* Remove internal scroll */
+    }
+    .button-container {
+        flex-wrap: wrap; /* Allow buttons to wrap */
+        justify-content: center; /* Center wrapped buttons */
+    }
+     .button-container button {
+        flex-basis: 48%; /* Two buttons per row approx */
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    #ascii-art-bottom-left{
+        font-size: 1.1vw;
+    }
+     .map-container {
+         width: 95vw;
+         height: 95vw;
+     }
+
+}
+/* === END ORIGINAL MEDIA QUERIES === */
+
+
+/* === SEQUENTIAL SHINE SWEEP EFFECT (Keep Original) === */
+
+/* Define the keyframes for the left-to-right sweep */
+@keyframes sweep-shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Define the appearance of the shine pseudo-element */
+.your-shine-target::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Keep original gradient */
+    background: linear-gradient(to right, transparent 30%, rgba(0, 255, 65, 0.15) 50%, transparent 70%); /* Adjust 0.15 as needed */
+
+    /* Start hidden */
+    opacity: 0;
+    /* Keep original z-index */
+    z-index: 1;
+    /* Prevent interfering with mouse events */
+    pointer-events: none;
+    /* Performance hints for smooth animation */
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
+
+/* Apply visibility and the animation ONLY when the target is active */
+.your-shine-target.is-shining::after {
+    opacity: 1;
+    /* Keep original animation */
+    animation: sweep-shine 2.4s infinite linear;
+}
+
+/* --- Content Stacking (Keep Original Method) --- */
+/* Apply position:relative and z-index:2 to ALL direct content children */
+.info-panel-container > .zones-box,
+.info-panel-container > .info-box,
+.info-panel-container > .status-box,
+.info-panel-container > .video-box,
+.info-panel-container > .button-container {
+    position: relative; /* Establish stacking context for children */
+    z-index: 2;      /* Place these containers above the ::after (z-index: 1) */
+}
+/* Note: Individual buttons inside .button-container do NOT need extra styling */
+/* Their parent (.button-container) now handles the stacking */
+
+/* === END SEQUENTIAL SHINE SWEEP EFFECT === */

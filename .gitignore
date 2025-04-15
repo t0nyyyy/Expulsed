@@ -1,0 +1,44 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+._*
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories (VERY IMPORTANT if you ever use Node.js)
+node_modules/
+jspm_packages/
+
+# Build output directories (Add yours if you use build tools)
+dist/
+build/
+out/
+public/ # Or whatever your build output folder is called
+
+# Temporary files
+*.tmp
+*.bak
+*~
+
+# Editor directories and files (Optional, but common)
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace  
+
+# Design Files (Add if you have them in the repo)
+*.psd
+*.ai
+*.sketch
+*.fig
+
+# Environment variables / Secret Files (Add your specific file names!)
+# .env
+# config.secret.js
+# secrets.json
+# IMPORTANT: Add any file containing API keys or passwords here!

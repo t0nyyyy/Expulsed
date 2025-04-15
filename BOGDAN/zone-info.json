@@ -1,0 +1,31 @@
+
+{
+  "yadro-central": {
+    "description": "The vibrant nucleus of the station, bustling with trade, logistics, and passenger activity. Its expansive docking facilities embody its name, Yadro, meaning core in Russian. Access requires threading a dense field of orbiting debris and scattered cargo, a perilous journey demanding precision from seasoned pilots.",
+    "color": "white"
+  },
+  "free-port": {
+    "description": "The Freeport District, capitalizing on the station's tax-free status, pulsates with open trade and unrestrained amusement. This lawless enclave attracts businesses and escapists, fueling a vibrant, anything-goes atmosphere.Opportunity knocks for those who dare.",
+    "color": "green"
+  },
+  "critical-infrastructure-alpha-bravo": {
+    "description": "Bogdan's Rest's critical infrastructure lies in its Alpha and Bravo Zones. Alpha handles vital systems: scorching temperature control, crucial supercomputers, water recycling, and power. Bravo mirrors Alpha but also houses experimental, high-risk, high-reward zero-point energy research.",
+    "color": "yellow"
+  },
+  "warrens": {
+    "description": "Named after the intricate, maze-like warrens of rabbits, this densely packed residential sector—curled within one of the spokes of the station's ring—is a tumultuous web of repurposed cargo container homes stacked haphazardly like a vertical jigsaw puzzle.",
+    "color": "lightblue"
+  },
+  "operational-security": {
+    "description": "Operational Security Zone: A fortified nexus of station defense, housing advanced surveillance systems, elite security personnel, and critical monitoring stations. Impenetrable barriers and automated defense protocols guard against any potential intrusion or external threat.",
+    "color": "red"
+  },
+  "authorized-personnel": {
+    "description": "Restricted access sector housing cutting-edge research labs, quantum data vaults, and high-ranking personnel quarters. Biometric scanners and AI-driven security protocols ensure ironclad protection. Unauthorized entry triggers immediate lockdown procedures. AI-controlled defense drones stand ready for rapid deployment.",
+    "color": "purple"
+  },
+  "restricted-access": {
+    "description": "Top-level security zone. Experimental technologies and classified projects are housed in this sector. Entry requires special clearance.Experimental technologies and classified station survival strategies reside within these sealed chambers. Rumours persist of clandestine projects that could reshape humanity’s future in space. ",
+    "color": "white"
+  }
+}

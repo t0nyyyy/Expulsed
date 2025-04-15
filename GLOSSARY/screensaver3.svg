@@ -1,0 +1,59 @@
+<svg width="90%" height="100%" viewBox="0 0 820 350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Space Background -->
+    <radialGradient id="spaceGradient" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#001a00"/>
+      <stop offset="100%" stop-color="#003300"/>
+    </radialGradient>
+    
+    <!-- Planet Gradient -->
+    <radialGradient id="planetGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00ff00"/>
+      <stop offset="100%" stop-color="#004400"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="350" fill="url(#spaceGradient)"/>
+
+  <!-- Twinkling Stars -->
+  <g fill="#00ff00">
+    <circle cx="100" cy="50" r="1.5">
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="80" r="1.2">
+      <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="30" r="1.8">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="700" cy="60" r="1.4">
+      <animate attributeName="opacity" values="0;1;0" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Rotating Planet -->
+  <g id="planet">
+    <animateTransform attributeName="transform" type="rotate" from="0 410 175" to="360 410 175" dur="30s" repeatCount="indefinite"/>
+    <circle cx="410" cy="175" r="50" fill="url(#planetGradient)" stroke="#00ff00" stroke-width="2"/>
+  </g>
+
+    <!-- Orbiting Space Station -->
+  <g id="spaceStation">
+    <animateTransform attributeName="transform" type="rotate" from="0 410 175" to="360 410 175" dur="90s" repeatCount="indefinite"/>
+    <g transform="translate(530, 175)">
+      <circle r="10" stroke="#00ff00" stroke-width="1" fill="none"/>
+      <circle r="15" stroke="#00ff00" stroke-width="1" fill="none"/>
+      <circle r="20" stroke="#00ff00" stroke-width="1" fill="none"/>
+
+      <rect x="-3" y="-20" width="6" height="40" fill="#00ff00"/>  <!-- Vertical Beam -->
+      <rect x="-20" y="-3" width="40" height="6" fill="#00ff00"/>  <!-- Horizontal Beam -->
+
+      <!-- NEW DIAGONAL BEAMS -->
+      <rect x="-3" y="-20" width="6" height="40" fill="#00ff00" transform="rotate(45)"/>   <!-- Diagonal Beam 1 (45 degrees) -->
+      <rect x="-3" y="-20" width="6" height="40" fill="#00ff00" transform="rotate(-45)"/>  <!-- Diagonal Beam 2 (-45 degrees) -->
+
+      <circle r="3" fill="#00ff00"/>
+    </g>
+  </g>
+</svg>

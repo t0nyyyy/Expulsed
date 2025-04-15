@@ -1,0 +1,220 @@
+/* book-series-style.css */
+
+.book-series-body {
+    background-color: #332222;
+    color: #ffaaff;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.book-cover-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1vw;
+    padding: 2vw 0;
+    max-width: 85%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1vw;
+}
+
+.book-entry {
+    width: 18%;
+    flex-shrink: 0;
+    margin-bottom: 2vw;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.book-cover-container {
+    overflow: hidden;
+    border: 1px solid #0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+}
+
+.book-cover-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.book-description {
+    text-align: left;
+    padding: 1.5vw 0;
+    color: #ddd;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.book-description h3 {
+    color: #99ff99;
+    margin-top: 0;
+    margin-bottom: 0.5vw;
+    font-family: 'Electrolize', monospace;
+    font-size: 1.2em;
+}
+
+.book-description h4 {
+    color: #ccffcc;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 1vw;
+    font-size: 1.0em;
+}
+
+.book-description p {
+    line-height: 1.4;
+    margin-top: 0;
+    margin-bottom: 0.8vw;
+    font-size: 0.85em;
+}
+
+.book-description a.read-more-link {
+    display: inline-block;
+    padding: 0.8vw 1.5vw;
+    background-color: #0f0;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 1vw;
+    transition: background-color 0.3s ease;
+    font-size: 0.9em;
+}
+
+.book-description a.read-more-link:hover {
+    background-color: #00bb00;
+}
+
+.book-description p:last-child {
+    font-size: 0.85em;
+    color: #bbb;
+    margin-bottom: 0;
+}
+
+.book-entry.classified .book-cover-container::before {
+    content: "[REDACTED]";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: rgb(0, 255, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Electrolize', monospace;
+    font-size: 1.5vw;
+    font-weight: bold;
+    letter-spacing: 0.2vw;
+    z-index: 10;
+    border: 2px solid rgb(0, 255, 0);
+    box-sizing: border-box;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+    animation: classified-glow 2s infinite alternate;
+    pointer-events: none;
+}
+
+.book-entry.classified:hover .book-cover-container::before {
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 1.7vw;
+}
+
+.book-entry.classified .book-description {
+    filter: blur(2px);
+    opacity: 0.7;
+    transition: all 0.5s ease;
+}
+
+.book-entry.classified:hover .book-description {
+    filter: blur(1px);
+    opacity: 0.9;
+}
+
+.hidden-text {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.hidden-text.revealed {
+    opacity: 1;
+    height: auto;
+    margin-top: 1vw;
+    color: rgb(0, 255, 0);
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+@keyframes classified-glow {
+    from {
+        box-shadow: 0 0 5px rgb(0, 255, 0), inset 0 0 5px rgb(0, 255, 0);
+        text-shadow: 0 0 5px rgb(0, 255, 0);
+    }
+    to {
+        box-shadow: 0 0 20px rgb(0, 255, 0), inset 0 0 10px rgb(0, 255, 0);
+        text-shadow: 0 0 15px rgb(0, 255, 0);
+    }
+}
+
+@media (max-width: 1024px) {
+    .book-entry { width: 30%; }
+    .book-entry.classified .book-cover-container::before { font-size: 2vw; }
+}
+@media (max-width: 768px) {
+    .book-entry { width: 48%; }
+    .book-description h3 { font-size: 1.1em; }
+    .book-description h4 { font-size: 1.0em; }
+    .book-description p { font-size: 0.8em; }
+    .book-entry.classified .book-cover-container::before { font-size: 3vw; }
+}
+@media (max-width: 480px) {
+    .book-entry { width: 98%; }
+    .book-description h3 { font-size: 1.0em; }
+    .book-description h4 { font-size: 0.9em; }
+    .book-description p { font-size: 0.7em; }
+    .book-entry.classified .book-cover-container::before { font-size: 5vw; }
+}
+
+@keyframes sweep-shine {
+     0% { transform: translateX(-100%); }
+     100% { transform: translateX(100%); }
+ }
+
+.book-cover-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        transparent 30%,
+        var(--navbar-shine-color, rgba(0, 255, 65, 0.08)) 50%,
+        transparent 70%
+    );
+    opacity: 0;
+    pointer-events: none;
+    z-index: 11;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
+
+.book-cover-container.is-shining::after {
+    opacity: 1;
+    /* Duration must match JS animationDuration */
+    animation: sweep-shine 2.4s infinite linear;
+}

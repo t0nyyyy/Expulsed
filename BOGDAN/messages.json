@@ -1,0 +1,914 @@
+[
+  {
+    "message": "[CRITICAL] The Warrens: Fire reported. Emergency response teams dispatched.",
+    "color": "red"
+  },
+  {
+    "message": "[CRITICAL] Critical Infrastructure Zone Bravo: Reactor coolant levels dropping!",
+    "color": "red"
+  },
+  {
+    "message": "[STATUS] Freeport District: Trade routes clear and operational.",
+    "color": "green"
+  },
+  {
+    "message": "[WARNING] Yadro Central experiencing elevated heat levels in Sector 3.",
+    "color": "red"
+  },
+  {
+    "message": "[STATUS] The Warrens: Water purification systems operating at 65% efficiency.",
+    "color": "green"
+  },
+  {
+    "message": "[WARNING] Zone Bravo: Monitoring closely.",
+    "color": "yellow"
+  },
+  {
+    "message": "[SECURITY] The Warrens: Increased patrols deployed following recent incidents.",
+    "color": "yellow"
+  },
+  {
+    "message": "[ALERT] Freeport District: Unauthorized vessel attempting to dock.",
+    "color": "red"
+  },
+  {
+    "message": "[WARNING] The Warrens: Power surges detected. Expect temporary outages.",
+    "color": "yellow"
+  },
+  {
+    "message": "[STATUS] Critical Infrastructure Zone Alpha operating at 95% efficiency.",
+    "color": "green"
+  },
+  {
+    "message": "[ALERT] The Warrens: Unauthorized gatherings reported in Sub-Sector 12.",
+    "color": "red"
+  },
+  {
+    "message": "[ALERT] The Warrens: Reports of armed conflict. Proceed with caution!",
+    "color": "red"
+  },
+  {
+    "message": "[CRITICAL] Mainframe overload imminent!",
+    "color": "red"
+  },
+  {
+    "message": "[STATUS] The Warrens: Air quality improving after recent filtration upgrades.",
+    "color": "green"
+  },
+  {
+    "message": "Yadro Central: Minor network latency detected. Monitoring...",
+    "color": "yellow"
+  },
+  {
+    "message": "[ALERT] Yadro Central: Unauthorized drone activity detected.",
+    "color": "red"
+  },
+  {
+    "message": "[STATUS] All life support systems functioning within acceptable parameters.",
+    "color": "green"
+  },
+  {
+    "message": "[WARNING] The Warrens: Air filtration systems operating below capacity.",
+    "color": "yellow"
+  },
+  {
+    "message": "[ALERT] Unauthorized personnel detected near Reactor Core!",
+    "color": "red"
+  },
+  {
+    "message": "[ALERT] Yadro Central: Communication uplink experiencing packet loss.",
+    "color": "yellow"
+  },
+  {
+    "message": "[SECURITY] Freeport District: OSI requested.",
+    "color": "red"
+  },
+  {
+    "message": "[CRITICAL] The Warrens: Emergency shutdown initiated in Reactor Core!",
+    "color": "red"
+  },
+  {
+    "message": "[SECURITY] Surveillance systems recalibrated and online.",
+    "color": "green"
+  },
+  {
+    "message": "[ALERT] Restricted Access Sector: Motion detected. Investigating...",
+    "color": "yellow"
+  },
+  {
+    "message": "[STATUS] The Warrens: Power grid stable. No outages detected.",
+    "color": "green"
+  },
+  {
+    "message": "[CRITICAL] Structural collapse reported in The Warrens. Evacuation advised!",
+    "color": "red"
+  },
+  {
+    "message": "[STATUS] Freeport District: All docking requests processed successfully.",
+    "color": "green"
+  },
+  {
+    "message": "[NOTICE] Yadro Central: Routine safety inspections underway.",
+    "color": "white"
+  },
+  {
+    "message": "Operational Security Zone: Patrols successfully deployed.",
+    "color": "green"
+  },
+  {
+    "message": "[ALERT] Critical Infrastructure Zone Alpha: Power grid instability detected.",
+    "color": "yellow"
+  },
+  {
+    "message": "[STATUS] Yadro Central: Security protocols fully operational.",
+    "color": "green"
+  },
+  {
+    "message": "[ALERT] Unauthorized drone activity in Operational Security Zone.",
+    "color": "red"
+  },
+  {
+    "message": "[SECURITY] The Warrens: Surveillance cameras offline. Repairs underway.",
+    "color": "yellow"
+  },
+  {
+    "message": "[INCOMING TRANSMISSION]",
+    "color": "lightblue"
+  },
+  {
+    "message": "Restricted Access Sector: Emergency lockdown initiated.",
+    "color": "red"
+  },
+  {
+    "message": "[WARNING] Critical Infrastructure Zone Bravo: Reactor coolant levels dropping!",
+    "color": "red"
+  },
+  {
+    "message": "[NOTICE] Freeport District: Cargo inspections delayed due to system errors.",
+    "color": "yellow"
+  },
+  {
+    "message": "[STATUS] Operational Security Zone secure. No breaches reported.",
+    "color": "green"
+  },
+  {
+    "message": "[NOTICE] The Warrens: Routine maintenance scheduled for ventilation shafts.",
+    "color": "white"
+  },
+  {
+    "message": "[WARNING] Unauthorized access detected in Restricted Zone.",
+    "color": "red"
+  },
+  {
+    "message": "[NOTICE] Yadro Central: Scheduled maintenance commencing in 5 minutes.",
+    "color": "white"
+  },
+  {
+    "message": "[STATUS] Freeport District: Docking bays operating at full capacity.",
+    "color": "green"
+  },
+  {
+    "message": "[NOTICE] Evacuation drills scheduled for next cycle. Participation mandatory.",
+    "color": "white"
+  },
+  {
+    "message": "Yadro Central systems operational. No anomalies detected.",
+    "color": "green"
+  },
+  {
+    "message": "[WARNING] Freeport District experiencing cargo theft incidents.",
+    "color": "red"
+  },
+  {
+    "message": "[SECURITY] Freeport District: Customs scanners fully operational.",
+    "color": "green"
+  },
+  {
+    "message": "Yadro Central: Backup power systems online and stable.",
+    "color": "green"
+  },
+  {
+    "message": "[CAUTION] Restricted Access Sector: Unidentified signal detected.",
+    "color": "yellow"
+  },
+  {
+    "message": "Yadro Central: Unauthorized data access attempt blocked.",
+    "color": "yellow"
+  },
+  {
+    "message": "Yadro Central: Data integrity verified. No anomalies found.",
+    "color": "green"
+  },
+  {
+    "message": "System diagnostics nominal. All sectors online.",
+    "color": "green"
+  },
+  {
+    "message": "Life support systems at 70% efficiency.",
+    "color": "green"
+  },
+  {
+    "message": "Realignment systems recalibrating...",
+    "color": "yellow"
+  },
+  {
+    "message": "All external communication channels are operational.",
+    "color": "green"
+  },
+  {
+    "message": "Security level: Standard operating protocols engaged.",
+    "color": "white"
+  },
+  
+  
+  {
+    "message": " атмосферное давление в норме.",
+    "color": "lightblue"
+  },
+  {
+    "message": "Minor fluctuations detected in Zone Alpha. Investigating...",
+    "color": "yellow"
+  },
+  {
+    "message": "CRITICAL: Power surge in Reactor Core! Emergency procedures initiated.",
+    "color": "red"
+  },
+  {
+    "message": "Yadro Central: All systems functioning at peak efficiency.",
+    "color": "green"
+  },
+  
+  {
+    "message": "[ALERT] The Warrens: Unauthorized gatherings reported in Sub-Sector 12.",
+    "color": "red"
+  },
+  {
+    "message": "[CRITICAL] Mainframe overload imminent!",
+    "color": "red"
+  },
+  {
+    "message": "[STATUS] Yadro Central: Core systems running at optimal efficiency.",
+    "color": "green"
+  },
+  {
+    "message": "[NOTICE] Freeport District: Routine safety inspections underway.",
+    "color": "white"
+  },
+  {
+    "message": "[STATUS] Yadro Central: Life support systems fully operational.",
+    "color": "green"
+  },
+  {
+    "message": "[WARNING] The Warrens: Elevated radiation levels detected near abandoned tunnels.",
+    "color": "red"
+  },
+  {
+    "message": "[WARNING] Freeport District experiencing power fluctuations in Sub-Sector 4.",
+    "color": "yellow"
+  },
+  {
+    "message": "[ALERT] The Warrens: Reports of armed conflict. Proceed with caution!",
+    "color": "red"
+  },
+  {
+    "message": "Yadro Central: Data integrity verified. No anomalies found.",
+    "color": "green"
+  },
+  {
+    "message": "[SECURITY] Freeport District: Customs scanners detecting contraband materials.",
+    "color": "red"
+  },
+  {
+    "message": "[ALERT] The Warrens: Unauthorized excavation activity detected.",
+    "color": "yellow"
+  },
+  {
+    "message": "[WARNING] The Warrens: Power surges detected. Expect temporary outages.",
+    "color": "yellow"
+  },
+  {
+    "message": "Operational Security Zone: Patrols successfully deployed.",
+    "color": "green"
+  },
+  {
+    "message": "[ALERT] Critical Infrastructure Zone Alpha: Power grid instability detected.",
+    "color": "yellow"
+  },
+  {
+    "message": "[CRITICAL] Yadro Central: Emergency shutdown initiated in Reactor Core!",
+    "color": "red"
+  },
+  {
+    "message": "[NOTICE] Yadro Central: Scheduled maintenance in Sector 2 starts in 1 hour.",
+    "color": "white"
+  },
+  {
+    "message": "[STATUS] All docking requests processed successfully.",
+    "color": "green"
+  },
+  {
+    "message": "[WARNING] Critical Infrastructure Zone Bravo: Reactor coolant levels dropping!",
+    "color": "red"
+  },
+  {
+    "message": "[WARNING] Air quality levels in Zone Bravo fluctuating.",
+    "color": "yellow"
+  },
+  {
+    "message": "[SECURITY] Zone Alpha: Surveillance systems recalibrated and online.",
+    "color": "green"
+  },
+  {
+    "message": "[SECURITY] The Warrens: Increased patrols deployed following recent incidents.",
+    "color": "yellow"
+  },
+  {
+    "message": "[NOTICE] Infrastructure Zone Bravo: Emergency drills scheduled for tomorrow.",
+    "color": "white"
+  },
+  {
+    "message": "[CRITICAL] The Warrens: Structural collapse reported. Evacuation advised!",
+    "color": "red"
+  },
+  {
+    "message": "Yadro Central systems operational. No anomalies detected.",
+    "color": "green"
+  },
+  {
+    "message": "[ALERT] Breach attempt detected at Data Core. Countermeasures activated.",
+    "color": "red"
+  },
+  {
+    "message": "[STATUS] Docking bays operating at full capacity.",
+    "color": "green"
+  },
+  {
+    "message": "[SECURITY] Yadro Central: Surveillance drones deployed.",
+    "color": "green"
+  },
+  {
+    "message": "[NOTICE] Yadro Central: Scheduled maintenance commencing in 5 minutes.",
+    "color": "white"
+  },
+  {
+    "message": "[SECURITY] The Warrens: Surveillance cameras offline. Repairs underway.",
+    "color": "yellow"
+  },
+  {
+    "message": "[WARNING] Unauthorized access detected in Restricted Zone.",
+    "color": "red"
+  },
+  {
+    "message": "[STATUS] Freeport District: Trade routes clear and operational.",
+    "color": "green"
+  },
+  {
+    "message": "[NOTICE] The Warrens: Routine maintenance scheduled for ventilation shafts.",
+    "color": "white"
+  },
+  {
+    "message": "[CRITICAL] Unauthorized access detected in Restricted Access Sector.",
+    "color": "red"
+  },
+  {
+    "message": "[WARNING] The Warrens: Air filtration systems operating below capacity.",
+    "color": "yellow"
+  },
+  {
+    "message": "[NOTICE] Freeport District: Cargo inspections delayed due to system errors.",
+    "color": "yellow"
+  },
+  {
+    "message": "Yadro Central: Core systems running at optimal efficiency.",
+    "color": "green"
+  },
+  {
+    "message": "Yadro Central: Minor network latency detected. Monitoring...",
+    "color": "yellow"
+  },
+  {
+    "message": "[INCOMING TRANSMISSION]",
+    "color": "lightblue"
+  },
+  {
+    "message": "[STATUS] Yadro Central: Security protocols fully operational.",
+    "color": "green"
+  },
+  {
+    "message": "Yadro Central: Minor network latency detected. Monitoring...",
+    "color": "yellow"
+  },
+  {
+    "message": "[WARNING] Yadro Central: Cooling systems operating below optimal levels.",
+    "color": "yellow"
+  },
+  {
+    "message": "Orbital control systems recalibrating...",
+    "color": "yellow"
+  },
+  {
+    "message": "All external communication channels are operational.",
+    "color": "green"
+  },
+  {
+    "message": "[ALERT] Yadro Central: Communication uplink experiencing packet loss.",
+    "color": "yellow"
+  },
+  {
+    "message": "[CRITICAL] Yadro Central: Reactor Core approaching critical pressure!",
+    "color": "red"
+  },
+  {
+    "message": "[NOTICE] Yadro Central: Routine safety inspections underway.",
+    "color": "white"
+  },
+  {
+    "message": "[SECURITY] Freeport District: Surveillance drones deployed.",
+    "color": "green"
+  },
+  {
+    "message": "System diagnostics nominal. All sectors online.",
+    "color": "green"
+  },
+  {
+    "message": "[NOTICE] Scheduled upgrades to realignment systems begin tomorrow.",
+    "color": "white"
+  },
+  {
+    "message": "[CRITICAL] The Warrens: Emergency shutdown initiated in Reactor Core!",
+    "color": "red"
+  },
+  {
+    "message": "[NOTICE] Yadro Central: Minor delays expected in data processing.",
+    "color": "white"
+  },
+  {
+    "message": "[ALERT] Yadro Central: Unauthorized personnel detected in Maintenance Bay 3.",
+    "color": "red"
+  },
+  {
+    "message": "[ALERT] Explosion reported near Docking Bay 7!",
+    "color": "red"
+  },
+  {
+    "message": "[WARNING] Power grid instability detected. Engineers dispatched.",
+    "color": "yellow"
+  },
+  {
+    "message": "[WARNING] Yadro Central: Power surges detected. Investigating...",
+    "color": "yellow"
+  },
+  {
+    "message": "Yadro Central: Backup power systems online and stable.",
+    "color": "green"
+  },
+  {
+    "message": "[NOTICE] Yadro Central: System diagnostics scheduled for next cycle.",
+    "color": "white"
+  },
+  {
+    "message": "[ALERT] Yadro Central: Unauthorized signal detected in Sector 5.",
+    "color": "red"
+  },
+  {
+    "message": "[ALERT] Freeport District: Unauthorized vessel attempting to dock.",
+    "color": "red"
+  },
+  {
+    "message": "[SECURITY] Yadro Central: Access logs show no breaches in the last cycle.",
+    "color": "green"
+  },
+  {
+    "message": "[STATUS] The Warrens: Air quality improving after recent filtration upgrades.",
+    "color": "green"
+  },
+  {
+    "message": "[NOTICE] Evacuation drills scheduled for next cycle. Participation mandatory.",
+    "color": "white"
+  },
+  {
+    "message": "[ALERT] Yadro Central: Data breach attempt detected and blocked.",
+    "color": "red"
+  },
+
+  {
+    "message": "Monorail system operational. All routes running on schedule.",
+    "color": "green"
+  },
+  {
+    "message": "Minor delay reported at Freeport District. Adjusting schedules.",
+    "color": "yellow"
+  },
+  {
+    "message": "CRITICAL: Monorail power failure detected. Emergency teams dispatched.",
+    "color": "red"
+  },
+  {
+    "message": "Routine maintenance scheduled for Monorail at the Freeport District.",
+    "color": "white"
+  },
+  {
+    "message": "Monorail passenger capacity at 85%. All systems running efficiently.",
+    "color": "green"
+  },
+  {
+    "message": "Unauthorized access to Monorail maintenance bay detected.",
+    "color": "red"
+  },
+  {
+    "message": "Monorail at Restricted Access Sector experiencing minor signal interference.",
+    "color": "yellow"
+  },
+  {
+    "message": "All Monorail stations are fully operational.",
+    "color": "green"
+  },
+  {
+    "message": "[NOTICE] Scheduled upgrades to Monorail at Yadro Central will begin tomorrow.",
+    "color": "white"
+  },
+  {
+    "message": "[WARNING] Monorail elevated vibrations detected.",
+    "color": "yellow"
+  },
+  {
+    "message": "[ALERT] Emergency brakes engaged on Monorail at Operational Security Zone!",
+    "color": "red"
+  },
+  {
+    "message": "[STATUS] Monorail cooling systems functioning within normal parameters.",
+    "color": "green"
+  },
+  {
+    "message": "[NOTICE] Passenger assistance kiosks online at all Monorail stations.",
+    "color": "white"
+  },
+  {
+    "message": "[WARNING] Monorail delays expected due to overcrowding at Freeport.",
+    "color": "yellow"
+  },
+  {
+    "message": "[CRITICAL] Collision detected on Monorail! Emergency response activated.",
+    "color": "red"
+  },
+  {
+    "message": "[STATUS] Monorail energy consumption at optimal levels.",
+    "color": "green"
+  },
+  {
+    "message": "[NOTICE] Next Monorail arrival at The Warrens in 2 minutes.",
+    "color": "white"
+  },
+  {
+    "message": "[WARNING] Signal disruption. Repairs underway.",
+    "color": "yellow"
+  },
+  {
+    "message": "[ALERT] Fire reported in Freeport Monorail Station! Evacuate immediately!",
+    "color": "red"
+  },
+  {
+    "message": "[STATUS] All Monorail emergency systems tested and fully operational.",
+    "color": "green"
+  },
+
+  {
+    "message": "[STATUS] Yadro Central Air Scrubbers operating at optimal efficiency.",
+    "color": "green"
+  },
+  {
+    "message": "[NOTICE] Routine maintenance scheduled for Freeport District Air Scrubbers.",
+    "color": "white"
+  },
+  {
+    "message": "[ALERT] Elevated CO2 levels detected. Air scrubbers operating at maximum capacity.",
+    "color": "red"
+  },
+  {
+    "message": "[WARNING] Minor fluctuations observed in Air Scrubbers performance.",
+    "color": "yellow"
+  },
+  {
+    "message": "[STATUS] Air Scrubbers successfully maintaining air quality.",
+    "color": "green"
+  },
+  {
+    "message": "[CRITICAL] Air Scrubbers malfunction detected. Immediate attention required.",
+    "color": "red"
+  },
+  {
+    "message": "[NOTICE] Air Scrubbers replacement in progress.",
+    "color": "white"
+  },
+  {
+    "message": "[WARNING] Air Scrubbers experiencing reduced efficiency. Engineering notified.",
+    "color": "yellow"
+  },
+  {
+    "message": "[STATUS] All air filtration systems functioning within normal parameters.",
+    "color": "green"
+  },
+  {
+    "message": "[ALERT] Unexpected dust accumulation. Maintenance crew dispatched.",
+    "color": "red"
+  },
+  {
+    "message": "Incoming spacecraft detected. Docking procedures initiated.",
+    "color": "yellow"
+  },
+  {
+    "message": "[STATUS] Space traffic lanes clear. No immediate hazards detected.",
+    "color": "green"
+  },
+  {
+    "message": "[ALERT] Unidentified object approaching station perimeter!",
+    "color": "red"
+  },
+  {
+    "message": "Scheduled supply shuttle arrival in T-minus 30 minutes.",
+    "color": "white"
+  },
+  {
+    "message": "[WARNING] Space debris field detected in nearby orbit.",
+    "color": "yellow"
+  },
+  {
+    "message": "[STATUS] All docking bays operational. Ready for incoming traffic.",
+    "color": "green"
+  },
+  {
+    "message": "[CRITICAL] Collision alert!",
+    "color": "red"
+  },
+  {
+    "message": "Routine satellite maintenance operation in progress near station.",
+    "color": "white"
+  },
+  {
+    "message": "[WARNING] Solar flare activity may disrupt communications with incoming vessels.",
+    "color": "yellow"
+  },
+  {
+    "message": "[STATUS] Traffic coordination system operating at optimal efficiency.",
+    "color": "green"
+  },
+  {
+    "message": "[ALERT] Unauthorized spacecraft attempting to dock! Security protocols engaged.",
+    "color": "red"
+  },
+  {
+    "message": "Scheduled crew rotation shuttle departing in T-minus 15 minutes.",
+    "color": "white"
+  },
+  {
+    "message": "[WARNING] Micro-meteoroid shower expected. All external activities suspended.",
+    "color": "yellow"
+  },
+  {
+    "message": "[STATUS] Space-based ADS-B system functioning normally. All traffic accounted for.",
+    "color": "green"
+  },
+  {
+    "message": "[CRITICAL] Rapid decompression detected! Emergency protocols activated.",
+    "color": "red"
+  },
+  {
+    "message": "Automated cargo transfer vehicle approaching. Prepare for docking sequence.",
+    "color": "white"
+  },
+  {
+    "message": "[WARNING] Unexpected solar wind activity.",
+    "color": "yellow"
+  },
+  {
+    "message": "[STATUS] All external communication arrays aligned. Traffic control optimal.",
+    "color": "green"
+  },
+  {
+    "message": "[ALERT] Debirs field detected on collision course!",
+    "color": "red"
+  },
+  {
+    "message": "Scheduled space walk to begin. Clearing immediate vicinity.",
+    "color": "white"
+  },
+
+  {
+    "message": "Shift change in progress. Incoming personnel report to Docking Bay 11.",
+    "color": "white"
+  },
+  {
+    "message": "[ALERT] Yadro Central: Understaffed. Additional personnel required immediately.",
+    "color": "red"
+  },
+  {
+    "message": "[STATUS] Yadro Central: All stations fully manned. Shift handover complete.",
+    "color": "green"
+  },
+  {
+    "message": "[NOTICE] Yadro Central: Crew rotation scheduled.",
+    "color": "white"
+  },
+  {
+    "message": "[WARNING] Unexpected staff absence in Traffic Control. Seeking replacement.",
+    "color": "yellow"
+  },
+
+  {
+    "message": "Zone Alpha: Emergency staff required for coolant system maintenance.",
+    "color": "red"
+  },
+  {
+    "message": "[STATUS] Zone Bravo: All critical posts manned and operational.",
+    "color": "green"
+  },
+  {
+    "message": "[NOTICE] Joint staff briefing in Conference Room 9.",
+    "color": "white"
+  },
+  {
+    "message": "[WARNING] Zone Alpha: Monitoring closely.",
+    "color": "yellow"
+  },
+  {
+    "message": "Zone Bravo: Shift change delayed due to ongoing system diagnostics.",
+    "color": "yellow"
+  },
+
+  {
+    "message": "Security breach detected. All available personnel report to stations.",
+    "color": "red"
+  },
+  {
+    "message": "Shift change complete. All security protocols active.",
+    "color": "green"
+  },
+  {
+    "message": "Mandatory security briefing for all staff at 0600 hours.",
+    "color": "white"
+  },
+  {
+    "message": "Staff shortage in Surveillance Room 12. Backup requested.",
+    "color": "yellow"
+  },
+  {
+    "message": "OpSec Zone: Overtime authorized for night shift due to increased activity.",
+    "color": "white"
+  },
+
+ 
+  {
+    "message": "[CRITICAL] Unauthorized personnel detected. Security teams mobilize.",
+    "color": "red"
+  },
+  {
+    "message": "[STATUS] All clearance levels verified. Shift change proceeding.",
+    "color": "green"
+  },
+  {
+    "message": "[NOTICE] Staff rotation for high-security areas begins in 2 hours.",
+    "color": "white"
+  },
+  {
+    "message": "[WARNING] Decontamination required for incoming shift. Expect delays.",
+    "color": "yellow"
+  },
+  {
+    "message": "Additional security detail requested for sensitive cargo transfer.",
+    "color": "yellow"
+  },
+
+
+
+  {
+    "message": "Cargo vessel approaching Docking Bay Gamma. Prepare for docking sequence.",
+    "color": "yellow"
+  },
+  {
+    "message": "[STATUS] IPX320 successfully docked. Cargo manifest being verified.",
+    "color": "green"
+  },
+  {
+    "message": "[ALERT] 'DUST STORM' Requesting emergency docking.",
+    "color": "red"
+  },
+  {
+    "message": "[NOTICE] Cargo vessel 912 scheduled to depart. Begin loading procedure.",
+    "color": "white"
+  },
+  {
+    "message": "[WARNING] Minor navigation error detected on incoming cargo vessel 379.",
+    "color": "yellow"
+  },
+  {
+    "message": "[STATUS] All cargo unloaded from cargo vessel 456. Departure clearance granted.",
+    "color": "green"
+  },
+  {
+    "message": "[CRITICAL] Docking clamp failure on cargo vessel 204!",
+    "color": "red"
+  },
+  {
+    "message": "Scheduled arrival of cargo vessel 597 delayed due to radiation storm.",
+    "color": "yellow"
+  },
+  {
+    "message": "[ALERT] Cargo vessel 280 detected drifting off course. Sending assistance.",
+    "color": "red"
+  },
+  {
+    "message": "[STATUS] Cargo vessel 812 successfully cleared station perimeter after departure.",
+    "color": "green"
+  },
+
+  {
+    "message": "[NOTICE] Minor signal interference detected.",
+    "color": "white"
+  },
+  {
+    "message": "[WARNING] Adjusting satellite alignment to compensate intermittent signal loss.",
+    "color": "yellow"
+  },
+  {
+    "message": "[CRITICAL] Complete signal blackout. Emergency diagnostics underway.",
+    "color": "red"
+  },
+  {
+    "message": "[STATUS] Signal strength reduced by 25% due to heavy debris.",
+    "color": "yellow"
+  },
+  {
+    "message": "[NOTICE] Scheduled maintenance on uplink station.",
+    "color": "white"
+  },
+  {
+    "message": "[ALERT] Satellite transmission disrupted.",
+    "color": "red"
+  },
+  {
+    "message": "[WARNING] Switching to backup frequency.",
+    "color": "yellow"
+  },
+  {
+    "message": "[NOTICE] Antenna realignment in progress to restore optimal signal quality.",
+    "color": "white"
+  },
+  {
+    "message": "[CRITICAL] Persistent signal loss. Investigating possible hardware failure.",
+    "color": "red"
+  },
+
+
+
+  {
+    "message": "[STATUS] Station traffic at normal levels. All docking bays operating efficiently.",
+    "color": "green"
+  },
+  {
+    "message": "[NOTICE] Increased vessel activity expected due to upcoming supply deliveries.",
+    "color": "white"
+  },
+  {
+    "message": "[WARNING] Traffic congestion in approach vector 3.",
+    "color": "yellow"
+  },
+  {
+    "message": "[ALERT] Additional traffic control personnel required.",
+    "color": "red"
+  },
+  {
+    "message": "[STATUS] Low traffic period forecasted for next 6 hours.",
+    "color": "green"
+  },
+  {
+    "message": "[WARNING] Space debris field causing delays. Expect longer approach times.",
+    "color": "yellow"
+  },
+  {
+    "message": "[NOTICE] Traffic patterns adjusted. Check updated flight paths.",
+    "color": "white"
+  },
+  {
+    "message": "[ALERT] Critical traffic overload. Implementing emergency management protocols.",
+    "color": "red"
+  },
+  {
+    "message": "[STATUS] Traffic levels returning to normal following solar flare activity.",
+    "color": "green"
+  },
+  {
+    "message": "[WARNING] Increased commercial traffic detected. Adjusting docking schedules.",
+    "color": "yellow"
+  }
+
+
+
+
+
+
+
+
+
+  
+
+]

@@ -1,0 +1,155 @@
+#ui-container {
+    position: absolute !important;
+    top: 10px !important;
+    left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 5px !important;
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    z-index: 10 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.stations-container, .preview-container, .text-container, .outposts-container {
+    width: 24.5% !important;
+    height: 216px !important;
+    border: 1px solid #00ff00 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important; /* Stack list and pagination vertically */
+}
+
+.stations-container ul, .outposts-container ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    color: #00ff00;
+    font-family: 'Electrolize', monospace;
+    flex: 1; /* Allow the list to take available space */
+}
+
+.stations-container li, .outposts-container li {
+    cursor: pointer;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 5px;
+}
+
+/* 5x2 grid layout */
+.list-grid {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important; /* 5 items per row */
+    grid-template-rows: repeat(2, 1fr) !important; /* 2 rows */
+    gap: 5px !important;
+    height: 100% !important; /* Ensure the grid fills the container */
+}
+
+/* Pagination buttons */
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.pagination-button {
+    background-color: #000;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-family: 'Electrolize', monospace;
+    font-size: 0.8em;
+    transition: background-color 0.3s;
+}
+
+.pagination-button:hover {
+    background-color: #00ff00;
+    color: #000;
+}
+
+.pagination-button:disabled {
+    background-color: #003300; /* Dark green background */
+    color: #006600; /* Dark green text */
+    border-color: #006600; /* Dark green border */
+    cursor: not-allowed;
+}
+
+.preview-container {
+    background-color: #000;
+    position: relative; /* Ensure canvas fits */
+}
+
+#previewCanvas {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.text-container {
+    padding: 10px;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    overflow-y: auto !important;
+    position: relative;
+    line-height: 1.4;
+}
+
+/* Ensure spans are inline */
+.text-container span {
+    display: inline !important;
+}
+
+/* Blinking cursor effect for the <span> */
+.cursor {
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Style the prefix (>) in each line */
+.name-line::before,
+.type-line::before,
+.callsign-line::before,
+.desc-line::before {
+    content: ">";
+    color: #00ff00; /* Green for the > */
+}
+
+/* Default color for the main content (labels and values) */
+.type-line,
+.desc-line,
+.name-line,
+.callsign-line {
+    color: #00ff00; /* Default green for labels */
+}
+
+/* Specific colors for the name value based on type */
+.name-line .name-value.station-name {
+    color: #800080; /* Dark Purple for station names */
+}
+.name-line .name-value.planet-outpost-name {
+    color: #00ffff; /* Cyan for planet outpost names */
+}
+.name-line .name-value.moon-outpost-name {
+    color: #ff69b4; /* Pink for moon outpost names */
+}
+
+/* Style the callsign value */
+.callsign-line .callsign-value {
+    color: #ffffff; /* White for the callsign value */
+}

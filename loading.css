@@ -1,0 +1,24 @@
+/* loading.css */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.loading-message {
+    color: #00ff66;
+    font-size: 2em;
+    font-family: 'Electrolize', 'Courier New', monospace;
+    text-shadow: 0 0 10px #00ff66;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Space Station</title>
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/nprogress.css">
+    <link rel="stylesheet" href="/loading.css">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="contact-style.css">
+    <link rel="stylesheet" href="/LOCKPAD/lockpad.css">
+    <link rel="stylesheet" href="/brightness-global.css">
+
+    <link rel="icon" href="/favicon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="../backgrounds/BACKGROUND8.css">
+</head>
+<body class="contact-body">
+    <div id="loading-screen">
+        <div class="loading-message">Loading Transmission...</div>
+    </div>
+
+    <canvas id="canvas"></canvas>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div></div>
+            <div class="navbar-menu-wrapper">
+                <ul class="navbar-menu">
+                    <li class="navbar-item"><a href="/index.html" class="navbar-link">HOME</a></li>
+                    <li class="navbar-item"><a href="/BOOK/book-series.html" class="navbar-link">BOOKS</a></li>
+                    <li class="navbar-item"><a href="/GLOSSARY/glossary.html" class="navbar-link">GLOSSARY</a></li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">LOCATIONS</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="/MAP/map.html">System Map</a></li>
+                            <li class="dropdown-item"><a href="/MOON/moon-camp.html">Crater Camp</a></li>
+                            <li class="dropdown-item"><a href="/BOGDAN/bogdan.html">Bogdan's Rest</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item"><a href="/CONTACT/contact.html" class="navbar-link">CONTACT</a></li>
+                </ul>
+            </div>
+            <div class="brightness-slider-container">
+                <label for="brightnessSlider" class="brightness-label">Brightness:</label>
+                <input type="range" id="brightnessSlider" min="50" max="200" value="100" step="10">
+            </div>
+        </div>
+    </nav>
+
+    <div id="page-content-wrapper">
+        <div class="hologram-container">
+            <div class="hologram">
+                <pre class="ascii-art">
+▓█████ ▒██   ██▒ ██▓███   █    ██  ██▓      ██████ ▓█████ ▓█████▄
+▓█   ▀ ▒▒ █ █ ▒░▓██░  ██▒ ██  ▓██▒▓██▒    ▒██    ▒ ▓█   ▀ ▒██▀ ██▌
+▒███   ░░  █   ░▓██░ ██▓▒▓██  ▒██░▒██░    ░ ▓██▄   ▒███   ░██   █▌
+▒▓█  ▄  ░ █ █ ▒ ▒██▄█▓▒ ▒▓▓█  ░██░▒██░      ▒   ██▒▒▓█  ▄ ░▓█▄   ▌
+░▒████▒▒██▒ ▒██▒▒██▒ ░  ░▒▒█████▓ ░██████▒▒██████▒▒░▒████▒░▒████▓
+░░ ▒░ ░▒▒ ░ ░▓ ░▒▓▒░ ░  ░░▒▓▒ ▒ ▒ ░ ▒░▓  ░▒ ▒▓▒ ▒ ░░░ ▒░ ░ ▒▒▓  ▒
+ ░ ░  ░░░   ░▒ ░░▒ ░     ░░▒░ ░ ░ ░ ░ ▒  ░░ ░▒  ░ ░ ░ ░  ░ ░ ▒  ▒
+   ░    ░    ░  ░░        ░░░ ░ ░   ░ ░   ░  ░  ░     ░    ░ ░  ░
+   ░  ░ ░    ░              ░         ░  ░      ░     ░  ░   ░
+                                                           ░
+                </pre>
+            </div>
+        </div>
+
+        <div class="contact-form-wrapper">
+            <svg class="contact-svg-border" viewBox="0 0 600 600" preserveAspectRatio="none">
+                <path class="svg-border-path" d="M20,10 L580,10 L590,20 L590,580 L580,590 L20,590 L10,580 L10,20 Z"></path>
+                <circle cx="20" cy="20" r="5" class="svg-node"></circle>
+                <circle cx="580" cy="20" r="5" class="svg-node"></circle>
+                <circle cx="20" cy="580" r="5" class="svg-node"></circle>
+                <circle cx="580" cy="580" r="5" class="svg-node"></circle>
+                <line x1="10" y1="50" x2="590" y2="50" class="scan-line"></line>
+            </svg>
+
+            <div class="contact-content">
+                <h1 class="glitch-text">CONTACT TRANSMISSION</h1>
+                <div class="form-container">
+                    <form id="contactForm" action="https://formsubmit.co/your-email-here" method="POST">
+                        <input type="hidden" name="_subject" value="New Contact Form Submission">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+
+                        <div class="form-group">
+                            <label for="name">CODE NAME:</label>
+                            <input type="text" id="name" name="name" required class="futuristic-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required class="futuristic-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">SUBJECT CLASSIFICATION:</label>
+                            <select id="subject" name="subject" class="futuristic-input">
+                                <option value="general">BOOK FEEDBACK</option>
+                                <option value="support">GENERAL INQUIRY</option>
+                                <option value="feedback">TECHNICAL SUPPORT</option>
+                                <option value="other">OTHER</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">MESSAGE CONTENT:</label>
+                            <textarea id="message" name="message" rows="8" required class="futuristic-input"></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">TRANSMIT MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simplex-noise@2.4.0/simplex-noise.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+    <script src="/loading.js"></script>
+    <script src="/navbar.js"></script>
+    <script src="contact-script.js"></script>
+    <script src="../backgrounds/BACKGROUND8.js"></script>
+    <script>
+        window.onload = () => {
+            setPageReady();
+        };
+    </script>
+    <script src="/LOCKPAD/gatekeeper.js"></script>
+
+</body>
+</html>

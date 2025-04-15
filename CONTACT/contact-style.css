@@ -1,0 +1,343 @@
+/* contact-style.css - Styles for the CONTACT page (contact.html) */
+
+/* CONTACT-specific body background */
+.contact-body {
+    background-color: #111111;
+    color: #00ff66;
+    font-family: 'Electrolize', 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    overflow: hidden; /* Added to match index page and prevent scrollbars */
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#page-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+    padding: 15px 0 10px 0;
+    position: relative;
+    max-height: calc(100vh - 60px);
+    overflow-y: hidden;
+    width: 100%;
+    max-width: 1200px; /* Reverted to original to match navbar.css */
+    margin: 0 auto; /* Retained for centering */
+}
+
+/* Fix for brightness slider position */
+.brightness-slider-container {
+    margin-right: -20px; /* Pulls the slider left from the right edge */
+    /* Keeps margin-left: auto from navbar.css, just adjusts right offset */
+}
+
+/* New styles for error messages */
+.error-message {
+    display: block;
+    color: #ff4444;
+    font-size: 0.8em;
+    margin-top: 5px;
+    text-shadow: 0 0 3px #ff4444;
+}
+
+/* Loading spinner animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+    display: inline-block;
+    margin-right: 10px;
+    animation: spin 1s linear infinite;
+    color: #00ff66;
+}
+
+/* Hologram container with both horizontal and vertical scrollbar fixes */
+.hologram-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    margin-bottom: -120px;
+    position: relative;
+    z-index: 3;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+/* Glitch Effect on Text */
+@keyframes glitch {
+    0% { text-shadow: 0px 0px 5px #00ff66, 0px 0px 10px #00ff66; }
+    50% { text-shadow: 2px -2px 5px #00ff66, -2px 2px 10px #ff00ff; }
+    100% { text-shadow: -2px 2px 5px #00ff66, 2px -2px 10px #00ffff; }
+}
+
+.glitch-text {
+    animation: glitch 0.15s infinite alternate;
+}
+
+/* Hologram element with spinning animation */
+.hologram {
+    width: 400px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: spin 35s linear infinite;
+    margin-left: -3vw;
+    margin-top: 17px; 
+}
+
+/* ASCII Art inside hologram - FIXED: Made selector more specific */
+.hologram .ascii-art {
+    color: #00ff66;
+    font-size: 14px;
+    text-shadow: 0 0 5px #00ff66, 0 0 10px #00ff66;
+    opacity: 0.8;
+    animation: pulse 2s ease-in-out infinite;
+    white-space: pre;
+    line-height: 1.2;
+}
+
+/* Contact form wrapper - now centered */
+.contact-form-wrapper {
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    margin: 0 auto;
+}
+
+/* SVG Border styling */
+.contact-svg-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.svg-border-path {
+    fill: rgba(0, 20, 0, 0.7);
+    stroke: #00ff66;
+    stroke-width: 2;
+    filter: drop-shadow(0 0 5px #00ff66);
+}
+
+.svg-node {
+    fill: #00ff66;
+    animation: pulse 2s ease-in-out infinite alternate;
+}
+
+.scan-line {
+    stroke: #00ff66;
+    stroke-width: 1;
+    stroke-dasharray: 10 5;
+    opacity: 0.7;
+    animation: scan 3s linear infinite;
+}
+
+/* Contact content container */
+.contact-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 40px;
+    box-sizing: border-box;
+}
+
+.contact-content h1 {
+    color: #00ff66;
+    text-shadow: 0 0 10px #00ff66;
+    margin-top: 0;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+/* Form styling */
+.form-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px #00ff66;
+}
+
+.futuristic-input {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #00ff66;
+    border-radius: 0;
+    color: #00ff66;
+    font-family: 'Electrolize', monospace;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 255, 102, 0.3);
+    box-sizing: border-box;
+}
+
+.futuristic-input:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.7);
+    border-color: #00ff99;
+}
+
+textarea.futuristic-input {
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: rgba(0, 20, 0, 0.8);
+    color: #00ff66;
+    border: 1px solid #00ff66;
+    padding: 12px 30px;
+    font-family: 'Electrolize', monospace;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: auto;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    align-self: center;
+    min-width: 200px;
+}
+
+.submit-btn:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 102, 0.3), transparent);
+    transition: all 0.5s;
+}
+
+.submit-btn:hover:before {
+    left: 100%;
+}
+
+.submit-btn:hover {
+    background-color: rgba(0, 40, 0, 0.8);
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.5);
+}
+
+/* Animations */
+@keyframes spin {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+@keyframes scan {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(540px); }
+}
+
+/* Responsive design - FIXED: Made selectors more specific */
+@media (max-width: 1200px) {
+    .hologram .ascii-art {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 992px) {
+    .hologram {
+        width: 350px;
+        height: 250px;
+    }
+    
+    .hologram-container {
+        margin-bottom: -70px;
+    }
+}
+
+@media (max-width: 768px) {
+    #page-content-wrapper {
+        padding: 30px 0 10px 0;
+    }
+    
+    .contact-form-wrapper {
+        width: 95%;
+    }
+    
+    .hologram .ascii-art {
+        font-size: 10px;
+    }
+    
+    .hologram-container {
+        margin-bottom: -40px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .hologram {
+        width: 280px;
+        height: 200px;
+    }
+    
+    .hologram .ascii-art {
+        font-size: 8px;
+    }
+    
+    .contact-content {
+        padding: 15px;
+        padding-top: 30px;
+    }
+    
+    .contact-form-wrapper {
+        height: 690px;
+    }
+    
+    .hologram-container {
+        margin-bottom: -30px;
+    }
+}

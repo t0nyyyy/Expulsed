@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- ... (All your head content - unchanged) ... -->
+          <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A cyberpunk-themed website about space exploration, books, and more. Explore the Space Station!">
+        <title>Expulsed Book Series</title>
+        <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+    
+        <!-- Link to Global Brightness Styles (NOW USING ROOT-RELATIVE PATH) -->
+        <link rel="stylesheet" href="/brightness-global.css">
+        <!-- END CHANGE -->
+    
+        <link rel="stylesheet" href="navbar.css">
+        <link rel="stylesheet" href="index-style.css">
+        <link rel="stylesheet" href="svg-animations.css">
+        <link rel="stylesheet" href="backgrounds/moonbackground.css">
+        <link rel="stylesheet" href="nprogress.css">
+        <link rel="stylesheet" href="loading.css">
+        <link rel="stylesheet" href="/LOCKPAD/lockpad.css">
+    
+        <!-- Favicon Links -->
+        <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    
+        <!-- Link to Web App Manifest (NOW USING ROOT-RELATIVE PATH) -->
+        <link rel="manifest" href="/site.webmanifest">
+        <!-- END CHANGE -->
+    
+        <style>
+          body.gatekeeper-hide-initial #page-content-wrapper,
+          body.gatekeeper-hide-initial > header,
+          body.gatekeeper-hide-initial > nav.navbar,
+          body.gatekeeper-hide-initial > canvas,
+          body.gatekeeper-hide-initial > #loading-screen
+          {
+            visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;
+          }
+        </style>
+    </head>
+<body class="index-body gatekeeper-hide-initial">
+
+    <!-- Loading Screen (unchanged) -->
+    <div id="loading-screen">
+        <div class="loading-message">Loading Transmission...</div>
+    </div>
+
+    <!-- Noscript (unchanged) -->
+    <noscript>
+       <div style="background-color: #f00; color: #fff; padding: 20px; text-align: center;">
+            <p><strong>JavaScript is Disabled</strong></p>
+            <p>This website requires JavaScript to function properly. Please enable JavaScript in your browser settings.</p>
+            <p>Alternatively, you can view a simplified version of this page <a href="no-js.html">here</a>.</p>
+        </div>
+    </noscript>
+
+    <header>
+      <!-- === NAVBAR STRUCTURE UPDATED (Order & Dropdown Content) === -->
+      <nav class="navbar">
+            <div class="navbar-container">
+                <div></div> <!-- Left spacer -->
+                <div class="navbar-menu-wrapper"> <!-- Centering wrapper -->
+                    <ul class="navbar-menu">
+                        <li class="navbar-item"><a href="index.html" class="navbar-link">HOME</a></li>
+                        <li class="navbar-item"><a href="BOOK/book-series.html" class="navbar-link">BOOKS</a></li>
+                        <!-- Dropdown menu moved below -->
+                        <li class="navbar-item"><a href="GLOSSARY/glossary.html" class="navbar-link">GLOSSARY</a></li>
+
+                        <!-- === Start Dropdown Item (Moved & Content Updated) === -->
+                        <li class="navbar-item dropdown">
+                            <a href="#" class="navbar-link dropdown-toggle">LOCATIONS</a>
+                            <ul class="dropdown-menu">
+                                <!-- Dropdown items reordered and renamed -->
+                                <li class="dropdown-item"><a href="MAP/map.html">System Map</a></li>
+                                <li class="dropdown-item"><a href="MOON/moon-camp.html">Crater Camp</a></li>
+                                <li class="dropdown-item"><a href="BOGDAN/bogdan.html">Bogdan's Rest</a></li>
+                            </ul>
+                        </li>
+                        <!-- === End Dropdown Item === -->
+
+                        <li class="navbar-item"><a href="CONTACT/contact.html" class="navbar-link">CONTACT</a></li>
+                    </ul>
+                </div>
+                <div class="brightness-slider-container"> <!-- Right side slider -->
+                    <label for="brightnessSlider" class="brightness-label">Brightness:</label>
+                    <input type="range" id="brightnessSlider" min="50" max="200" value="100" step="10">
+                </div>
+            </div>
+        </nav>
+        <!-- =============================== -->
+    </header>
+
+    <!-- Main content (unchanged) -->
+    <main id="page-content-wrapper">
+          <div class="homepage-content">
+            <section id="ascii-art-container">
+                <img src="placeholder.png" alt="Space Station Logo" id="logo-placeholder">
+            </section>
+            <section id="movable-text-container">
+                <div class="text-content">
+                    <p>Book series info</p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    
+                </div>
+            </section>
+        </div>
+        <div class="cyberpunk-animations-stack-container">
+            <div class="restricted-animation-container" id="alpha"></div>
+            <div class="restricted-animation-container" id="bravo"></div>
+            <div class="restricted-animation-container" id="charlie"></div>
+            <div class="restricted-animation-container" id="delta"></div>
+        </div>
+    </main>
+
+    <!-- Scripts (unchanged) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+    <script src="navbar.js"></script>
+    <script src="index-script.js"></script>
+    <script src="svg-animations.js"></script>
+    <script src="backgrounds/moonbackground.js"></script>
+    <script src="loading.js"></script>
+    <script>
+        window.onload = () => { setPageReady(); };
+    </script>
+    <script src="/LOCKPAD/gatekeeper.js"></script>
+
+</body>
+</html>

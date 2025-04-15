@@ -1,0 +1,65 @@
+/* svg-animations.css - Version 2: Targeted Styling (No body styles) */
+
+.cyberpunk-animations-stack-container {
+  background-color: #222; /* Container background, same as individual animations */
+  padding: 0; /* Removed padding from stack container */
+  display: flex;
+  flex-direction: row; /* Arrange animations in a horizontal row */
+  align-items: stretch; /* Stretch animations vertically to fill container height */
+  gap: 0; /* Removed gap between animation containers */
+  box-sizing: border-box; /* Include padding and border in container size */
+  width: 100%; /* Take full width of the viewport */
+  margin: 0; /* Removed margin around the stack container - now at bottom */
+  overflow: hidden; /* To prevent potential internal overflows */
+  position: fixed; /* Fix the container to the bottom of the viewport */
+  bottom: 0; /* Position at the bottom */
+  left: 0; /* Extend to the left edge */
+  right: 0; /* Extend to the right edge */
+  height: 200px; /* Fixed height for the row of animations */
+  font-family: monospace; /* ADDED: Monospace font for animation container */
+  color: #00ff00; /* ADDED: Green text color for animation container (default) */
+}
+
+.restricted-animation-container {
+  height: 100%; /* Animations fill the height of the stack container */
+  background-color: #333; /* Slightly darker background for individual animations */
+  border-width: 1px 0 0 0; /* Keep borders only on top */
+  border-style: solid;
+  border-color: #00ff00; /* Keep bright green border for individual animations */
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-basis: 25%; /* Equal width for each animation in the row (4 animations) */
+  /* Font and color inheritance from parent .cyberpunk-animations-stack-container */
+}
+
+/* First restricted-animation-container - needs left border */
+.cyberpunk-animations-stack-container > .restricted-animation-container:first-child {
+  border-width: 1px 0 0 1px; /* Add left border for the first one */
+}
+
+/* Last restricted-animation-container - needs right border */
+.cyberpunk-animations-stack-container > .restricted-animation-container:last-child {
+  border-width: 1px 1px 0 0; /* Add right border for the last one */
+}
+
+/* Remove bottom border from all animation containers */
+.cyberpunk-animations-stack-container > .restricted-animation-container {
+  border-bottom: none; /* Remove bottom border */
+}
+
+/* REMOVED NEGATIVE MARGIN
+#bravo {
+  margin-right: -4px;
+}
+*/
+
+/* Specific style for Wave Visualizer (now ALPHA) - Black Background */
+  #alpha { /* Changed to #alpha */
+  background-color: black; /* Set black background for the wave visualizer */
+  }
+
+/* Optimization rules for SVG rendering speed */
+svg {
+shape-rendering: optimizeSpeed;
+image-rendering: optimizeSpeed;
+}

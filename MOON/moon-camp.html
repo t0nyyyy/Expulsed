@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crater Camp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/nprogress.css">
+    <link rel="stylesheet" href="/loading.css">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="moon-camp-style.css">
+    <link rel="stylesheet" href="/LOCKPAD/lockpad.css">
+    <link rel="stylesheet" href="/brightness-global.css">
+
+    <link rel="icon" href="/favicon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.161.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.161.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loading-message">Loading Outpost...</div>
+    </div>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div></div>
+            <div class="navbar-menu-wrapper">
+                <ul class="navbar-menu">
+                    <li class="navbar-item"><a href="/index.html" class="navbar-link">HOME</a></li>
+                    <li class="navbar-item"><a href="/BOOK/book-series.html" class="navbar-link">BOOKS</a></li>
+                    <li class="navbar-item"><a href="/GLOSSARY/glossary.html" class="navbar-link">GLOSSARY</a></li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">LOCATIONS</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="/MAP/map.html">System Map</a></li>
+                            <li class="dropdown-item"><a href="/MOON/moon-camp.html">Crater Camp</a></li>
+                            <li class="dropdown-item"><a href="/BOGDAN/bogdan.html">Bogdan's Rest</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item"><a href="/CONTACT/contact.html" class="navbar-link">CONTACT</a></li>
+                </ul>
+            </div>
+            <div class="brightness-slider-container">
+                <label for="brightnessSlider" class="brightness-label">Brightness:</label>
+                <input type="range" id="brightnessSlider" min="50" max="200" value="100" step="10">
+            </div>
+        </div>
+    </nav>
+
+    <canvas id="backgroundCanvas"></canvas>
+
+    <div id="page-content-wrapper">
+
+        <div class="container">
+            <div class="map-area">
+                <div class="map-container">
+                    <div id="render-wrapper">
+                        <div id="three-canvas-container"></div>
+                        <div id="label-container"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="side-panel">
+                 <div class="info-panel-container your-shine-target">
+                    <div class="button-container">
+                        <button id="matrixRainToggle" class="matrix-rain-button">EFFECTS: ON</button>
+                        <button id="spinToggle" class="spin-button">SPIN: ON</button>
+                        <button id="scanButton" class="scan-button">SCAN</button>
+                        <button id="nextVideoButton" class="next-video-button">NEXT SONG</button>
+                   </div>
+
+                    <div class="zones-box">
+                        <div class="legend">
+                            <div class="legend-item" data-sector="canteen">            <span class="legend-text-wrapper"><span class="gray">Canteen</span></span>              <div class="color-bar bar-gray bar-canteen"></div></div>
+                            <div class="legend-item" data-sector="bunkhouse">          <span class="legend-text-wrapper"><span class="green">Bunkhouse</span></span>            <div class="color-bar bar-green bar-bunkhouse"></div></div>
+                            <div class="legend-item" data-sector="harvest-hub">        <span class="legend-text-wrapper"><span class="yellow">Harvest Hub</span></span>         <div class="color-bar bar-yellow bar-harvest-hub"></div></div>
+                            <div class="legend-item" data-sector="sickbay">            <span class="legend-text-wrapper"><span class="blue">Sickbay</span></span>              <div class="color-bar bar-blue bar-sickbay"></div></div>
+                            <div class="legend-item" data-sector="life-support-systems"> <span class="legend-text-wrapper"><span class="red">Life Support Systems</span></span> <div class="color-bar bar-red bar-life-support-systems"></div></div>
+                            <div class="legend-item" data-sector="storage">            <span class="legend-text-wrapper"><span class="purple">Storage</span></span>            <div class="color-bar bar-purple bar-storage"></div></div>
+                            <div class="legend-item" data-sector="gravity-generator">  <span class="legend-text-wrapper"><span class="white">Gravity Generator</span></span>    <div class="color-bar bar-white bar-gravity-generator"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h2>Zone Information</h2>
+                        <div id="zone-description">Click zone for info.</div>
+                    </div>
+
+                    <div class="status-box">
+                        <h2>Outpost Status</h2>
+                        <div id="status-report">
+                            System diagnostics nominal. All sectors online.
+                        </div>
+                    </div>
+
+                    <div class="video-box">
+                        <h2>Outpost Tunes</h2>
+                        <div id="video-player-container">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="ascii-art-bottom-left"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+    <script src="/loading.js"></script>
+    <script src="/navbar.js"></script>
+
+    <script type="module" src="moon-camp-background.js"></script>
+    <script type="module" src="moon-camp-script.js"></script>
+
+    <script>
+        window.onload = () => {
+            if (typeof setPageReady === 'function') {
+               setPageReady();
+            }
+             if (typeof updateBarPositions === 'function') {
+                 updateBarPositions();
+             } else {
+                 setTimeout(() => {
+                     if (typeof updateBarPositions === 'function') {
+                         updateBarPositions();
+                     } else {
+                        console.warn("updateBarPositions function still not available. Legend bar alignment may be off.");
+                     }
+                 }, 500);
+             }
+        };
+
+        if (typeof window.updateBarPositions !== 'function') {
+            window.updateBarPositions = function() {
+                console.log("Placeholder updateBarPositions called. Ensure this is properly defined in moon-camp-script.js");
+            }
+        }
+    </script>
+
+    <script src="/LOCKPAD/gatekeeper.js"></script>
+
+</body>
+</html>

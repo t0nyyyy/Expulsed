@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bogdan's Rest</title> <!-- Changed title for clarity -->
+        <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../nprogress.css">
+        <link rel="stylesheet" href="../loading.css">
+    
+        <!-- Link to Global Brightness Styles (NOW USING ROOT-RELATIVE PATH) -->
+        <link rel="stylesheet" href="/brightness-global.css">
+        <!-- END CHANGE -->
+    
+        <link rel="stylesheet" href="../navbar.css"> <!-- Includes dropdown styles -->
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="/LOCKPAD/lockpad.css">
+    
+        <!-- Preload links -->
+        <link rel="preload" href="messages.json" as="fetch" crossorigin="anonymous">
+        <link rel="preload" href="zone-info.json" as="fetch" crossorigin="anonymous">
+        <link rel="preload" href="videos.json" as="fetch" crossorigin="anonymous">
+    
+        <!-- Favicon Links -->
+        <link rel="icon" href="../favicon/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    
+        <!-- Link to Web App Manifest (NOW USING ROOT-RELATIVE PATH) -->
+        <link rel="manifest" href="/site.webmanifest">
+        <!-- END CHANGE -->
+    </head>
+    <canvas id="backgroundCanvas"></canvas>
+
+    <div id="loading-screen">
+        <div class="loading-message">Loading Station...</div>
+    </div>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div></div> <!-- Left Spacer -->
+            <div class="navbar-menu-wrapper">
+                <ul class="navbar-menu">
+                    <li class="navbar-item"><a href="../index.html" class="navbar-link">HOME</a></li>
+                    <li class="navbar-item"><a href="../BOOK/book-series.html" class="navbar-link">BOOKS</a></li>
+                    <li class="navbar-item"><a href="../GLOSSARY/glossary.html" class="navbar-link">GLOSSARY</a></li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">LOCATIONS</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="../MAP/map.html">System Map</a></li>
+                            <li class="dropdown-item"><a href="../MOON/moon-camp.html">Crater Camp</a></li>
+                            <li class="dropdown-item"><a href="bogdan.html">Bogdan's Rest</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item"><a href="../CONTACT/contact.html" class="navbar-link">CONTACT</a></li>
+                </ul>
+            </div>
+            <div class="brightness-slider-container">
+                <label for="brightnessSlider" class="brightness-label">Brightness:</label>
+                <input type="range" id="brightnessSlider" min="50" max="200" value="100" step="10">
+            </div>
+        </div>
+    </nav>
+
+    <div id="page-content-wrapper">
+        <div class="container">
+            <div class="map-area">
+                <div class="map-container">
+                    <canvas id="stationCanvas"></canvas>
+                </div>
+            </div>
+            <div class="side-panel">
+                 <!-- Added 'your-shine-target' class here -->
+                <div class="info-panel-container your-shine-target">
+                    <div class="button-container">
+                        <button id="matrixRainToggle" class="matrix-rain-button">EFFECTS: ON</button>
+                        <button id="spinToggle" class="spin-button">SPIN: ON</button>
+                        <button id="scanButton" class="scan-button">SCAN</button>
+                        <button id="nextVideoButton" class="next-video-button">NEXT SONG</button>
+                    </div>
+                    <div class="zones-box">
+                        <div class="legend">
+                            <div class="legend-item" data-sector="yadro-central"> <span class="legend-text-wrapper"> <span class="gray">Yadro Central</span> </span> <div class="color-bar bar-gray bar-yadro-central"></div> </div>
+                            <div class="legend-item" data-sector="free-port"> <span class="legend-text-wrapper"> <span class="green">Freeport District</span> </span> <div class="color-bar bar-green bar-free-port-district"></div> </div>
+                            <div class="legend-item" data-sector="critical-infrastructure-alpha-bravo"> <span class="legend-text-wrapper"> <span class="yellow">Critical Infrastructure Zones Alpha & Bravo</span> </span> <div class="color-bar bar-yellow bar-critical-infrastructure"></div> </div>
+                            <div class="legend-item" data-sector="warrens"> <span class="legend-text-wrapper"> <span class="blue">The Warrens</span> </span> <div class="color-bar bar-blue bar-warrens"></div> </div>
+                            <div class="legend-item" data-sector="operational-security"> <span class="legend-text-wrapper"> <span class="red">Operational Security Zone</span> </span> <div class="color-bar bar-red bar-operational-security-zone"></div> </div>
+                            <div class="legend-item" data-sector="authorized-personnel"> <span class="legend-text-wrapper"> <span class="purple">Authorized Personnel Only</span> </span> <div class="color-bar bar-purple bar-authorized-personnel-only"></div> </div>
+                            <div class="legend-item" data-sector="restricted-access"> <span class="legend-text-wrapper"> <span class="white">Restricted Access Sector</span> </span> <div class="color-bar bar-white bar-restricted-access-sector"></div> </div>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <h2>Zone Information</h2>
+                        <div id="zone-description">Click zone for info.</div>
+                    </div>
+                    <div class="status-box">
+                        <h2>Station Status</h2>
+                        <div id="status-report">System diagnostics nominal.  All sectors online.</div>
+                    </div>
+                    <div class="video-box">
+                        <h2>Station Tunes</h2>
+                        <div id="video-player-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="ascii-art-bottom-left"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+    <script src="../loading.js"></script>
+    <script src="../navbar.js"></script>
+
+    <!-- Main script loaded as module - includes shine effect logic now -->
+    <script src="script.js" type="module" defer></script>
+
+    <script>
+        // Fallback setPageReady (for compatibility)
+        if (typeof window.setPageReady !== 'function') {
+            window.setPageReady = () => {
+                console.log("Fallback setPageReady called.");
+                 const loadingScreen = document.getElementById('loading-screen');
+                 if (loadingScreen) {
+                    loadingScreen.style.opacity = '0';
+                    setTimeout(() => { if (loadingScreen) loadingScreen.style.display = 'none'; }, 500);
+                }
+            };
+        }
+
+         window.onload = () => {
+             if (typeof window.setPageReady === 'function') {
+                window.setPageReady(); // Call the function needed by loading/lockpad
+             } else {
+                console.warn("setPageReady function not defined by window.onload.");
+             }
+             // Removed updateBarPositions call from here
+         };
+    </script>
+
+    <script src="/LOCKPAD/gatekeeper.js"></script>
+
+    <!-- NO MORE INLINE SCRIPT FOR SHINE EFFECT -->
+
+</body>
+</html>

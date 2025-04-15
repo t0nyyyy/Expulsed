@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/nprogress.css">
+    <link rel="stylesheet" href="/loading.css">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="glossary-style.css">
+    <link rel="stylesheet" href="../backgrounds/space-background.css">
+    <link rel="stylesheet" href="/LOCKPAD/lockpad.css">
+    <link rel="stylesheet" href="/brightness-global.css">
+
+    <link rel="icon" href="/favicon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body class="glossary-body">
+    <div id="loading-screen">
+        <div class="loading-message">Loading Glossary...</div>
+    </div>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div></div>
+            <div class="navbar-menu-wrapper">
+                <ul class="navbar-menu">
+                    <li class="navbar-item"><a href="/index.html" class="navbar-link">HOME</a></li>
+                    <li class="navbar-item"><a href="/BOOK/book-series.html" class="navbar-link">BOOKS</a></li>
+                    <li class="navbar-item"><a href="/GLOSSARY/glossary.html" class="navbar-link">GLOSSARY</a></li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">LOCATIONS</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="/MAP/map.html">System Map</a></li>
+                            <li class="dropdown-item"><a href="/MOON/moon-camp.html">Crater Camp</a></li>
+                            <li class="dropdown-item"><a href="/BOGDAN/bogdan.html">Bogdan's Rest</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item"><a href="/CONTACT/contact.html" class="navbar-link">CONTACT</a></li>
+                </ul>
+            </div>
+            <div class="brightness-slider-container">
+                <label for="brightnessSlider" class="brightness-label">Brightness:</label>
+                <input type="range" id="brightnessSlider" min="50" max="200" value="100" step="10">
+            </div>
+        </div>
+    </nav>
+
+    <div id="page-content-wrapper">
+        <div class="glossary-main-content">
+            <div class="svg-container">
+                <svg width="1200" height="700" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <filter id="premium-glow">
+                      <feGaussianBlur stdDeviation="2" result="glow1"/>
+                      <feGaussianBlur stdDeviation="1" result="glow2"/>
+                      <feMerge>
+                        <feMergeNode in="glow1"/>
+                        <feMergeNode in="glow2"/>
+                        <feMergeNode in="SourceGraphic"/>
+                      </feMerge>
+                    </filter>
+                    <linearGradient id="cyber-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#008800;stop-opacity:0.05"/>
+                      <stop offset="50%" style="stop-color:#008800;stop-opacity:0.15"/>
+                      <stop offset="100%" style="stop-color:#008800;stop-opacity:0.05"/>
+                    </linearGradient>
+                    <clipPath id="innerRectClip">
+                      <path d="M40,40 L1160,40 L1160,660 L40,660 Z" />
+                    </clipPath>
+                  </defs>
+                  <rect width="100%" height="100%" fill="black" clip-path="url(#innerRectClip)" />
+                  <path d="M20,20 L1180,20 L1180,680 L20,680 Z
+                           M40,40 L1160,40 L1160,660 L40,660 Z"
+                        fill="url(#cyber-gradient)" stroke="#008800" stroke-width="5" />
+                  <path d="M70,70 L70,630 L40,660 L40,40 Z" fill="none" stroke="#008800" stroke-width="3" />
+                  <path d="M1130,70 L1130,630 L1160,660 L1160,40 Z" fill="none" stroke="#008800" stroke-width="3" />
+                  <path d="M60,50 L1140,50 L1100,90 L100,90 Z" fill="none" stroke="#008800" stroke-width="3" />
+                  <circle cx="120" cy="70" r="10" fill="#4B0082" stroke="#008800" stroke-width="2" filter="url(#premium-glow)"/>
+                  <circle cx="150" cy="70" r="10" fill="#008B8B" stroke="#008800" stroke-width="2" filter="url(#premium-glow)"/>
+                  <circle cx="180" cy="70" r="10" fill="#006400" stroke="#008800" stroke-width="2" filter="url(#premium-glow)"/>
+                  <path d="M100,120 L1100,120 L1100,610 L100,610 Z
+                           M130,150 L1070,150 L1070,580 L130,580 Z"
+                        fill="none" stroke="#008800" stroke-width="3" />
+                  <path d="M1040,140 L1100,140 L1100,580 L1040,580 Z
+                           M1010,180 L1070,180 L1070,550 L1010,550 Z"
+                        fill="none" stroke="#008800" stroke-width="2" />
+                  <circle cx="1055" cy="210" r="10" fill="#00ff00" stroke="#fff" stroke-width="1" filter="url(#premium-glow)">
+                    <animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle cx="1055" cy="250" r="10" fill="#00ff00" stroke="#fff" stroke-width="1" filter="url(#premium-glow)">
+                    <animate attributeName="opacity" values="1;0.5;1" dur="4s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle cx="1055" cy="290" r="10" fill="#00ff00" stroke="#fff" stroke-width="1" filter="url(#premium-glow)">
+                    <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite"/>
+                  </circle>
+                  <path d="M60,660 L1140,660 L1100,680 L100,680 Z" fill="none" stroke="#008800" stroke-width="3" />
+                  <text x="600" y="635"
+                        font-family="monospace"
+                        font-size="14"
+                        fill="#008800"
+                        text-anchor="middle"
+                        dominant-baseline="middle"
+                        filter="url(#premium-glow)">
+                        SYSTEM STATUS: OPERATIONAL
+                  </text>
+                </svg>
+
+                <div class="terminal-content-container">
+                    <p id="welcome-message">Loading Glossary...</p>
+                    <div id="terminal-output"></div>
+                    <div id="screensaver-container" style="display: none;"></div>
+                </div>
+
+            </div>
+
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="Search glossary...">
+                <div id="search-buttons">
+                  <div class="button-row">
+                      <button id="random-button">Random</button>
+                      <button id="button-2-placeholder">ABOUT</button>
+                      <button id="reset-button">RESET</button>
+                  </div>
+                  <div class="button-row">
+                      <button id="screensaver1-button">SCREENSAVER 1</button>
+                      <button id="screensaver-button">SCREENSAVER 2</button>
+                      <button id="screensaver3-button">SCREENSAVER 3</button>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+    <script src="/loading.js"></script>
+    <script src="/navbar.js"></script>
+    <script src="glossary-script.js"></script>
+    <script src="../backgrounds/space-background.js"></script>
+    <script>
+        window.onload = () => {
+             if (typeof setPageReady === 'function') {
+                 setPageReady();
+             } else {
+                 console.error("setPageReady function not found. Check loading.js");
+             }
+        };
+    </script>
+    <script src="/LOCKPAD/gatekeeper.js"></script>
+
+</body>
+</html>

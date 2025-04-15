@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Space Station</title>
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+    <!-- Standard Shared Styles -->
+    <link rel="stylesheet" href="/nprogress.css">
+    <link rel="stylesheet" href="/loading.css">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/LOCKPAD/lockpad.css">
+    <link rel="stylesheet" href="/brightness-global.css">
+    <!-- Page Specific Background -->
+    <link rel="stylesheet" href="../backgrounds/BACKGROUND8.css"> <!-- Assuming thank-you.html is in root or similar level to contact.html -->
+
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Page Specific Styles -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            color: #00ff66;
+            font-family: 'Electrolize', 'Courier New', monospace;
+            text-align: center;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        /* Ensure #page-content-wrapper is taken into account for centering */
+        #page-content-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centers content vertically */
+            align-items: center; /* Centers content horizontally */
+            width: 100%;
+            padding: 20px; /* Padding moved here */
+            box-sizing: border-box; /* Include padding in width/height */
+            position: relative; /* Needed for z-index */
+            z-index: 5; /* Above background canvas */
+        }
+
+        .thank-you-container {
+            /* Removed flex properties, now handled by wrapper */
+            width: 100%; /* Allow container to take space within wrapper */
+            max-width: 600px; /* Limit content width */
+            display: flex; /* Keep flex for internal alignment if needed */
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .thank-you-message {
+            background-color: rgba(0, 20, 0, 0.7);
+            border: 2px solid #00ff66;
+            padding: 40px;
+            width: 100%; /* Make message box fill container width */
+            box-shadow: 0 0 20px rgba(0, 255, 102, 0.5);
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #00ff66;
+            text-shadow: 0 0 10px #00ff66;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+
+        p {
+            margin-bottom: 30px;
+            line-height: 1.6;
+            text-shadow: 0 0 3px #00ff66;
+        }
+
+        .return-btn {
+            background-color: rgba(0, 20, 0, 0.8);
+            color: #00ff66;
+            border: 1px solid #00ff66;
+            padding: 12px 30px;
+            font-family: 'Electrolize', monospace;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .return-btn:hover {
+            background-color: rgba(0, 40, 0, 0.8);
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- Standard Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-message">Processing...</div> <!-- Example message -->
+    </div>
+
+    <!-- Background Canvas -->
+    <canvas id="canvas"></canvas>
+
+    <!-- Standard Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div></div> <!-- Left Spacer -->
+            <div class="navbar-menu-wrapper">
+                <ul class="navbar-menu">
+                    <li class="navbar-item"><a href="/index.html" class="navbar-link">HOME</a></li>
+                    <li class="navbar-item"><a href="/BOOK/book-series.html" class="navbar-link">BOOKS</a></li>
+                    <li class="navbar-item"><a href="/GLOSSARY/glossary.html" class="navbar-link">GLOSSARY</a></li>
+                    <!-- Standard Dropdown -->
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">LOCATIONS</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="/MAP/map.html">System Map</a></li>
+                            <li class="dropdown-item"><a href="/MOON/moon-camp.html">Crater Camp</a></li>
+                            <li class="dropdown-item"><a href="/BOGDAN/bogdan.html">Bogdan's Rest</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item"><a href="/CONTACT/contact.html" class="navbar-link">CONTACT</a></li>
+                </ul>
+            </div>
+            <!-- Standard Brightness Slider -->
+            <div class="brightness-slider-container">
+                <label for="brightnessSlider" class="brightness-label">Brightness:</label>
+                <input type="range" id="brightnessSlider" min="50" max="200" value="100" step="10">
+            </div>
+        </div>
+    </nav>
+
+    <!-- Standard Content Wrapper -->
+    <div id="page-content-wrapper">
+        <div class="thank-you-container">
+            <div class="thank-you-message">
+                <h1>TRANSMISSION RECEIVED</h1>
+                <p>Your message has been successfully transmitted to our communication relay. A EL-X Corp representative will process your transmission and respond as soon as possible.</p>
+                <p>TRANSMISSION ID: <span id="transmissionId">BF-LOADING</span></p>
+                <!-- Updated Link -->
+                <a href="/CONTACT/contact.html" class="return-btn">RETURN TO COMMUNICATIONS</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Standard and Page Specific Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simplex-noise@2.4.0/simplex-noise.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+    <script src="/loading.js"></script>
+    <script src="/navbar.js"></script>
+    <!-- Background Script -->
+    <script src="../backgrounds/BACKGROUND8.js"></script> <!-- Assuming thank-you.html is in root or similar level to contact.html -->
+    <!-- Page Specific Script -->
+    <script>
+        // Get Transmission ID from URL and display it
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const transmissionId = urlParams.get('transmissionId');
+            const transmissionIdElement = document.getElementById('transmissionId');
+
+            if (transmissionId) {
+                transmissionIdElement.textContent = transmissionId;
+            } else {
+                // Fallback if no ID is passed (e.g., direct access to thank-you.html)
+                const randomId = Math.floor(Math.random() * 9000000) + 1000000;
+                transmissionIdElement.textContent = `BF-${randomId}`;
+            }
+        });
+
+        // Standard Page Ready Call
+        window.onload = () => {
+            // Ensure setPageReady exists before calling
+             if (typeof setPageReady === 'function') {
+                 setPageReady();
+             } else {
+                 // Fallback if loading.js hasn't defined it yet (less likely but safe)
+                 console.warn("setPageReady function not found initially.");
+                 // Hide loading screen directly as a backup
+                 const loadingScreen = document.getElementById('loading-screen');
+                 if (loadingScreen) {
+                     loadingScreen.style.opacity = 0;
+                     setTimeout(() => { loadingScreen.style.display = 'none'; }, 500);
+                 }
+             }
+        };
+    </script>
+    <!-- Optional Gatekeeper -->
+    <script src="/LOCKPAD/gatekeeper.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,340 @@
+
+[
+  {
+    "message": "[WARNING] Canteen: Synthetic protein dispenser malfunctioning.",
+    "color": "yellow"
+  },
+  {
+    "message": "[ALERT] Bunkhouse: Artificial gravity fluctuations detected.",
+    "color": "red"
+  },
+  {
+    "message": "[NOTICE] Harvest Hub: Systems operating at 80% efficiency.",
+    "color": "green"
+  },
+  {
+    "message": "[CRITICAL] Sickbay: Quarantine protocols activated. All personnel report for screening.",
+    "color": "red"
+  },
+  {
+    "message": "[STATUS] Life Support Systems: Oxygen levels optimal.",
+    "color": "green"
+  },
+  {
+    "message": "[WARNING] Storage: Cryogenic unit 7 showing signs of instability.",
+    "color": "yellow"
+  },
+  {
+    "message": "[ALERT] Gravity Generator: Minor fluctuations detected.",
+    "color": "yellow"
+  },
+
+
+    {
+      "message": "[STATUS] Bunkhouse 1: 5 out of 40 bunks available.",
+      "color": "green"
+    },
+    
+    {
+      "message": "[NOTICE] Bunkhouse 3: Fully occupied. No vacancies available.",
+      "color": "white"
+    },
+    {
+      "message": "[ALERT] Bunkhouse 4: Overcrowding detected. Emergency accommodations being arranged.",
+      "color": "red"
+    },
+    {
+      "message": "[STATUS] Bunkhouse 15: 8 out of 40 bunks available.",
+      "color": "green"
+    },
+   
+    {
+      "message": "[NOTICE] Bunkhouse 7: Currently at 50% capacity.",
+      "color": "white"
+    },
+    {
+      "message": "[ALERT] Bunkhouse 8: All bunks full. Waiting list activated.",
+      "color": "red"
+    },
+    {
+      "message": "[STATUS] Bunkhouse 9: 4 out of 40 bunks available.",
+      "color": "green"
+    },
+    {
+      "message": "[WARNING] Bunkhouse 11: Only 1 bunk left. Book immediately.",
+      "color": "yellow"
+    },
+    {
+      "message": "[NOTICE] Bunkhouse 1: 3 new bunks available due to cancellations.",
+      "color": "white"
+    },
+    {
+      "message": "[ALERT] Bunkhouse 12: Room allocation error detected. Manual override required.",
+      "color": "red"
+    },
+    {
+      "message": "[STATUS] Bunkhouse 3: 2 bunks freed up due to early departures.",
+      "color": "green"
+    },
+    {
+      "message": "[WARNING] Bunkhouse 4: High demand.",
+      "color": "yellow"
+    },
+    
+    {
+      "message": "[ALERT] Bunkhouse 6: Unauthorized room changes detected. Report to management.",
+      "color": "red"
+    },
+    {
+      "message": "[STATUS] Bunkhouse 7: All rooms inspected and certified safe.",
+      "color": "green"
+    },
+    {
+      "message": "[WARNING] Bunkhouse 8: Room allocation system experiencing glitches.",
+      "color": "yellow"
+    },
+    {
+      "message": "[NOTICE] Bunkhouse 9: New room assignments posted. Check the board.",
+      "color": "white"
+    },
+    {
+      "message": "[ALERT] Bunkhouse 10: Emergency evacuation drill scheduled. Participate mandatory.",
+      "color": "red"
+    },
+  
+ {
+    "message": "[ALERT] Harvest Hub: Unidentified rapidly growing plant detected in sector 3.",
+    "color": "red"
+  },
+  {
+    "message": "[STATUS] Sickbay: Gravity Adjustment Pods functioning normally.",
+    "color": "green"
+  },
+  {
+    "message": "[CRITICAL] Life Support Systems: CO2 scrubbers offline. Switch to emergency respirators.",
+    "color": "red"
+  },
+  {
+    "message": "[NOTICE] Storage: Annual inventory check commencing. Prepare for temporary lockdown.",
+    "color": "white"
+  },
+  {
+    "message": "[WARNING] Gravity Generator: Recalibration in progress. Expect minor disorientation.",
+    "color": "yellow"
+  },
+
+  {
+    "message": "[STATUS] Bunkhouse: Sleep quality index at all-time high.",
+    "color": "green"
+  },
+
+  {
+    "message": "[NOTICE] Sickbay: New holographic nurse program installed. Please be patient.",
+    "color": "white"
+  },
+  {
+    "message": "[CRITICAL] Life Support Systems: Atmospheric processor malfunction.",
+    "color": "red"
+  },
+  {
+    "message": "[ALERT] Storage: Temporal anomaly detected.",
+    "color": "red"
+  },
+  {
+    "message": "[STATUS] Gravity Generator: Operating at peak efficiency. Enjoy your weight!",
+    "color": "green"
+  },
+  {
+    "message": "[WARNING] Canteen: Alien spice detected in food supply. Expect unusual flavors.",
+    "color": "yellow"
+  },
+ 
+
+  {
+    "message": "[STATUS] Sickbay: All viruses successfully contained.",
+    "color": "green"
+  },
+
+  {
+    "message": "[ALERT] Storage: Quantum uncertainty causing inventory discrepancies.",
+    "color": "red"
+  },
+  {
+    "message": "[CRITICAL] Gravity Generator: Power surge detected.",
+    "color": "red"
+  },
+
+
+  {
+    "message": "[STATUS] Sickbay: Nanobots successfully eliminating common cold.",
+    "color": "green"
+  },
+
+
+  {
+    "message": "[ALERT] Gravity Generator: Artificial gravity hiccups causing random floating.",
+    "color": "red"
+  },
+  {
+    "message": "[STATUS] Canteen: Nutritional algorithm updated.",
+    "color": "green"
+  },
+
+
+  {
+    "message": "[ALERT] Canteen: Chef bot stuck in loop.",
+    "color": "red"
+  },
+  
+
+    {
+      "message": "[ALERT] Harvest Hub: Lunar Ice Harvester 23 malfunction. Ice extraction halted.",
+      "color": "red"
+    },
+    {
+      "message": "[NOTICE] Harvest Hub: Routine maintenance scheduled for Lunar Ice Harvester 64.",
+      "color": "white"
+    },
+    {
+      "message": "[WARNING] Harvest Hub: Ice Harvester 81 thermal management system overheating.",
+      "color": "yellow"
+    },
+    {
+      "message": "[STATUS] Harvest Hub: Lunar Ice Harvester operating at peak efficiency.",
+      "color": "green"
+    },
+    {
+      "message": "[ALERT] Harvest Hub: Unauthorized access detected near Lunar Ice Harvester.",
+      "color": "red"
+    },
+    {
+      "message": "[NOTICE] Harvest Hub: New ice harvesting protocols being implemented.",
+      "color": "white"
+    },
+  
+    {
+      "message": "[STATUS] Harvest Hub: All ice harvesting systems functioning normally.",
+      "color": "green"
+    },
+    {
+      "message": "[ALERT] Harvest Hub: Lunar Ice Harvester 42 propulsion system failing.",
+      "color": "red"
+    },
+    {
+      "message": "[NOTICE] Harvest Hub: Training session for ice harvesting operations scheduled.",
+      "color": "white"
+    },
+    {
+      "message": "[WARNING] Harvest Hub: Ice Harvester 91 navigation system experiencing glitches.",
+      "color": "yellow"
+    },
+    {
+      "message": "[STATUS] Harvest Hub: Ice storage capacity at maximum.",
+      "color": "green"
+    },
+    {
+      "message": "[ALERT] Harvest Hub: Ice Harvester 78 communication link lost.",
+      "color": "red"
+    },
+    {
+      "message": "[NOTICE] Harvest Hub: Upgrades to ice processing equipment underway.",
+      "color": "white"
+    },
+    
+    {
+      "message": "[STATUS] Harvest Hub: Ice harvesting operations paused for maintenance.",
+      "color": "green"
+    },
+    {
+      "message": "[ALERT] Harvest Hub: Security breach detected in ice storage area.",
+      "color": "red"
+    },
+    {
+      "message": "[NOTICE] Harvest Hub: New ice harvesting mission parameters uploaded.",
+      "color": "white"
+    },
+    {
+      "message": "[WARNING] Harvest Hub: Ice Harvester 21 cooling system malfunctioning.",
+      "color": "yellow"
+    },
+    {
+      "message": "[STATUS] Harvest Hub: All ice harvesting personnel accounted for.",
+      "color": "green"
+    },
+
+      {
+        "message": "[STATUS] Storage: Ice Level Alpha at 95% capacity. Harvesting slowed.",
+        "color": "green"
+      },
+      {
+        "message": "[ALERT] Storage: Ice Level Beta critically low.",
+        "color": "red"
+      },
+      {
+        "message": "[WARNING] Storage: Ice Level Gamma experiencing rapid melt. Investigate immediately.",
+        "color": "yellow"
+      },
+      {
+        "message": "[NOTICE] Storage: Ice Level Delta now open for new deposits.",
+        "color": "white"
+      },
+      {
+        "message": "[STATUS] Storage: Ice Level Epsilon at optimal storage temperature.",
+        "color": "green"
+      },
+      {
+        "message": "[ALERT] Storage: Contamination detected in Ice Level Zeta. Quarantine activated.",
+        "color": "red"
+      },
+      {
+        "message": "[WARNING] Storage: Ice Level Eta showing signs of structural instability.",
+        "color": "yellow"
+      },
+      {
+        "message": "[NOTICE] Storage: Routine quality check scheduled for Ice Level Theta.",
+        "color": "white"
+      },
+      {
+        "message": "[STATUS] Storage: Ice Level Iota at 50% capacity. Ready for more harvests.",
+        "color": "green"
+      },
+      {
+        "message": "[ALERT] Storage: Unauthorized access detected in Ice Level Kappa.",
+        "color": "red"
+      },
+      {
+        "message": "[WARNING] Storage: Temperature fluctuations in Ice Level Lambda.",
+        "color": "yellow"
+      },
+      {
+        "message": "[NOTICE] Storage: Ice Level Xray undergoing scheduled maintenance.",
+        "color": "white"
+      },
+      {
+        "message": "[STATUS] Storage: Ice Level Zulu fully restocked. Ready for distribution.",
+        "color": "green"
+      },
+      {
+        "message": "[ALERT] Storage: Power failure in Ice Level Golf. Backup systems engaged.",
+        "color": "red"
+      },
+      {
+        "message": "[WARNING] Storage: Unusual crystalline formations detected.",
+        "color": "yellow"
+      },
+      {
+        "message": "[NOTICE] Storage: New high-density storage implemented in Ice Level Golf.",
+        "color": "white"
+      },
+      {
+        "message": "[STATUS] Storage: Ice Level Rho at 75% purity. Exceeding quality standards.",
+        "color": "green"
+      },
+      {
+        "message": "[ALERT] Storage: Pressure buildup detected in Ice Level Sigma. Venting required.",
+        "color": "red"
+      }
+        
+]
+
+

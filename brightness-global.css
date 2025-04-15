@@ -1,0 +1,4 @@
+#page-content-wrapper {
+    opacity: 1;
+    transition: opacity 0.3s ease !important;
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expulsed Book Series</title>
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/nprogress.css">
+    <link rel="stylesheet" href="/loading.css">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="book-series-style.css">
+    <link rel="stylesheet" href="../backgrounds/BACKGROUND8.css">
+    <link rel="stylesheet" href="/LOCKPAD/lockpad.css">
+    <link rel="stylesheet" href="/brightness-global.css">
+
+    <link rel="icon" href="/favicon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body class="book-series-body">
+    <div id="loading-screen">
+        <div class="loading-message">Loading Books...</div>
+    </div>
+
+    <canvas id="canvas"></canvas>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div></div>
+            <div class="navbar-menu-wrapper">
+                <ul class="navbar-menu">
+                    <li class="navbar-item"><a href="/index.html" class="navbar-link">HOME</a></li>
+                    <li class="navbar-item"><a href="/BOOK/book-series.html" class="navbar-link">BOOKS</a></li>
+                    <li class="navbar-item"><a href="/GLOSSARY/glossary.html" class="navbar-link">GLOSSARY</a></li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">LOCATIONS</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="/MAP/map.html">System Map</a></li>
+                            <li class="dropdown-item"><a href="/MOON/moon-camp.html">Crater Camp</a></li>
+                            <li class="dropdown-item"><a href="/BOGDAN/bogdan.html">Bogdan's Rest</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item"><a href="/CONTACT/contact.html" class="navbar-link">CONTACT</a></li>
+                </ul>
+            </div>
+            <div class="brightness-slider-container">
+                <label for="brightnessSlider" class="brightness-label">Brightness:</label>
+                <input type="range" id="brightnessSlider" min="50" max="200" value="100" step="10">
+            </div>
+        </div>
+    </nav>
+
+    <div id="page-content-wrapper">
+        <div class="book-cover-row">
+            <div id="book1" class="book-entry">
+                <div class="book-cover-container">
+                    <img src="book1.jpg" alt="Book Cover 1">
+                </div>
+                <div class="book-description">
+                    <h3>Book Title 1</h3>
+                    <h4>Book Subtitle/Tagline (Optional)</h4>
+                    <p>By Your Author Name</p>
+                    <p>Short summary of Book 1...</p>
+                </div>
+            </div>
+
+            <div id="book2" class="book-entry classified">
+                <div class="book-cover-container">
+                    <img src="book2.jpg" alt="Book Cover 2">
+                </div>
+                <div class="book-description">
+                    <h3>████████████████████</h3>
+                    <h4>███ ████████ ██ █████</h4>
+                    <p>█████████████████████████</p>
+                    <p>█ ███ ███████ ███ ████████ █████ ███ ███ ████████ ██ █████ █████ ████</p>
+                    <div class="hidden-text">Coming soon...</div>
+                </div>
+            </div>
+
+            <div id="book3" class="book-entry classified">
+                <div class="book-cover-container">
+                    <img src="book3.jpg" alt="Book Cover 3">
+                </div>
+                <div class="book-description">
+                    <h3>████████████████████</h3>
+                    <h4>██████████ ███ ███████</h4>
+                    <p>█████████████████████████</p>
+                    <p>██████ ██ ██████████ ███ ███ ████████ ██ █████ █████ ██ █████</p>
+                    <div class="hidden-text">Coming soon...</div>
+                </div>
+            </div>
+
+            <div id="book4" class="book-entry classified">
+                <div class="book-cover-container">
+                    <img src="book4.jpg" alt="Book Cover 4">
+                </div>
+                <div class="book-description">
+                    <h3>████████████████████</h3>
+                    <h4>█████ ██████████ ███ ███████ ██████████</h4>
+                    <p>█████████████████████████</p>
+                    <p>█████ ████████ ██ ██████████ ███ ███ ████████ ██ █████████</p>
+                    <div class="hidden-text">Coming soon...</div>
+                </div>
+            </div>
+
+            <div id="book5" class="book-entry classified">
+                <div class="book-cover-container">
+                    <img src="book5.jpg" alt="Book Cover 5">
+                </div>
+                <div class="book-description">
+                    <h3>████████████████████</h3>
+                    <h4>███ ██ ██████████ ██████</h4>
+                    <p>█████████████████████████</p>
+                    <p>██ ███ ███ ███████ ███ ███ ████████ ██ █████ █████ █████ ██ █████.</p>
+                    <div class="hidden-text">Coming soon...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simplex-noise@2.4.0/simplex-noise.js"></script>
+    <script src="/navbar.js"></script>
+    <script src="book-series-script.js"></script>
+    <script src="../backgrounds/BACKGROUND8.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+    <script src="/loading.js"></script>
+    <script>
+        window.onload = () => {
+            setPageReady();
+        };
+    </script>
+    <script src="/LOCKPAD/gatekeeper.js"></script>
+
+</body>
+</html>

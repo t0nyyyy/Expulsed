@@ -1,0 +1,168 @@
+/* LOCKPAD/lockpad.css */
+:root {
+    --bg-dark: #000000;
+    --panel-bg: rgba(0, 20, 0, 0.85);
+    --display-bg: #030803;
+    --key-bg: #00280A; /* Solid dark green */
+    --key-bg-hover: #003D10; /* Slightly lighter solid green for hover */
+    --key-border: #005010;
+    --bright-green: #00FF41;
+    --medium-green: #00C030;
+    --dark-green: #008020; /* Used for particles and default glow */
+    --glow-color: rgba(0, 255, 65, 0.6);
+    --status-denied: #FF4141;
+    --status-granted: #41FF41;
+    --scanline-color: rgba(0, 0, 0, 0.2);
+    --shine-color: rgba(0, 255, 65, 0.1);
+    --panel-width: 360px;
+    --panel-height: auto;
+    --subtle-overlay-bg: rgba(0, 10, 0, 0.75); /* Darker semi-transparent green overlay */
+}
+
+/* --- Lockpad Overlay Styles --- */
+.lockpad-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000; /* High, but below lockpad panel if panel needs higher */
+    display: flex; /* Used to center the lockpad container */
+    justify-content: center;
+    align-items: center;
+    font-family: 'VT323', 'Courier New', Courier, monospace !important; /* Ensure lockpad font */
+    color: var(--bright-green);
+}
+
+/* Opaque version (for Index, Glossary, etc.) */
+.lockpad-overlay.opaque {
+    background-color: var(--bg-dark); /* Solid black background */
+}
+
+/* Allow Background version (for Moon, Bogdan) */
+.lockpad-overlay.allow-bg {
+    /* Semi-transparent background to help readability over complex page BGs */
+    background-color: var(--subtle-overlay-bg);
+    /* Or use 'transparent' if you want zero overlay effect */
+    /* background-color: transparent; */
+}
+
+
+/* --- Styles Applied ALWAYS When Lockpad is Active (body.lockpad-active) --- */
+/* NOTE: The default hiding is now done by JS, not a CSS class */
+
+body.lockpad-active {
+    overflow: hidden !important; /* Prevent scrolling page content */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Backup Hiding Rules (In case JS fails or default class was wrong) */
+/* These elements are BEHIND the overlay */
+body.lockpad-active #page-content-wrapper,
+body.lockpad-active > header,
+body.lockpad-active > nav.navbar,
+body.lockpad-active > canvas, /* Hide ANY direct child canvas */
+body.lockpad-active > #loading-screen {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Lockpad UI itself sits INSIDE the overlay */
+.lockpad-container {
+    position: relative; /* Positioned within the overlay's flex context */
+    padding: 20px;
+    z-index: 1001; /* Ensures it's above the overlay background */
+}
+
+/* Scanline Effect applied to overlay */
+.lockpad-overlay::after {
+    content: '';
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(to bottom, transparent, transparent 2px, var(--scanline-color) 2px, var(--scanline-color) 3px );
+    pointer-events: none;
+    z-index: 1000; /* Same level as overlay bg, below panel */
+    opacity: 0.5;
+}
+
+.lockpad-panel {
+    background-color: var(--panel-bg); border: 2px solid var(--medium-green); border-radius: 8px;
+    width: var(--panel-width); height: var(--panel-height); padding: 25px;
+    box-shadow: 0 0 20px var(--glow-color), inset 0 0 15px rgba(0, 40, 0, 0.5);
+    position: relative; /* Needed for ::before and branding */
+    overflow: hidden;
+    display: flex; flex-direction: column; gap: 20px;
+    z-index: 1001; /* Above overlay background/scanlines */
+}
+
+/* Background Shine Effect for Panel */
+.lockpad-panel::before {
+    content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+    background: linear-gradient( 45deg, transparent, var(--shine-color), transparent );
+    transform: rotate(45deg); animation: panel-shine 8s infinite linear;
+    z-index: 0; /* Behind panel content */
+}
+
+.lockpad-display {
+    background-color: var(--display-bg); border: 1px solid var(--dark-green); border-radius: 4px;
+    padding: 15px; box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); text-align: center;
+    position: relative; z-index: 1; /* Above panel ::before */
+}
+
+.status-text {
+    font-size: 1.1em; color: var(--medium-green); margin-bottom: 15px; height: 20px;
+    letter-spacing: 1px; text-transform: uppercase;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    text-shadow: 0 0 6px var(--dark-green), 0 0 10px var(--dark-green);
+}
+.status-text.denied { color: var(--status-denied); text-shadow: 0 0 8px var(--status-denied); }
+.status-text.granted { color: var(--status-granted); text-shadow: 0 0 8px var(--status-granted); }
+
+.pin-input-display {
+    font-size: 2.5em; letter-spacing: 15px; color: var(--bright-green);
+    text-shadow: 0 0 5px var(--glow-color); position: relative; padding-right: 1ch; white-space: nowrap;
+}
+.pin-input-display span:not(.cursor) { display: inline-block; width: 1ch; text-align: center; }
+.pin-input-display .cursor {
+    display: inline-block; width: 2px; position: absolute; margin-left: 8px; animation: blink 1s step-end infinite;
+    opacity: 1; color: var(--bright-green); background-color: var(--bright-green); height: 1em; bottom: 0.1em;
+}
+
+.lockpad-keypad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; position: relative; z-index: 1; }
+
+.keypad-btn {
+    background-color: var(--key-bg); border: 1px solid var(--key-border); color: var(--bright-green);
+    font-family: inherit; font-size: 1.8em; padding: 15px 0; border-radius: 4px; cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+    text-shadow: 0 0 3px var(--glow-color);
+}
+.keypad-btn:hover { background-color: var(--key-bg-hover); border-color: var(--medium-green); box-shadow: 0 0 8px var(--glow-color); }
+.keypad-btn:active { transform: translateY(2px); box-shadow: 0 0 5px var(--glow-color); }
+.keypad-btn.clear-btn { color: #ffcc00; }
+.keypad-btn.enter-btn { color: var(--status-granted); }
+
+.lockpad-branding { position: absolute; bottom: 8px; right: 15px; font-size: 0.8em; color: var(--dark-green); letter-spacing: 1px; z-index: 1; }
+
+/* Shake animation for incorrect PIN */
+.lockpad-panel.shake { animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both; }
+
+/* Animations */
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes panel-shine { 0% { transform: rotate(45deg) translate(-80%, -80%); } 50% { transform: rotate(45deg) translate(80%, 80%); } 100% { transform: rotate(45deg) translate(-80%, -80%); } }
+@keyframes shake { 10%, 90% { transform: translateX(-1px); } 20%, 80% { transform: translateX(2px); } 30%, 50%, 70% { transform: translateX(-4px); } 40%, 60% { transform: translateX(4px); } }
+
+/* Floating Particle Styles */
+/* Position particles inside the overlay */
+.lockpad-overlay .floating-particles {
+    position: absolute; /* Position relative to overlay */
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; overflow: hidden;
+    z-index: 1000; /* Behind lockpad panel but above overlay background */
+}
+.particle {
+    position: absolute; bottom: -20px; background-color: var(--dark-green); border-radius: 50%; opacity: 0; animation: float linear infinite;
+}
+@keyframes float { 0% { transform: translateY(0) translateX(0); opacity: 0; } 10%, 90% { opacity: 0.6; } 50% { opacity: 0.8; } 100% { transform: translateY(-100vh) translateX(10px); opacity: 0; } }

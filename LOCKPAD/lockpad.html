@@ -1,0 +1,32 @@
+<!-- LOCKPAD/lockpad.html -->
+<!-- Floating particles container (optional, relies on JS/CSS) -->
+<div class="floating-particles" id="floatingParticles"></div>
+
+<div class="lockpad-container">
+    <div class="scanline-overlay"></div>
+    <div class="lockpad-panel">
+        <div class="lockpad-display">
+            <div id="status-text" class="status-text">AWAITING INPUT</div>
+            <div id="pin-input-display" class="pin-input-display">
+                <span data-index="0">_</span><span data-index="1">_</span><span data-index="2">_</span><span data-index="3">_</span>
+                <!-- REMOVED the pipe character from inside this span -->
+                <span class="cursor" id="cursor"></span>
+            </div>
+        </div>
+        <div class="lockpad-keypad">
+            <button class="keypad-btn" data-value="1">1</button>
+            <button class="keypad-btn" data-value="2">2</button>
+            <button class="keypad-btn" data-value="3">3</button>
+            <button class="keypad-btn" data-value="4">4</button>
+            <button class="keypad-btn" data-value="5">5</button>
+            <button class="keypad-btn" data-value="6">6</button>
+            <button class="keypad-btn" data-value="7">7</button>
+            <button class="keypad-btn" data-value="8">8</button>
+            <button class="keypad-btn" data-value="9">9</button>
+            <button class="keypad-btn clear-btn" data-action="clear">CLR</button>
+            <button class="keypad-btn" data-value="0">0</button>
+            <button class="keypad-btn enter-btn" data-action="enter">ENT</button>
+        </div>
+        <div class="lockpad-branding">SYSTEM LOCK v1.3</div>
+    </div>
+</div>

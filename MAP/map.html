@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Map</title>
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/nprogress.css">
+    <link rel="stylesheet" href="/loading.css">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="js/ui.css">
+    <link rel="stylesheet" href="/brightness-global.css">
+    <link rel="icon" href="/favicon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <style>
+        body { margin: 0; overflow: hidden; height: 100vh; width: 100vw; background-color: #000000; }
+        #mapCanvas { display: block; position: fixed; top: 0; left: 0; z-index: -1; }
+        #page-content-wrapper { position: relative; z-index: 5; height: 100%; width: 100%; }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loading-message">Loading Map...</div>
+    </div>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div></div>
+            <div class="navbar-menu-wrapper">
+                <ul class="navbar-menu">
+                    <li class="navbar-item"><a href="/index.html" class="navbar-link">HOME</a></li>
+                    <li class="navbar-item"><a href="/BOOK/book-series.html" class="navbar-link">BOOKS</a></li>
+                    <li class="navbar-item"><a href="/GLOSSARY/glossary.html" class="navbar-link">GLOSSARY</a></li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">LOCATIONS</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="/MAP/map.html">System Map</a></li>
+                            <li class="dropdown-item"><a href="/MOON/moon-camp.html">Crater Camp</a></li>
+                            <li class="dropdown-item"><a href="/BOGDAN/bogdan.html">Bogdan's Rest</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item"><a href="/CONTACT/contact.html" class="navbar-link">CONTACT</a></li>
+                </ul>
+            </div>
+            <div class="brightness-slider-container">
+                <label for="brightnessSlider" class="brightness-label">Brightness:</label>
+                <input type="range" id="brightnessSlider" min="50" max="200" value="100" step="10">
+            </div>
+        </div>
+    </nav>
+
+    <div id="page-content-wrapper">
+        <canvas id="mapCanvas"></canvas>
+        <div id="ui-container">
+            <div class="stations-container" id="stations-container"></div>
+            <div class="preview-container"><canvas id="previewCanvas"></canvas></div>
+            <div class="text-container" id="text-container"></div>
+            <div class="outposts-container" id="outposts-container"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/lib/CSS2DRenderer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("Loading.js is running!");
+            if (typeof NProgress !== 'undefined') {
+                NProgress.configure({ parent: 'body', showSpinner: false });
+                NProgress.start();
+            } else {
+                console.error("NProgress is not loaded!");
+            }
+        });
+        window.setPageReady = function() {
+            if (typeof NProgress !== 'undefined') { NProgress.done(); }
+            document.getElementById('loading-screen').style.opacity = 0;
+            setTimeout(() => { document.getElementById('loading-screen').style.display = 'none'; }, 500);
+        };
+    </script>
+    <script src="js/main.js" defer></script>
+    <script src="js/sceneSetup.js" defer></script>
+    <script src="js/utils.js" defer></script>
+    <script src="js/planets.js" defer></script>
+    <script src="js/moons.js" defer></script>
+    <script src="js/stations.js" defer></script>
+    <script src="js/outposts.js" defer></script>
+    <script src="js/background.js" defer></script>
+    <script src="js/animate.js" defer></script>
+    <script type="module" src="js/uiSetup.js" defer></script>
+    <script src="js/uiInteractions.js" defer></script>
+    <script src="/navbar.js" defer></script>
+    <script>
+        window.onload = () => { setPageReady(); };
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "storage": {
+    "description": "Central storage and logistics hub for Moon Crater Camp. Contains essential supplies, equipment, and resource reserves to support station operations and long-term habitation.",
+    "color": "#800080",
+    "highlightColor": "#800080"
+  },
+  "life-support-systems": {
+    "description": "Vital sector responsible for maintaining atmospheric conditions, recycling air and water, and managing waste. Critical for sustaining life within the sealed environment of the Moon Crater Camp.",
+    "color": "#ff0000",
+    "highlightColor": "#ff0000"
+  },
+  "harvest-hub": {
+    "description": "Dedicated to hydroponic and aeroponic farming, providing fresh produce and supplementing food supplies. Utilizes advanced environmental controls to maximize crop yields in the lunar environment.",
+    "color": "#ffff00",
+    "highlightColor": "#ffff00"
+  },
+  "sickbay": {
+    "description": "Medical facility equipped for routine check-ups, emergency care, and treatment of station personnel. Includes advanced diagnostic tools and isolation units for containing contagions.",
+    "color": "#00c3fe",
+    "highlightColor": "#00c3fe"
+  },
+  "bunkhouse": {
+    "description": "Residential sector providing living quarters for station crew and visiting personnel. Designed for comfort and privacy within the compact and functional station layout.",
+    "color": "#00ff00",
+    "highlightColor": "#00ff00"
+  },
+  "canteen": {
+    "description": "Communal dining and recreation area where station personnel can relax, socialize, and enjoy meals. Serves as a central gathering point to foster community and morale.",
+    "color": "#a9a9a9",
+    "highlightColor": "#a9a9a9"
+  },
+  "gravity-generator": {
+    "description": "Houses the station's gravity generation technology, maintaining Earth-like gravity within the habitable sections of Moon Crater Camp. Essential for long-term health and operational efficiency.",
+    "color": "#ffffff",
+    "highlightColor": "#ffffff"
+  }
+}
