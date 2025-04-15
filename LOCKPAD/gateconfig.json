@@ -1,35 +1,35 @@
 {
-    "globalPin": "1234",
-    "pages": {
-      "/index.html": {
-        "protected": false,
-        "showPageBackground": false,
-        "pin": "1234"
-      },
-      "/BOOK/book-series.html": {
-        "protected": true,
-        "showPageBackground": false,
-        "pin": "1234"
-      },
-      "/MOON/moon-camp.html": {
-        "protected": true,
-        "showPageBackground": true,
-        "pin": "1234"
-      },
-      "/BOGDAN/bogdan.html": {
-        "protected": true,
-        "showPageBackground": true,
-        "pin": "1234"
-      },
-      "/GLOSSARY/glossary.html": {
-        "protected": true,
-        "showPageBackground": false,
-        "pin": "1234"
-      },
-      "/CONTACT/contact.html": {
-        "protected": true,
-        "showPageBackground": false,
-        "pin": "1234"
-      }
+  "globalPin": "1234",
+  "pages": {
+    "/Expulsed/index.html": {
+      "protected": false,
+      "showPageBackground": false,
+      "pin": "1234"
+    },
+    "/Expulsed/BOOK/book-series.html": {
+      "protected": true,
+      "showPageBackground": false,
+      "pin": "1234"
+    },
+    "/Expulsed/MOON/moon-camp.html": {
+      "protected": true,
+      "showPageBackground": true,
+      "pin": "1234"
+    },
+    "/Expulsed/BOGDAN/bogdan.html": {
+      "protected": true,
+      "showPageBackground": true,
+      "pin": "1234"
+    },
+    "/Expulsed/GLOSSARY/glossary.html": {
+      "protected": true,
+      "showPageBackground": false,
+      "pin": "1234"
+    },
+    "/Expulsed/CONTACT/contact.html": {
+      "protected": true,
+      "showPageBackground": false,
+      "pin": "1234"
     }
   }
+}
