@@ -79,7 +79,9 @@
                         <button id="matrixRainToggle" class="matrix-rain-button">EFFECTS: ON</button>
                         <button id="spinToggle" class="spin-button">SPIN: ON</button>
                         <button id="scanButton" class="scan-button">SCAN</button>
-                        <button id="nextVideoButton" class="next-video-button">NEXT SONG</button>
+                        <!-- === MODIFIED BUTTON === -->
+                        <button id="toggleCustomAnimationsButton" class="toggle-animations-button">ANIMATIONS: ON</button>
+                        <!-- ===================== -->
                    </div>
 
                     <div class="zones-box">
@@ -106,11 +108,20 @@
                         </div>
                     </div>
 
+                    <!-- === MODIFIED VIDEO BOX === -->
                     <div class="video-box">
-                        <h2>Outpost Tunes</h2>
-                        <div id="video-player-container">
+                        <!-- REMOVED H2 and video player container -->
+                        <!-- ADDED structure for animations -->
+                        <div class="split-animation-wrapper">
+                            <div id="moon-animation-alpha" class="split-animation-container">
+                                <!-- Alpha (Network Pulse) will be generated here by JS -->
+                            </div>
+                            <div id="moon-animation-bravo" class="split-animation-container">
+                                <!-- Bravo (Data Grid) will be generated here by JS -->
+                            </div>
                         </div>
                     </div>
+                    <!-- ======================== -->
                 </div>
             </div>
         </div>
@@ -122,6 +133,11 @@
     <script src="../navbar.js"></script>
 
     <script type="module" src="moon-camp-background.js"></script>
+
+    <!-- === ADDED SVG ANIMATIONS SCRIPT === -->
+    <script src="../backgrounds/svg-animations.js"></script>
+    <!-- ================================= -->
+
     <script type="module" src="moon-camp-script.js"></script>
 
     <script>

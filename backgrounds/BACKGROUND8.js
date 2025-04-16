@@ -1,6 +1,3 @@
-// BACKGROUND8.js
-
-// Initialize Three.js scene, camera, and renderer
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
 const renderer = new THREE.WebGLRenderer({
@@ -64,14 +61,14 @@ const wireframeGeometry2 = new THREE.WireframeGeometry(geometry2);
 // Material with matrix green and transparency for fading
 // Create a subtle glow effect with a slight pulse
 const material1 = new THREE.LineBasicMaterial({
-    color: 0x00cc00,
+    color: 0x008800, // UPDATED from 0x00cc00
     transparent: true,
     opacity: 0.8,
     fog: true, // Enable fog effect on material
     linewidth: 1 // Note: Most browsers only support linewidth of 1
 });
 const material2 = new THREE.LineBasicMaterial({
-    color: 0x00cc00,
+    color: 0x008800, // UPDATED from 0x00cc00
     transparent: true,
     opacity: 0.8,
     fog: true, // Enable fog effect on material

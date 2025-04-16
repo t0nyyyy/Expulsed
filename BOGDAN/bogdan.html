@@ -9,12 +9,13 @@
         <link rel="stylesheet" href="../loading.css">
         <link rel="stylesheet" href="../brightness-global.css">
         <link rel="stylesheet" href="../navbar.css">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.css"> <!-- Links to BOGDAN/style.css -->
         <link rel="stylesheet" href="../LOCKPAD/lockpad.css">
 
+        <!-- Removed preload for videos.json -->
         <link rel="preload" href="messages.json" as="fetch" crossorigin="anonymous">
         <link rel="preload" href="zone-info.json" as="fetch" crossorigin="anonymous">
-        <link rel="preload" href="videos.json" as="fetch" crossorigin="anonymous">
+        <!-- <link rel="preload" href="videos.json" as="fetch" crossorigin="anonymous"> -->
 
         <link rel="icon" href="../favicon/favicon.ico" type="image/x-icon">
         <link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
@@ -23,7 +24,7 @@
         <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
         <link rel="manifest" href="../site.webmanifest">
     </head>
-    <canvas id="backgroundCanvas"></canvas>
+    <canvas id="backgroundCanvas"></canvas> <!-- Keep background canvas -->
 
     <div id="loading-screen">
         <div class="loading-message">Loading Station...</div>
@@ -59,19 +60,22 @@
         <div class="container">
             <div class="map-area">
                 <div class="map-container">
-                    <canvas id="stationCanvas"></canvas>
+                    <canvas id="stationCanvas"></canvas> <!-- Keep station canvas -->
                 </div>
             </div>
             <div class="side-panel">
-                <div class="info-panel-container your-shine-target">
+                <div class="info-panel-container your-shine-target"> <!-- Keep shine target -->
                     <div class="button-container">
                         <button id="matrixRainToggle" class="matrix-rain-button">EFFECTS: ON</button>
                         <button id="spinToggle" class="spin-button">SPIN: ON</button>
                         <button id="scanButton" class="scan-button">SCAN</button>
-                        <button id="nextVideoButton" class="next-video-button">NEXT SONG</button>
+                        <!-- === REPURPOSED BUTTON === -->
+                        <button id="toggleBogdanAnimationsButton" class="toggle-animations-button">ANIMATIONS: ON</button>
+                        <!-- ======================= -->
                     </div>
                     <div class="zones-box">
                         <div class="legend">
+                            <!-- Legend items remain unchanged -->
                             <div class="legend-item" data-sector="yadro-central"> <span class="legend-text-wrapper"> <span class="gray">Yadro Central</span> </span> <div class="color-bar bar-gray bar-yadro-central"></div> </div>
                             <div class="legend-item" data-sector="free-port"> <span class="legend-text-wrapper"> <span class="green">Freeport District</span> </span> <div class="color-bar bar-green bar-free-port-district"></div> </div>
                             <div class="legend-item" data-sector="critical-infrastructure-alpha-bravo"> <span class="legend-text-wrapper"> <span class="yellow">Critical Infrastructure Zones Alpha & Bravo</span> </span> <div class="color-bar bar-yellow bar-critical-infrastructure"></div> </div>
@@ -89,22 +93,40 @@
                         <h2>Station Status</h2>
                         <div id="status-report">System diagnostics nominal.  All sectors online.</div>
                     </div>
+                    <!-- === MODIFIED VIDEO BOX === -->
                     <div class="video-box">
-                        <h2>Station Tunes</h2>
-                        <div id="video-player-container"></div>
+                        <!-- REMOVED H2 Station Tunes -->
+                        <!-- REMOVED video-player-container -->
+                        <!-- ADDED structure for animations -->
+                        <div class="split-animation-wrapper"> <!-- Reuse class name -->
+                            <div id="bogdan-animation-charlie" class="split-animation-container"> <!-- Reuse class name -->
+                                <!-- Charlie (Binary Scroll) will be generated here by JS -->
+                            </div>
+                            <div id="bogdan-animation-delta" class="split-animation-container"> <!-- Reuse class name -->
+                                <!-- Delta (Code Scanline) will be generated here by JS -->
+                            </div>
+                        </div>
                     </div>
+                    <!-- ======================== -->
                 </div>
             </div>
         </div>
-        <div id="ascii-art-bottom-left"></div>
+        <div id="ascii-art-bottom-left"></div> <!-- Keep ASCII art placeholder -->
     </div>
 
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
     <script src="../loading.js"></script>
     <script src="../navbar.js"></script>
-    <script src="script.js" type="module" defer></script>
 
+    <!-- === ADDED SVG ANIMATIONS SCRIPT (Correct Path) === -->
+    <script src="../backgrounds/svg-animations.js"></script>
+    <!-- ================================================ -->
+
+    <script src="script.js" type="module" defer></script> <!-- Links to BOGDAN/script.js -->
+
+    <!-- Onload/setPageReady logic remains unchanged -->
     <script>
         if (typeof window.setPageReady !== 'function') {
             window.setPageReady = () => {

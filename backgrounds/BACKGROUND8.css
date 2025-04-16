@@ -1,11 +1,10 @@
 html, body {
     margin: 0;
     height: 100%;
-    overflow: hidden; /* Prevent browser scrolling */
+    overflow: hidden;
 }
 
 body {
-    /* Rich gradient with depth for better contrast with wireframes */
     background: radial-gradient(ellipse at bottom, #090a18 0%, #050510 50%, #000000 100%);
 }
 
@@ -18,7 +17,6 @@ body {
     z-index: -1;
 }
 
-/* Overlay vignette for edge darkening */
 body::after {
     content: '';
     position: fixed;
@@ -29,35 +27,4 @@ body::after {
     background: radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.5) 100%);
     pointer-events: none;
     z-index: 0;
-}
-
-.content {
-    position: relative;
-    z-index: 1;
-    padding: 20px;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
-
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Green glow for text */
-}
-
-p {
-    font-size: 1.2em;
-    text-shadow: 0 0 5px rgba(0, 255, 0, 0.3); /* Subtle green glow for text */
-}
-
-/* Optimize for mobile devices */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2em;
-    }
-    
-    p {
-        font-size: 1em;
-    }
 }

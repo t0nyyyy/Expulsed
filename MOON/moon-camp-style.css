@@ -1,8 +1,7 @@
-/* moon-camp-style.css (Corrected - Matching Bogdan Stacking) */
 @import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
 
 body {
-    background: #222; /* Base page background color */
+    background: #222;
     color: #99ff99;
     font-family: 'Courier New', monospace;
     text-align: center;
@@ -12,7 +11,6 @@ body {
     height: 100vh;
 }
 
-/* === Styles for the new background canvas === */
 #backgroundCanvas {
     position: fixed;
     top: 0;
@@ -20,20 +18,17 @@ body {
     width: 100%;
     height: 100%;
     display: block;
-    pointer-events: none; /* Crucial for background */
-    z-index: -1;         /* Place behind page content */
-    /* Ensure no unwanted background color from the canvas itself */
-    background-color: transparent; /* Explicitly set transparent */
+    pointer-events: none;
+    z-index: -1;
+    background-color: transparent;
 }
-/* =========================================== */
-
 
 #page-content-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: calc(100vh - 60px);
-    padding-bottom: 200px; /* Adjust as needed if layout changes */
+    padding-bottom: 200px;
     box-sizing: border-box;
 }
 
@@ -60,28 +55,23 @@ body {
 }
 
 .map-container {
-    position: relative; /* Keep relative positioning */
+    position: relative;
     width: 100%;
-    max-width: 720px; /* Keep max width if desired */
-    aspect-ratio: 1 / 1; /* Restore aspect ratio */
-    /* Restore background and circle shape */
+    max-width: 720px;
+    aspect-ratio: 1 / 1;
     background: radial-gradient(circle, rgba(50,50,50,0.8) 20%, #111 100%);
-    border: 2px solid #0f0; /* Keep border if desired */
-    box-shadow: 0px 0px 10px #0f0; /* Keep shadow if desired */
-    border-radius: 50%; /* Restore border radius */
-    overflow: hidden; /* Restore overflow hidden */
-    /* Remove height/min-height from previous attempt */
+    border: 2px solid #008800;
+    box-shadow: 0px 0px 10px #008800;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
-/* --- START: Styles for 3D Container & Labels --- */
-
-/* Wrapper remains relative for positioning canvas/labels */
 #render-wrapper {
     width: 100%;
     height: 100%;
     position: relative;
     display: block;
-    overflow: hidden; /* NEW: Clip canvas/labels within the map-container circle */
+    overflow: hidden;
 }
 
 #three-canvas-container,
@@ -94,53 +84,43 @@ body {
     display: block;
 }
 
-/* Ensure canvas is visible */
 #three-canvas-container canvas {
     display: block;
     width: 100%;
     height: 100%;
 }
 
-/* Make label container transparent to clicks */
 #label-container {
-    pointer-events: none; /* Allows clicks to go through to the OrbitControls */
-    overflow: hidden; /* Hide overflowing labels if any */
+    pointer-events: none;
+    overflow: hidden;
 }
 
-/* Style for the individual labels (if/when added) */
 .station-label {
-    color: #00ff00; /* Matrix green */
+    color: #00ff00;
     font-family: 'Courier New', monospace;
     font-size: 12px;
     font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 2px 5px;
     border-radius: 3px;
-    white-space: nowrap; /* Prevent wrapping */
+    white-space: nowrap;
 }
-
-/* --- END: Styles for 3D Container & Labels --- */
-
-
-/* --- Side Panel and other styles remain the same as previous version --- */
-/* (Keep all the styles for .side-panel, .info-panel-container, .zones-box, etc.) */
-/* ... (rest of the CSS from the previous good version) ... */
 
 .side-panel {
     position: fixed;
-    top: 60px; /* Adjust based on navbar height */
+    top: 60px;
     right: 10px;
-    width: 45%; /* Adjust width distribution if needed */
-    max-width: calc(100% - 55% - 20px - 10px); /* Adjust based on map-area width */
+    width: 45%;
+    max-width: calc(100% - 55% - 20px - 10px);
     display: flex;
     flex-direction: column;
     align-items: stretch;
     padding: 0 20px;
     box-sizing: border-box;
     z-index: 500;
-    max-height: calc(100vh - 80px); /* Prevent panel from going off screen */
-    overflow-y: auto; /* Add scroll if content overflows vertically */
-     scrollbar-width: thin;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    scrollbar-width: thin;
     scrollbar-color: #0f0 #222;
 }
 .side-panel::-webkit-scrollbar { width: 8px; }
@@ -150,40 +130,34 @@ body {
 
 
 .info-panel-container {
-    border: 2px solid #0f0;
+    border: 2px solid #008800;
     background-color: #000 !important;
-    box-shadow: 0px 0px 5px #0f0;
+    box-shadow: 0px 0px 5px #008800;
     border-radius: 10px;
     padding: 20px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    position: relative; /* Added for shine effect */
-    overflow: hidden;   /* Added for shine effect */
+    position: relative;
+    overflow: hidden;
 }
 
-/* Styles for inner content boxes */
 .zones-box, .info-box, .status-box, .video-box {
     padding: 15px;
     margin-bottom: 10px;
-    border: 1px solid #0f0;
+    border: 1px solid #008800;
     background-color: #000;
-    box-shadow: 0px 0px 5px #0f0;
+    box-shadow: 0px 0px 5px #008800;
     border-radius: 5px;
     box-sizing: border-box;
     width: 100%;
-    /* === MODIFIED: Changed auto margins to fixed 5px === */
     margin-left: 5px;
     margin-right: 5px;
-    /* =============================================== */
-    /* position: relative; */ /* Keep original stacking method */
-    /* z-index: 2; */ /* Keep original stacking method */
 }
 
-
-.info-box, .status-box, .video-box {
-    flex-grow: 0; /* Prevent these boxes from growing excessively */
+.info-box, .status-box {
+    flex-grow: 0;
 }
 
 .info-box {
@@ -193,10 +167,10 @@ body {
     padding-bottom: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    border: 1px solid #0f0;
+    border: 1px solid #008800;
     border-radius: 5px;
     background-color: #000;
-    box-shadow: 0px 0px 5px #0f0;
+    box-shadow: 0px 0px 5px #008800;
     box-sizing: border-box;
     overflow-x: hidden;
     font-weight: bold;
@@ -209,10 +183,10 @@ body {
     padding-bottom: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    border: 1px solid #0f0;
+    border: 1px solid #008800;
     border-radius: 5px;
     background-color: #000;
-    box-shadow: 0px 0px 5px #0f0;
+    box-shadow: 0px 0px 5px #008800;
     max-height: 150px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -225,26 +199,20 @@ body {
 }
 
 .video-box {
-    padding-top: 5px;
-}
-
-#video-player-container {
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #008800;
+    background-color: #000;
+    box-shadow: 0px 0px 5px #008800;
+    border-radius: 5px;
+    box-sizing: border-box;
     width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: stretch;
     overflow: hidden;
-    position: relative;
-    /* Maintain aspect ratio - adjust if needed */
-    padding-bottom: 25%; /* 16:9 aspect ratio */
-    height: 0;
-}
-
-
-#video-player-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
 }
 
 .status-box::-webkit-scrollbar { width: 8px; }
@@ -252,7 +220,8 @@ body {
 .status-box::-webkit-scrollbar-thumb { background-color: #0f0; border-radius: 10px; border: 2px solid #222; }
 .status-box::-webkit-scrollbar-thumb:hover { background-color: #00bb00; }
 
-.info-box h2, .status-box h2, .video-box h2 {
+.info-box h2, .status-box h2 {
+    color: #99ff99; /* <<< ADDED THIS LINE */
     margin-top: 0px;
     margin-bottom: 5px;
     font-size: 1.2em;
@@ -265,14 +234,14 @@ body {
     font-family: 'Electrolize', monospace;
 }
 
-.info-box h2::after, .status-box h2::after, .video-box h2::after {
+.info-box h2::after, .status-box h2::after {
     content: '';
     position: absolute;
     left: 0;
     width: 100%;
     bottom: -5px;
     height: 2px;
-    background-color: #0f0;
+    background-color: #008800;
 }
 
 .legend {
@@ -291,33 +260,19 @@ body {
     border-radius: 3px;
     width: 100%;
     box-sizing: border-box;
-    /* === MODIFIED: Added position relative === */
     position: relative;
-    /* ======================================== */
 }
 
-.legend-item:hover, .legend-item.highlighted-legend { /* Added .highlighted-legend */
+.legend-item:hover, .legend-item.highlighted-legend {
     background-color: rgba(0, 255, 0, 0.1);
 }
 
-/* === REMOVED: Old legend span direct styling === */
-/* .legend span {
-    font-size: 16px;
-    margin-right: 10px;
-    white-space: normal;
-    position: relative;
-} */
-/* ============================================= */
-
-/* === ADDED: Styles for the legend text wrapper to match Bogdan === */
 .legend-text-wrapper {
-    margin-right: auto; /* Pushes color bar to the right */
-    text-align: right;  /* Aligns text within the wrapper (less impactful now) */
-    padding-right: 10px; /* Space between text and color bar */
-    position: relative; /* Needed for potential future absolute positioning inside */
+    margin-right: auto;
+    text-align: right;
+    padding-right: 10px;
+    position: relative;
 }
-/* ============================================================== */
-
 
 #status-report {
     min-height: 45px;
@@ -331,7 +286,7 @@ body {
     right: 5px;
     top: 50%;
     transform: translateY(-50%);
-    left: 0; /* Will be adjusted by JS */
+    left: 0;
 }
 
 .green  { color: #00ff00; }
@@ -352,35 +307,25 @@ body {
 
 @keyframes color-bar-glow-pulse {
     0%   { box-shadow: 0 0 5px rgba(0, 255, 0, 0.6); }
-    50%  { box-shadow: 0 0 15px rgba(0, 255, 0, 0.9); }
+    50%  { box-shadow: 0 0 15px rgba(0, 255, 0, 0.75); }
     100% { box-shadow: 0 0 5px rgba(0, 255, 0, 0.6); }
 }
 
-/* === REMOVED ALL MATRIX RAIN STYLES === */
-
-/* Style for the button container */
 .button-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    /* === MODIFIED: Changed auto margins to fixed 5px === */
     margin: 10px 5px 20px 5px;
-    /* =============================================== */
     flex-wrap: nowrap;
     gap: 10px;
-     /* position: relative; */ /* Keep original stacking method */
-     /* z-index: 2; */ /* Keep original stacking method */
 }
 
-/* Button styles */
-.matrix-rain-button, .spin-button, .scan-button, .next-video-button {
+.matrix-rain-button, .spin-button, .scan-button {
     display: inline-block;
-    /* === MODIFIED: Changed vertical padding === */
-    padding: 1px 15px; /* Adjusted padding */
-    /* ======================================== */
+    padding: 1px 15px;
     background-color: rgba(0, 0, 0, 0.8);
-    color: #0f0;
-    border: 2px solid #0f0;
+    color: #99ff99;
+    border: 2px solid #008800;
     border-radius: 5px;
     font-family: 'Courier New', monospace;
     font-size: 14px;
@@ -389,21 +334,83 @@ body {
     box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
     text-transform: uppercase;
     letter-spacing: 1px;
-    /* position: relative; */ /* Keep original stacking method */
-    /* z-index: 2; */         /* Keep original stacking method */
     box-sizing: border-box;
     text-align: center;
-    flex: 1 1 auto; /* Allow shrinking and growing */
+    flex: 1 1 auto;
     min-width: 100px;
     white-space: nowrap;
 }
 
-.matrix-rain-button:hover, .spin-button:hover, .scan-button:hover, .next-video-button:hover {
+.matrix-rain-button:hover, .spin-button:hover, .scan-button:hover {
     background-color: rgba(0, 255, 0, 0.2);
     box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
 }
 
-.matrix-rain-button:active, .spin-button:active, .scan-button:active, .next-video-button:active {
+.matrix-rain-button:active, .spin-button:active, .scan-button:active {
+    transform: scale(0.98);
+}
+
+.split-animation-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    gap: 5px;
+}
+
+.split-animation-container {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid #008800;
+    box-sizing: border-box;
+    position: relative;
+    background-color: #111;
+}
+
+#moon-animation-alpha {
+    background-color: #000;
+}
+
+#moon-animation-bravo canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.split-animation-container svg {
+    display: block;
+    shape-rendering: optimizeSpeed;
+    image-rendering: optimizeSpeed;
+}
+
+.toggle-animations-button {
+    display: inline-block;
+    padding: 1px 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #99ff99;
+    border: 2px solid #008800;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    text-align: center;
+    flex: 1 1 auto;
+    min-width: 100px;
+    white-space: nowrap;
+}
+
+.toggle-animations-button:hover {
+    background-color: rgba(0, 255, 0, 0.2);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+}
+
+.toggle-animations-button:active {
     transform: scale(0.98);
 }
 
@@ -411,7 +418,7 @@ body {
     position: fixed;
     bottom: 0;
     left: 0;
-    z-index: 10; /* Safe */
+    z-index: 10;
     font-family: 'Courier New', monospace;
     color: #00ff00;
     white-space: pre;
@@ -422,13 +429,13 @@ body {
     padding: 10px;
 }
 
-#background-moon-art { /* Keep this if it was in the original */
+#background-moon-art {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -2; /* <<< MODIFIED: Set behind canvas */
+    z-index: -2;
     color: #008000;
     font-family: 'Courier New', monospace;
     white-space: pre;
@@ -440,9 +447,7 @@ body {
     text-align: left;
 }
 
-/* === KEEP ORIGINAL MEDIA QUERIES === */
 @media (max-width: 1200px) {
-    /* Adjust layout slightly earlier if needed */
     .map-area {
         width: 50%;
     }
@@ -452,51 +457,50 @@ body {
     }
 }
 
-
 @media (max-width: 900px) {
     #page-content-wrapper {
-        padding-bottom: 20px; /* Reduce padding when stacked */
-         min-height: auto; /* Allow natural height */
+        padding-bottom: 20px;
+         min-height: auto;
          height: auto;
-         overflow-y: auto; /* Allow scrolling on main wrapper */
+         overflow-y: auto;
          overflow-x: hidden;
     }
      .container {
         flex-direction: column;
         align-items: center;
-        padding: 10px; /* Reduce padding */
+        padding: 10px;
     }
     .map-area {
-        width: 95%; /* Take more width */
+        width: 95%;
         max-width: none;
-        padding: 10px 0; /* Adjust padding */
+        padding: 10px 0;
     }
     .map-container {
-         width: 90vw; /* Adjust width relative to viewport */
-         height: 90vw; /* Keep it square */
-         max-width: 500px; /* Optional max size */
-         max-height: 500px; /* Optional max size */
+         width: 90vw;
+         height: 90vw;
+         max-width: 500px;
+         max-height: 500px;
          margin-left: auto;
          margin-right: auto;
-         /* aspect-ratio: 1/1; // Already set */
     }
     .side-panel {
-        position: static; /* Unfix the side panel */
-        width: 95%; /* Take more width */
+        position: static;
+        width: 95%;
         max-width: none;
-        margin: 20px auto 0 auto; /* Center and add top margin */
+        margin: 20px auto 0 auto;
         right: auto;
         top: auto;
         padding: 0;
-        max-height: none; /* Remove max-height */
-        overflow-y: visible; /* Remove internal scroll */
+        max-height: none;
+        overflow-y: visible;
     }
     .button-container {
-        flex-wrap: wrap; /* Allow buttons to wrap */
-        justify-content: center; /* Center wrapped buttons */
+        flex-wrap: wrap;
+        justify-content: center;
     }
      .button-container button {
-        flex-basis: 48%; /* Two buttons per row approx */
+        flex-basis: 30%;
+        min-width: 120px;
         margin-bottom: 10px;
     }
 }
@@ -509,20 +513,16 @@ body {
          width: 95vw;
          height: 95vw;
      }
-
+      .button-container button {
+        flex-basis: 45%;
+    }
 }
-/* === END ORIGINAL MEDIA QUERIES === */
 
-
-/* === SEQUENTIAL SHINE SWEEP EFFECT (Keep Original) === */
-
-/* Define the keyframes for the left-to-right sweep */
 @keyframes sweep-shine {
     0% { transform: translateX(-100%); }
     100% { transform: translateX(100%); }
 }
 
-/* Define the appearance of the shine pseudo-element */
 .your-shine-target::after {
     content: '';
     position: absolute;
@@ -530,38 +530,24 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Keep original gradient */
-    background: linear-gradient(to right, transparent 30%, rgba(0, 255, 65, 0.15) 50%, transparent 70%); /* Adjust 0.15 as needed */
-
-    /* Start hidden */
+    background: linear-gradient(to right, transparent 30%, rgba(0, 255, 65, 0.08) 50%, transparent 70%);
     opacity: 0;
-    /* Keep original z-index */
     z-index: 1;
-    /* Prevent interfering with mouse events */
     pointer-events: none;
-    /* Performance hints for smooth animation */
     will-change: transform, opacity;
     backface-visibility: hidden;
 }
 
-/* Apply visibility and the animation ONLY when the target is active */
 .your-shine-target.is-shining::after {
     opacity: 1;
-    /* Keep original animation */
     animation: sweep-shine 2.4s infinite linear;
 }
 
-/* --- Content Stacking (Keep Original Method) --- */
-/* Apply position:relative and z-index:2 to ALL direct content children */
 .info-panel-container > .zones-box,
 .info-panel-container > .info-box,
 .info-panel-container > .status-box,
 .info-panel-container > .video-box,
 .info-panel-container > .button-container {
-    position: relative; /* Establish stacking context for children */
-    z-index: 2;      /* Place these containers above the ::after (z-index: 1) */
+    position: relative;
+    z-index: 2;
 }
-/* Note: Individual buttons inside .button-container do NOT need extra styling */
-/* Their parent (.button-container) now handles the stacking */
-
-/* === END SEQUENTIAL SHINE SWEEP EFFECT === */

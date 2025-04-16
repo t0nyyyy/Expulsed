@@ -4,7 +4,7 @@ body {
 
 .glossary-body {
     background-color: #000;
-    color: #aaffff;
+    color: #aaffff; /* Default cyan */
     font-family: 'Courier New', monospace;
     margin: 0;
     padding: 0;
@@ -45,8 +45,8 @@ body {
     flex-grow: 1;
     padding: 10px;
     font-family: 'Courier New', monospace;
-    color: #00ff00;
-    text-shadow: 0 0 5px #00ff00;
+    color: #008800;
+    text-shadow: 0 0 5px #00AA00;
     white-space: pre-wrap;
     font-size: 1em;
     line-height: 1.2;
@@ -73,8 +73,8 @@ body {
 
 #welcome-message {
     font-size: 0.5em;
-    color: #00ff00;
-    text-shadow: 0 0 8px #00ff00;
+    color: #008800;
+    text-shadow: 0 0 8px #00AA00;
     letter-spacing: .05em;
     animation: typing 0.5s steps(40, end) forwards;
     white-space: pre-wrap;
@@ -93,17 +93,17 @@ body {
 
 @keyframes blink-caret {
   from, to { border-color: transparent }
-  50% { border-color: #00ffff; }
+  50% { border-color: #00ffff; } /* Kept original cyan */
 }
 
 .glossary-entry {
     font-size: 1em;
-    color: #00ff00;
-    text-shadow: 0 0 4px #00ff00;
+    color: #008800;
+    text-shadow: 0 0 4px #00AA00;
     max-width: 90%;
     text-align: justify;
     overflow: hidden;
-    border-right: .05em solid #00ff00;
+    border-right: .05em solid #008800;
     letter-spacing: .05em;
     animation:
         typing-glossary 1s steps(40, end) forwards,
@@ -122,13 +122,13 @@ body {
 
 @keyframes blink-caret-glossary {
   from, to { border-color: transparent }
-  50% { border-color: #aaffaa; }
+  50% { border-color: #008800; }
 }
 
 .glossary-title {
     font-size: 1.4em;
-    color: #00ff00;
-    text-shadow: 0 0 10px #00ff00;
+    color: #00ff00; /* KEPT Original Bright Green */
+    text-shadow: 0 0 10px #00AA00;
     text-align: center;
     margin-bottom: 10px;
     font-weight: bold;
@@ -152,8 +152,8 @@ body {
 }
 
 .search-results-list ol li:hover {
-    color: #00ffff;
-    text-shadow: 0 0 8px #00ffff;
+    color: #00AA00;
+    text-shadow: 0 0 8px #00AA00;
     transition: color 0.2s ease, text-shadow 0.2s ease;
 }
 
@@ -183,7 +183,7 @@ body {
 
 #search-input {
     background-color: #000;
-    color: #00ff00;
+    color: #00ff00; /* Kept original bright text input */
     border: 2px solid #008800;
     padding: 8px;
     font-family: 'Courier New', monospace;
@@ -191,7 +191,7 @@ body {
     width: 70%;
     max-width: 400px;
     margin-right: 10px;
-    box-shadow: 0 0 5px #008800;
+    box-shadow: 0 0 5px #00AA00;
     margin-bottom: 10px;
 }
 #search-input:focus {
@@ -202,13 +202,13 @@ body {
 
 #search-buttons button {
     background-color: #222;
-    color: #00ff00;
+    color: #008800;
     border: 2px solid #008800;
     padding: 0;
     font-family: 'Courier New', monospace;
     font-size: 14px;
     cursor: pointer;
-    box-shadow: 0 0 3px #008800;
+    box-shadow: 0 0 3px #00AA00;
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
     width: 120px;
     height: 40px;
@@ -221,7 +221,7 @@ body {
 
 #search-buttons button:hover {
     background-color: rgba(0, 136, 0, 0.2);
-    box-shadow: 0 0 15px rgba(0, 136, 0, 0.4);
+    box-shadow: 0 0 15px rgba(0, 170, 0, 0.4);
 }
 
 #search-buttons button:disabled {
@@ -237,16 +237,17 @@ body {
     box-shadow: none;
 }
 
+/*
 .navbar-link {
-    color: #99ff99 !important;
-    font-family: 'Electrolize', monospace !important;
+    REMOVED THIS RULE BLOCK
 }
+*/
 
 .about-message {
     margin-top: 2vw;
     text-align: center;
     white-space: pre-wrap;
-    color: #00ff00;
+    color: #00ff00; /* Kept original */
     font-family: 'Courier New', monospace;
     font-size: 1em;
     line-height: 1.2;
@@ -255,6 +256,6 @@ body {
 .no-results {
     margin-top: 2vw;
     text-align: center;
-    color: #ff4444;
+    color: #ff4444; /* Kept original */
     font-style: italic;
 }

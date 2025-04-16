@@ -1,4 +1,3 @@
-/* style.css (Cleaned - Final Version + Shine Effect + Corrected Comment) */
 @import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
 
 body {
@@ -79,8 +78,8 @@ body {
     max-width: 720px;
     aspect-ratio: 1 / 1;
     background: radial-gradient(circle, rgba(50,50,50,0.8) 20%, #111 100%);
-    border: 2px solid #0f0;
-    box-shadow: 0px 0px 10px #0f0;
+    border: 2px solid #008800;
+    box-shadow: 0px 0px 10px #008800;
     border-radius: 50%;
     overflow: hidden;
 }
@@ -109,7 +108,7 @@ body {
     z-index: 500;
     max-height: calc(100vh - 80px);
     overflow-y: auto;
-     scrollbar-width: thin;
+    scrollbar-width: thin;
     scrollbar-color: #0f0 #222;
 }
 .side-panel::-webkit-scrollbar { width: 8px; }
@@ -142,34 +141,34 @@ body {
 }
 
 .info-panel-container {
-    border: 2px solid #0f0;
+    border: 2px solid #008800;
     background-color: #000 !important;
-    box-shadow: 0px 0px 5px #0f0;
+    box-shadow: 0px 0px 5px #008800;
     border-radius: 10px;
     padding: 20px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    position: relative; /* Added for shine effect */
-    overflow: hidden;   /* Added for shine effect */
+    position: relative;
+    overflow: hidden;
 }
 
 .zones-box, .info-box, .status-box, .video-box {
     padding: 15px;
     margin-bottom: 10px;
-    border: 1px solid #0f0;
+    border: 1px solid #008800;
     background-color: #000;
-    box-shadow: 0px 0px 5px #0f0;
+    box-shadow: 0px 0px 5px #008800;
     border-radius: 5px;
     box-sizing: border-box;
     width: 100%;
     margin-left: 5px;
     margin-right: 5px;
-    position: relative; /* Ensures content is above negative z-index pseudo */
-    z-index: 2; /* Ensures content is above negative z-index pseudo */
+    position: relative;
+    z-index: 2;
 }
-/* Apply the same stacking context to button container */
+
 .button-container {
     display: flex;
     justify-content: space-between;
@@ -177,11 +176,11 @@ body {
     margin: 10px 5px 20px 5px;
     flex-wrap: nowrap;
     gap: 10px;
-    position: relative; /* Ensures content is above negative z-index pseudo */
-    z-index: 2; /* Ensures content is above negative z-index pseudo */
+    position: relative;
+    z-index: 2;
 }
 
-.info-box, .status-box, .video-box {
+.info-box, .status-box {
     flex-grow: 0;
 }
 
@@ -192,10 +191,10 @@ body {
     padding-bottom: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    border: 1px solid #0f0;
+    border: 1px solid #008800;
     border-radius: 5px;
     background-color: #000;
-    box-shadow: 0px 0px 5px #0f0;
+    box-shadow: 0px 0px 5px #008800;
     box-sizing: border-box;
     overflow-x: hidden;
     font-weight: bold;
@@ -208,10 +207,10 @@ body {
     padding-bottom: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    border: 1px solid #0f0;
+    border: 1px solid #008800;
     border-radius: 5px;
     background-color: #000;
-    box-shadow: 0px 0px 5px #0f0;
+    box-shadow: 0px 0px 5px #008800;
     overflow-y: auto;
     overflow-x: hidden;
     word-wrap: break-word;
@@ -224,24 +223,20 @@ body {
 }
 
 .video-box {
-    padding-top: 5px;
-}
-
-#video-player-container {
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #008800;
+    background-color: #000;
+    box-shadow: 0px 0px 5px #008800;
+    border-radius: 5px;
+    box-sizing: border-box;
     width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: stretch;
     overflow: hidden;
-    position: relative;
-    padding-bottom: 25%;
-    height: 0;
-}
-
-#video-player-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
 }
 
 .status-box::-webkit-scrollbar { width: 8px; }
@@ -249,7 +244,8 @@ body {
 .status-box::-webkit-scrollbar-thumb { background-color: #0f0; border-radius: 10px; border: 2px solid #222; }
 .status-box::-webkit-scrollbar-thumb:hover { background-color: #00bb00; }
 
-.info-box h2, .status-box h2, .video-box h2 {
+.info-box h2, .status-box h2 {
+    color: #99ff99;
     margin-top: 0px;
     margin-bottom: 5px;
     font-size: 1.2em;
@@ -262,14 +258,14 @@ body {
     font-family: 'Electrolize', monospace;
 }
 
-.info-box h2::after, .status-box h2::after, .video-box h2::after {
+.info-box h2::after, .status-box h2::after {
     content: '';
     position: absolute;
     left: 0;
     width: 100%;
     bottom: -5px;
     height: 2px;
-    background-color: #0f0;
+    background-color: #008800;
 }
 
 .legend {
@@ -330,16 +326,16 @@ body {
 
 @keyframes color-bar-glow-pulse {
     0%   { box-shadow: 0 0 5px rgba(0, 255, 0, 0.6); }
-    50%  { box-shadow: 0 0 15px rgba(0, 255, 0, 0.9); }
+    50%  { box-shadow: 0 0 15px rgba(0, 255, 0, 0.75); }
     100% { box-shadow: 0 0 5px rgba(0, 255, 0, 0.6); }
 }
 
-.matrix-rain-button, .spin-button, .scan-button, .next-video-button {
+.matrix-rain-button, .spin-button, .scan-button {
     display: inline-block;
     padding: 1px 15px;
     background-color: rgba(0, 0, 0, 0.8);
-    color: #0f0;
-    border: 2px solid #0f0;
+    color: #99ff99;
+    border: 2px solid #008800;
     border-radius: 5px;
     font-family: 'Courier New', monospace;
     font-size: 14px;
@@ -348,8 +344,6 @@ body {
     box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
     text-transform: uppercase;
     letter-spacing: 1px;
-    /* position: relative; */ /* Removed relative from buttons */
-    /* z-index: 2; */ /* Removed z-index from buttons */
     box-sizing: border-box;
     text-align: center;
     flex: 1 0 auto;
@@ -364,16 +358,16 @@ body {
     box-shadow: none;
 }
 .scan-button:disabled:hover {
-     background-color: rgba(0, 0, 0, 0.6);
-     box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: none;
 }
 
-.matrix-rain-button:hover, .spin-button:hover, .scan-button:hover, .next-video-button:hover {
+.matrix-rain-button:hover, .spin-button:hover, .scan-button:hover {
     background-color: rgba(0, 255, 0, 0.2);
     box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
 }
 
-.matrix-rain-button:active, .spin-button:active, .scan-button:active, .next-video-button:active {
+.matrix-rain-button:active, .spin-button:active, .scan-button:active {
     transform: scale(0.98);
 }
 
@@ -392,54 +386,91 @@ body {
     padding: 10px;
 }
 
-/* === SEQUENTIAL SHINE SWEEP EFFECT === */
+.split-animation-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    gap: 5px;
+}
 
-/* Define the keyframes for the left-to-right sweep */
+.split-animation-container {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid #008800;
+    box-sizing: border-box;
+    position: relative;
+    background-color: #111;
+}
+
+.split-animation-container canvas,
+.split-animation-container svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.split-animation-container svg {
+    shape-rendering: optimizeSpeed;
+    image-rendering: optimizeSpeed;
+}
+
+.toggle-animations-button {
+    display: inline-block;
+    padding: 1px 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #99ff99;
+    border: 2px solid #008800;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    text-align: center;
+    flex: 1 1 auto;
+    min-width: 100px;
+    white-space: nowrap;
+}
+
+.toggle-animations-button:hover {
+    background-color: rgba(0, 255, 0, 0.2);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+}
+
+.toggle-animations-button:active {
+    transform: scale(0.98);
+}
+
 @keyframes sweep-shine {
     0% { transform: translateX(-100%); }
     100% { transform: translateX(100%); }
 }
 
-/*
-  Prerequisites for the target element (e.g., '.info-panel-container'):
-  - MUST have 'position: relative;'
-  - MUST have 'overflow: hidden;'
-  (These styles were added directly to the .info-panel-container rule above)
-*/
+.your-shine-target::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent 30%, rgba(0, 255, 65, 0.08) 50%, transparent 70%);
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
 
-/* Define the appearance of the shine pseudo-element */
-    .your-shine-target::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        /* Define the shine gradient */
-        background: linear-gradient(to right, transparent 30%, rgba(0, 255, 65, 0.08) 50%, transparent 70%);
-
-        /* Start hidden */
-        opacity: 0;
-        /* Set z-index to -1 to appear BEHIND the container's content */
-        z-index: 1;
-        /* Prevent interfering with mouse events */
-        pointer-events: none;
-        /* Performance hints for smooth animation */
-        will-change: transform, opacity;
-        backface-visibility: hidden;
-    }
-
-/* Apply visibility and the animation ONLY when the target is active */
 .your-shine-target.is-shining::after {
     opacity: 1;
-    /* Apply the animation */
-    /* Make sure the duration (e.g., 2.4s) matches the JS 'animationDuration' variable! */
     animation: sweep-shine 2.4s infinite linear;
 }
-/* === END SEQUENTIAL SHINE SWEEP EFFECT === */
 
-
-/* --- Media Queries --- */
 @media (max-width: 1200px) {
     .side-panel {
         position: static;
@@ -448,7 +479,7 @@ body {
         margin-right: 0;
         margin-top: 20px;
     }
-     .map-area, .side-panel {
+    .map-area, .side-panel {
         width: 90%;
         margin-right: 0;
     }
@@ -475,6 +506,7 @@ body {
     }
     .button-container button {
         width: 100%;
+        margin-bottom: 10px;
     }
     #ascii-art-bottom-left {
         font-size: 1.1vw;
@@ -485,10 +517,11 @@ body {
     .button-container {
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: center;
     }
     .button-container button {
         width: 48%;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
     }
     #ascii-art-bottom-left {
         font-size: 1.1vw;

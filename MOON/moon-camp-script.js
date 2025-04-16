@@ -18,24 +18,26 @@ import {
 // ============================================
 
 // --- State Variables Moved to Top Scope ---
-let videoPlaylist = [];
-let currentVideoIndex = 0;
+// REMOVED: let videoPlaylist = [];
+// REMOVED: let currentVideoIndex = 0;
 let messagesArray = [];
 let zoneDescriptions = {};
 let zoneHighlightColors = {}; // *** NEW: Store highlight colors ***
-// let matrixRainEnabled = true; // REMOVED
 let backgroundEffectEnabled = true; // *** NEW: State for background effect ***
+let customAnimationsEnabled = true; // *** ADDED: State for custom split animations ***
 let rotationAngle = 0;
 let isSpinning = true;
 let animationFrameId = null; // For station rotation logic loop
 let threeJsInitialized = false; // *** CRITICAL FLAG ***
 
 // --- DOM Element Variables ---
-let legendItems, zoneDescriptionDiv, scanButton, videoPlayerContainer,
-    // matrixRainContainer, // REMOVED
-    matrixRainToggleButton, // Keep the button variable, ID is the same
+let legendItems, zoneDescriptionDiv, scanButton,
+    // REMOVED: videoPlayerContainer,
+    matrixRainToggleButton, // Keep the button variable, ID is the same ('matrixRainToggle')
     spinToggleButton, statusReportDiv,
-    asciiArtContainerBottom;
+    asciiArtContainerBottom,
+    toggleCustomAnimationsButton, // *** ADDED ***
+    splitAnimationWrapper; // *** ADDED ***
 
 
 // --- Central Initialization Function ---
@@ -51,12 +53,15 @@ function initializeEverything() {
     legendItems = document.querySelectorAll('.legend-item');
     zoneDescriptionDiv = document.getElementById('zone-description');
     scanButton = document.getElementById('scanButton');
-    videoPlayerContainer = document.getElementById('video-player-container');
-    // matrixRainContainer = document.getElementById('matrixRain'); // REMOVED
-    matrixRainToggleButton = document.getElementById('matrixRainToggle'); // Kept
+    // REMOVED: videoPlayerContainer = document.getElementById('video-player-container');
+    matrixRainToggleButton = document.getElementById('matrixRainToggle');
     spinToggleButton = document.getElementById('spinToggle');
     statusReportDiv = document.getElementById('status-report');
     asciiArtContainerBottom = document.getElementById('ascii-art-bottom-left');
+    // *** ADDED Assignments ***
+    toggleCustomAnimationsButton = document.getElementById('toggleCustomAnimationsButton');
+    splitAnimationWrapper = document.querySelector('.split-animation-wrapper');
+    // *************************
 
     // --- Initialize 3D ---
     try {
@@ -111,25 +116,53 @@ function initializeEverything() {
     }
     // ==============================================
 
-    /* REMOVED Matrix Rain Initialization Block
-    if (matrixRainEnabled) {
-        createMatrixRain();
-        if (matrixRainContainer) matrixRainContainer.style.visibility = 'visible';
-        if (matrixRainToggleButton) matrixRainToggleButton.textContent = 'RAIN: ON';
-        updateMatrixRain(); // Start Matrix rain loop
-    } else {
-         if (matrixRainToggleButton) matrixRainToggleButton.textContent = 'RAIN: OFF';
-    }
-    */
-
     // Start other features
     startMessageRotation();
     loadZoneDescriptions(); // *** This now also loads highlight colors ***
-    loadVideoPlaylist();
+    // REMOVED: loadVideoPlaylist();
     updateBarPositions(); // Requires legendItems to be assigned
 
+    // === Initialize Custom Split Animations ===
+    console.log("Initializing custom split animations...");
+    try {
+        // Check if the functions exist before calling (robustness)
+        if (typeof createNetworkNodePulse === 'function') {
+            createNetworkNodePulse('moon-animation-alpha'); // Use the new ID
+        } else {
+            console.error("createNetworkNodePulse function not found!");
+            const alphaContainer = document.getElementById('moon-animation-alpha');
+            if (alphaContainer) alphaContainer.textContent = "Error: Network Pulse unavailable.";
+        }
 
-    // --- START: Sequential Shine Sweep Logic (Integrated Here) ---
+        if (typeof createBravoData === 'function') {
+             createBravoData('moon-animation-bravo');       // Use the new ID
+        } else {
+            console.error("createBravoData function not found!");
+            const bravoContainer = document.getElementById('moon-animation-bravo');
+            if (bravoContainer) bravoContainer.textContent = "Error: Data Grid unavailable.";
+        }
+        console.log("Custom split animations initialized.");
+
+        // Set initial visibility based on state
+        if (splitAnimationWrapper) {
+             splitAnimationWrapper.style.display = customAnimationsEnabled ? 'flex' : 'none';
+        }
+        if (toggleCustomAnimationsButton) {
+            toggleCustomAnimationsButton.textContent = customAnimationsEnabled ? 'ANIMATIONS: ON' : 'ANIMATIONS: OFF';
+        }
+
+    } catch (error) {
+        console.error("Error initializing custom split animations:", error);
+        // Optional: Display error in the UI containers
+        const alphaContainer = document.getElementById('moon-animation-alpha');
+        if (alphaContainer) alphaContainer.textContent = "Animation Error";
+        const bravoContainer = document.getElementById('moon-animation-bravo');
+        if (bravoContainer) bravoContainer.textContent = "Animation Error";
+    }
+    // =========================================
+
+
+    // --- START: Sequential Shine Sweep Logic (Unchanged) ---
 
     // 1. Select all the elements you want the shine applied to sequentially
     const shineTargets = document.querySelectorAll('.your-shine-target'); // Use the class you gave your target elements
@@ -220,9 +253,7 @@ function initializeEverything() {
     attachEventListeners();
 }
 
-// --- setPageReady Hook ---
-// This wrapper ensures initializeEverything is only called *once*
-// even if setPageReady is triggered multiple times.
+// --- setPageReady Hook (Unchanged) ---
 let pageReadyCalled = false; // Flag for setPageReady
 if (typeof window.setPageReady !== 'function') {
     console.log("setPageReady not found, creating..."); // DEBUG
@@ -249,7 +280,7 @@ if (typeof window.setPageReady !== 'function') {
     };
 }
 
-// --- DOMContentLoaded Listener (Minimal) ---
+// --- DOMContentLoaded Listener (Unchanged) ---
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM Content Loaded. Waiting for setPageReady to trigger init.");
 });
@@ -257,7 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // --- Helper Functions ---
 
-// *** MODIFIED clearHighlights to include 3D ***
+// *** MODIFIED clearHighlights to include 3D (Unchanged from previous step) ***
 const clearHighlights = () => {
     if (legendItems) {
         legendItems.forEach(item => {
@@ -269,6 +300,7 @@ const clearHighlights = () => {
     }
 };
 
+// *** displayZoneInfo (Unchanged) ***
 const displayZoneInfo = (sectorName) => {
     if (!zoneDescriptionDiv) return; // Check if assigned
     if (zoneDescriptions[sectorName]) {
@@ -299,13 +331,7 @@ function animateRotation() {
     }
 }
 
-// === REMOVED Matrix Rain Functions ===
-// function generateRandomMatrixText(maxLength) { ... }
-// function createMatrixRain() { ... }
-// function updateMatrixRain() { ... }
-// ===================================
-
-// --- Remaining Helper Functions (Unchanged) ---
+// --- Remaining Helper Functions (Unchanged except for removed video functions) ---
 function startMessageRotation() {
     fetch('messages.json').then(response => response.json()).then(messages => { messagesArray = messages; if (messagesArray.length > 0) { displayNextMessage(); setInterval(displayNextMessage, 3000); } else if (statusReportDiv) { statusReportDiv.textContent = "No status messages loaded."; statusReportDiv.style.color = "yellow"; } }).catch(error => { console.error("Error fetching messages:", error); if (statusReportDiv) { statusReportDiv.textContent = "Failed to load status messages."; statusReportDiv.style.color = "red"; } });
 }
@@ -348,12 +374,10 @@ function loadZoneDescriptions() {
              }
         });
 }
-function loadYouTubeVideo(videoId) {
-    if (!videoPlayerContainer) return; videoPlayerContainer.innerHTML = ''; const iframe = document.createElement('iframe'); iframe.width = '100%'; iframe.height = '100%'; iframe.style.position = 'absolute'; iframe.style.top = '0'; iframe.style.left = '0'; iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=0&controls=1&loop=0&playlist=${videoPlaylist.join(',')}&showinfo=0`; iframe.frameborder = '0'; iframe.allowfullscreen = true; videoPlayerContainer.appendChild(iframe);
-}
-function loadVideoPlaylist() {
-    fetch('videos.json').then(response => response.json()).then(videos => { videoPlaylist = videos; if (videoPlaylist.length > 0) { currentVideoIndex = Math.floor(Math.random() * videoPlaylist.length); loadYouTubeVideo(videoPlaylist[currentVideoIndex]); } else if (videoPlayerContainer) { videoPlayerContainer.textContent = "No videos in playlist."; } }).catch(error => { console.error("Error fetching video playlist:", error); if (videoPlayerContainer) videoPlayerContainer.textContent = "Failed to load video playlist."; });
-}
+
+// REMOVED: function loadYouTubeVideo(videoId) { ... }
+// REMOVED: function loadVideoPlaylist() { ... }
+
 function debounce(func, wait) {
     let timeout; return function(...args) { const context = this; clearTimeout(timeout); timeout = setTimeout(() => func.apply(context, args), wait); };
 }
@@ -369,7 +393,7 @@ function attachEventListeners() {
 
     console.log("Attaching event listeners..."); // DEBUG
 
-    // *** MODIFIED Legend Listener to call 3D highlight ***
+    // *** MODIFIED Legend Listener (Unchanged) ***
     if (legendItems) {
         legendItems.forEach(item => {
             item.addEventListener('click', () => {
@@ -389,7 +413,7 @@ function attachEventListeners() {
         });
     }
 
-    // === UPDATED: Toggle Button Listener for Background Effect ===
+    // === UPDATED: Toggle Button Listener for Background Effect (Unchanged) ===
     if (matrixRainToggleButton) {
         matrixRainToggleButton.addEventListener('click', () => {
             backgroundEffectEnabled = !backgroundEffectEnabled; // Toggle the state
@@ -402,15 +426,6 @@ function attachEventListeners() {
             }
         });
     }
-    /* REMOVED Old Matrix Rain Toggle Listener
-    if (matrixRainToggleButton) {
-        matrixRainToggleButton.addEventListener('click', () => {
-            matrixRainEnabled = !matrixRainEnabled;
-            if (matrixRainEnabled) { createMatrixRain(); if (matrixRainContainer) matrixRainContainer.style.visibility = 'visible'; matrixRainToggleButton.textContent = 'RAIN: ON'; updateMatrixRain(); } else { if (matrixRainContainer) matrixRainContainer.style.visibility = 'hidden'; matrixRainToggleButton.textContent = 'RAIN: OFF'; if (matrixRainContainer) matrixRainContainer.innerHTML = ''; }
-        });
-    }
-    */
-    // =========================================================
 
     // *** Spin Toggle Listener (Unchanged) ***
     if (spinToggleButton) {
@@ -426,10 +441,27 @@ function attachEventListeners() {
         });
     }
 
-    // *** Next Video Button Listener (Unchanged) ***
-    if (nextVideoButton) {
-        nextVideoButton.addEventListener('click', () => { if (videoPlaylist.length > 0) { currentVideoIndex = (currentVideoIndex + 1) % videoPlaylist.length; loadYouTubeVideo(videoPlaylist[currentVideoIndex]); } });
+    // *** REMOVED Next Video Button Listener ***
+    // if (nextVideoButton) { ... }
+
+    // *** ADDED Toggle Custom Animations Button Listener ***
+    if (toggleCustomAnimationsButton && splitAnimationWrapper) {
+        toggleCustomAnimationsButton.addEventListener('click', () => {
+            customAnimationsEnabled = !customAnimationsEnabled; // Toggle the state
+
+            // Update visibility of the animation wrapper
+            splitAnimationWrapper.style.display = customAnimationsEnabled ? 'flex' : 'none';
+
+            // Update button text
+            toggleCustomAnimationsButton.textContent = customAnimationsEnabled ? 'ANIMATIONS: ON' : 'ANIMATIONS: OFF';
+
+            console.log(`Custom animations toggled: ${customAnimationsEnabled ? 'ON' : 'OFF'}`);
+        });
+    } else {
+            console.warn("Could not attach listener: Toggle button or animation wrapper not found.");
     }
+    // ============================================
+
 
     // *** Scan Button Listener (Unchanged) ***
     if (scanButton) {
@@ -461,16 +493,10 @@ function attachEventListeners() {
         });
     }
 
-    // === UPDATED: Resize Listener ===
+    // === UPDATED: Resize Listener (Unchanged) ===
     window.addEventListener('resize', debounce(() => {
         resizeBackgroundEffect(); // Call the resize function from the background module
         updateBarPositions();
     }, 250));
-    /* REMOVED Old Resize Listener Logic
-    window.addEventListener('resize', debounce(() => {
-        if (matrixRainEnabled) { createMatrixRain(); } // REMOVED this part
-        updateBarPositions();
-    }, 250));
-    */
-    // ==============================
-}
+
+} // END of attachEventListeners

@@ -1,11 +1,11 @@
 :root {
-    --navbar-shine-color: rgba(0, 255, 65, 0.08);
+    --navbar-shine-color: rgba(0, 255, 65, 0.08); /* Kept original for now */
   }
 
   .navbar {
       background-color: #111;
-      border-bottom: 2px solid #0f0;
-      box-shadow: 0 2px 5px #0f0;
+      border-bottom: 2px solid #008800; /* UPDATED from #0f0 */
+      box-shadow: 0 2px 5px #0f0; /* Kept original for now */
       padding: 10px 0;
       position: relative;
       z-index: 1000;
@@ -57,7 +57,7 @@
 
   .navbar-link {
       text-decoration: none;
-      color: #99ff99;
+      color: #99ff99; /* Kept original lighter green for now */
       font-family: 'Electrolize', monospace;
       font-size: 1.1em;
       position: relative;
@@ -70,7 +70,7 @@
 
   .navbar-link:hover,
   .navbar-item.dropdown.dropdown-active > .navbar-link.dropdown-toggle {
-      color: #0f0;
+      color: #0f0; /* Kept original hover color for now */
   }
 
   .navbar-link:not(.dropdown-toggle)::after {
@@ -80,7 +80,7 @@
       bottom: 5px;
       width: 0;
       height: 2px;
-      background-color: #0f0;
+      background-color: #008800; /* UPDATED from #0f0 */
       transition: width 0.3s ease;
   }
   .navbar-link:not(.dropdown-toggle):hover::after {
@@ -104,8 +104,8 @@
       padding: 10px 0;
       margin: 0;
       background-color: rgba(10, 25, 10, 0.97);
-      border: 1px solid #0f0;
-      box-shadow: 0 5px 15px rgba(0, 255, 0, 0.25);
+      border: 1px solid #008800; /* UPDATED from #0f0 */
+      box-shadow: 0 5px 15px rgba(0, 255, 0, 0.25); /* Kept original shadow for now */
       position: absolute;
       top: calc(100% + 5px);
       left: 50%;
@@ -137,7 +137,7 @@
   .dropdown-item a {
       display: block;
       padding: 9px 20px;
-      color: #99ff99;
+      color: #99ff99; /* Kept original lighter green for now */
       text-decoration: none;
       font-family: 'Electrolize', monospace;
       font-size: 1em;
@@ -146,8 +146,8 @@
   }
 
   .dropdown-item a:hover {
-      background-color: rgba(0, 255, 0, 0.15);
-      color: #0f0;
+      background-color: rgba(0, 255, 0, 0.15); /* Kept original hover bg for now */
+      color: #0f0; /* Kept original hover color for now */
   }
 
   .brightness-slider-container {
@@ -160,21 +160,21 @@
   }
 
   .brightness-label {
-      color: #00ff00;
+      color: #008800; /* UPDATED from #00ff00 */
       font-family: 'Electrolize', monospace;
       font-size: 0.9em;
       white-space: nowrap;
   }
 
   #brightnessSlider {
-     appearance: none; width: 100px; height: 5px; background-color: #00ff00; outline: none; border-radius: 0; cursor: pointer; transition: background-color 0.2s ease, box-shadow 0.2s ease;
+     appearance: none; width: 100px; height: 5px; background-color: #008800; /* UPDATED from #00ff00 */ outline: none; border-radius: 0; cursor: pointer; transition: background-color 0.2s ease, box-shadow 0.2s ease;
   }
   #brightnessSlider:hover,
   #brightnessSlider:focus {
-      background-color: #00ff00; box-shadow: 0 0 5px #00ff00;
+      background-color: #00ff00; /* Kept original hover/focus for now */ box-shadow: 0 0 5px #00ff00; /* Kept original hover/focus shadow for now */
   }
-  #brightnessSlider::-webkit-slider-thumb { appearance: none; width: 4px; height: 15px; background-color: #00ff00; cursor: pointer; border-radius: 0; }
-  #brightnessSlider::-moz-range-thumb { appearance: none; width: 4px; height: 15px; background-color: #00ff00; cursor: pointer; border-radius: 0; border: none; }
+  #brightnessSlider::-webkit-slider-thumb { appearance: none; width: 4px; height: 15px; background-color: #008800; /* UPDATED from #00ff00 */ cursor: pointer; border-radius: 0; }
+  #brightnessSlider::-moz-range-thumb { appearance: none; width: 4px; height: 15px; background-color: #008800; /* UPDATED from #00ff00 */ cursor: pointer; border-radius: 0; border: none; }
 
   @keyframes navbar-shine-horizontal {
       0% { transform: translateX(-100%); }

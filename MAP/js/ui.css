@@ -1,3 +1,5 @@
+/* --- START OF FILE ui.css --- */
+
 #ui-container {
     position: absolute !important;
     top: 10px !important;
@@ -17,7 +19,7 @@
 .stations-container, .preview-container, .text-container, .outposts-container {
     width: 24.5% !important;
     height: 216px !important;
-    border: 1px solid #00ff00 !important;
+    border: 1px solid #008800 !important; /* UPDATED from #00ff00 */
     margin: 0 !important;
     box-sizing: border-box !important;
     display: flex !important;
@@ -28,7 +30,7 @@
     list-style: none;
     padding: 10px;
     margin: 0;
-    color: #00ff00;
+    color: #008800; /* UPDATED from #00ff00 */
     font-family: 'Electrolize', monospace;
     flex: 1; /* Allow the list to take available space */
 }
@@ -60,8 +62,8 @@
 
 .pagination-button {
     background-color: #000;
-    color: #00ff00;
-    border: 1px solid #00ff00;
+    color: #008800; /* Kept original */
+    border: 1px solid #008800; /* Kept original */
     padding: 5px 10px;
     cursor: pointer;
     font-family: 'Electrolize', monospace;
@@ -70,7 +72,7 @@
 }
 
 .pagination-button:hover {
-    background-color: #00ff00;
+    background-color: #00ff00; /* Kept original */
     color: #000;
 }
 
@@ -96,7 +98,7 @@
 
 .text-container {
     padding: 10px;
-    color: #00ff00;
+    color: #00ff00; /* Kept original */
     font-family: 'Courier New', monospace;
     font-size: 0.9em;
     overflow-y: auto !important;
@@ -111,7 +113,7 @@
 
 /* Blinking cursor effect for the <span> */
 .cursor {
-    color: #00ff00;
+    color: #00ff00; /* Kept original */
     font-family: 'Courier New', monospace;
     font-size: 0.9em;
     animation: blink 1s infinite;
@@ -127,7 +129,7 @@
 .callsign-line::before,
 .desc-line::before {
     content: ">";
-    color: #00ff00; /* Green for the > */
+    color: #00ff00; /* Kept original */
 }
 
 /* Default color for the main content (labels and values) */
@@ -135,7 +137,7 @@
 .desc-line,
 .name-line,
 .callsign-line {
-    color: #00ff00; /* Default green for labels */
+    color: #00ff00; /* Kept original */
 }
 
 /* Specific colors for the name value based on type */
@@ -153,3 +155,5 @@
 .callsign-line .callsign-value {
     color: #ffffff; /* White for the callsign value */
 }
+
+/* --- END OF FILE ui.css --- */

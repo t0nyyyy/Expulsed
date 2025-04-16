@@ -35,7 +35,7 @@ body, html {
     left: 50%;
     transform: translateX(-50%); /* Center the wide canvas */
     width: 200%; /* Matches canvas.width = window.innerWidth * 2 */
-    height: 100%;
+    height: 110%;
 }
 
 .jagged-crater {
