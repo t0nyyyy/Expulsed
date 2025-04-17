@@ -1,23 +1,20 @@
 .contact-body {
     background-color: #111111;
-    color: #008800; /* UPDATED from #00ff66 */
+    color: #008800;
     font-family: 'Electrolize', 'Courier New', monospace;
     margin: 0;
     padding: 0;
     text-align: center;
     width: 100%;
-    overflow: hidden; /* Added to match index page and prevent scrollbars */
+    overflow: hidden;
 }
-
 html, body {
     width: 100%;
     height: 100%;
 }
-
 * {
     box-sizing: border-box;
 }
-
 #page-content-wrapper {
     display: flex;
     flex-direction: column;
@@ -27,19 +24,14 @@ html, body {
     padding: 15px 0 10px 0;
     position: relative;
     max-height: calc(100vh - 60px);
-    overflow-y: hidden;
+    overflow-y: hidden; /* Keep hidden as original, fixed icons are outside this wrapper */
     width: 100%;
-    max-width: 1200px; /* Reverted to original to match navbar.css */
-    margin: 0 auto; /* Retained for centering */
+    max-width: 1200px;
+    margin: 0 auto;
 }
-
-/* Fix for brightness slider position */
 .brightness-slider-container {
-    margin-right: -20px; /* Pulls the slider left from the right edge */
-    /* Keeps margin-left: auto from navbar.css, just adjusts right offset */
+    margin-right: -20px;
 }
-
-/* New styles for error messages */
 .error-message {
     display: block;
     color: #ff4444;
@@ -47,21 +39,16 @@ html, body {
     margin-top: 5px;
     text-shadow: 0 0 3px #ff4444;
 }
-
-/* Loading spinner animation */
-@keyframes spin {
+@keyframes spin { /* For loading spinner */
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-
 .loading-spinner {
     display: inline-block;
     margin-right: 10px;
     animation: spin 1s linear infinite;
-    color: #008800; /* UPDATED from #00ff66 */
+    color: #008800;
 }
-
-/* Hologram container with both horizontal and vertical scrollbar fixes */
 .hologram-container {
     width: 100%;
     display: flex;
@@ -74,53 +61,40 @@ html, body {
     overflow-x: hidden;
     overflow-y: hidden;
 }
-
-/* Glitch Effect on Text */
 @keyframes glitch {
-    /* UPDATED base shadow from #00ff66 */
     0% { text-shadow: 0px 0px 5px #008800, 0px 0px 10px #008800; }
-    /* UPDATED first shadow from #00ff66 */
     50% { text-shadow: 2px -2px 5px #008800, -2px 2px 10px #ff00ff; }
-    /* UPDATED first shadow from #00ff66 */
     100% { text-shadow: -2px 2px 5px #008800, 2px -2px 10px #00ffff; }
 }
-
 .glitch-text {
     animation: glitch 0.15s infinite alternate;
 }
-
-/* Hologram element with spinning animation */
 .hologram {
     width: 400px;
     height: 300px;
     position: relative;
     transform-style: preserve-3d;
-    animation: spin 35s linear infinite;
+    /* --- FIX: Correct animation name used here --- */
+    animation: spinHologram 35s linear infinite;
+    /* -------------------------------------------- */
     margin-left: -3vw;
     margin-top: 17px;
 }
-
-/* ASCII Art inside hologram - FIXED: Made selector more specific */
 .hologram .ascii-art {
-    color: #008800; /* UPDATED from #00ff66 */
+    color: #008800;
     font-size: 14px;
-    /* UPDATED shadows from #00ff66 */
     text-shadow: 0 0 5px #008800, 0 0 10px #008800;
     opacity: 0.8;
     animation: pulse 2s ease-in-out infinite;
     white-space: pre;
     line-height: 1.2;
 }
-
-/* Contact form wrapper - now centered */
 .contact-form-wrapper {
     width: 80%;
     max-width: 600px;
     position: relative;
     margin: 0 auto;
 }
-
-/* SVG Border styling */
 .contact-svg-border {
     position: absolute;
     top: 0;
@@ -128,29 +102,25 @@ html, body {
     width: 100%;
     height: 100%;
     z-index: 1;
+    pointer-events: none;
 }
-
 .svg-border-path {
-    fill: rgba(0, 20, 0, 0.7); /* Kept original */
-    stroke: #008800; /* UPDATED from #00ff66 */
+    fill: rgba(0, 20, 0, 0.7);
+    stroke: #008800;
     stroke-width: 2;
-    filter: drop-shadow(0 0 5px #008800); /* UPDATED from #00ff66 */
+    filter: drop-shadow(0 0 5px #008800);
 }
-
 .svg-node {
-    fill: #008800; /* UPDATED from #00ff66 */
+    fill: #008800;
     animation: pulse 2s ease-in-out infinite alternate;
 }
-
 .scan-line {
-    stroke: #008800; /* UPDATED from #00ff66 */
+    stroke: #008800;
     stroke-width: 1;
     stroke-dasharray: 10 5;
     opacity: 0.7;
     animation: scan 3s linear infinite;
 }
-
-/* Contact content container */
 .contact-content {
     position: relative;
     z-index: 2;
@@ -164,17 +134,14 @@ html, body {
     padding-top: 40px;
     box-sizing: border-box;
 }
-
 .contact-content h1 {
-    color: #008800; /* UPDATED from #00ff66 */
-    text-shadow: 0 0 10px #008800; /* UPDATED from #00ff66 */
+    color: #008800;
+    text-shadow: 0 0 10px #008800;
     margin-top: 0;
     margin-bottom: 20px;
     letter-spacing: 3px;
     text-align: center;
 }
-
-/* Form styling */
 .form-container {
     width: 100%;
     max-width: 500px;
@@ -183,57 +150,48 @@ html, body {
     flex-direction: column;
     flex: 1;
 }
-
 #contactForm {
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 100%;
 }
-
 .form-group {
     margin-bottom: 20px;
     text-align: left;
     width: 100%;
 }
-
 .form-group label {
     display: block;
     margin-bottom: 5px;
     font-size: 14px;
     letter-spacing: 1px;
-    text-shadow: 0 0 5px #008800; /* UPDATED from #00ff66 */
+    text-shadow: 0 0 5px #008800;
 }
-
 .futuristic-input {
     width: 100%;
     padding: 10px 15px;
-    background-color: rgba(0, 0, 0, 0.7); /* Kept original */
-    border: 1px solid #008800; /* UPDATED from #00ff66 */
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #008800;
     border-radius: 0;
-    color: #008800; /* UPDATED from #00ff66 */
+    color: #008800;
     font-family: 'Electrolize', monospace;
     transition: all 0.3s ease;
-    /* Kept original rgba shadow */
     box-shadow: 0 0 5px rgba(0, 255, 102, 0.3);
     box-sizing: border-box;
 }
-
 .futuristic-input:focus {
     outline: none;
-    /* Kept original rgba shadow */
     box-shadow: 0 0 10px rgba(0, 255, 102, 0.7);
-    border-color: #00ff99; /* Kept original focus border */
+    border-color: #00ff99;
 }
-
 textarea.futuristic-input {
     resize: vertical;
 }
-
 .submit-btn {
-    background-color: rgba(0, 20, 0, 0.8); /* Kept original */
-    color: #008800; /* UPDATED from #00ff66 */
-    border: 1px solid #008800; /* UPDATED from #00ff66 */
+    background-color: rgba(0, 20, 0, 0.8);
+    color: #008800;
+    border: 1px solid #008800;
     padding: 12px 30px;
     font-family: 'Electrolize', monospace;
     letter-spacing: 2px;
@@ -246,7 +204,6 @@ textarea.futuristic-input {
     align-self: center;
     min-width: 200px;
 }
-
 .submit-btn:before {
     content: "";
     position: absolute;
@@ -254,95 +211,129 @@ textarea.futuristic-input {
     left: -100%;
     width: 100%;
     height: 100%;
-    /* Kept original rgba background */
     background: linear-gradient(90deg, transparent, rgba(0, 255, 102, 0.3), transparent);
     transition: all 0.5s;
 }
-
 .submit-btn:hover:before {
     left: 100%;
 }
-
 .submit-btn:hover {
-    background-color: rgba(0, 40, 0, 0.8); /* Kept original */
-    /* Kept original rgba shadow */
+    background-color: rgba(0, 40, 0, 0.8);
     box-shadow: 0 0 15px rgba(0, 255, 102, 0.5);
 }
 
+/* === START: Fixed Social Icons CSS === */
+.social-fixed-left {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    z-index: 1000;
+    width: auto;
+    padding: 15px;
+    box-sizing: border-box;
+}
+.social-fixed-right {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    left: auto;
+    z-index: 1000;
+    width: auto;
+    padding: 15px;
+    box-sizing: border-box;
+}
+.social-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.social-icon-link {
+    display: block;
+    line-height: 0;
+    margin-bottom: 11px;
+    position: relative;
+     width: 225px;
+     height: 225px;
+}
+.social-icon {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#discord-icon-img {
+     top: 15px;
+     left: 30px;
+}
+.text-link-base {
+    display: block;
+    color: #0f0;
+    text-decoration: none;
+    font-size: 0.825em;
+    text-align: center;
+    padding: 4px;
+    position: relative;
+    transition: color 0.2s;
+    width: 100%;
+}
+.text-link-base:hover {
+    color: #8f8;
+}
+#x-text-link {
+    right: 10px;
+}
+#discord-text-link {
+     left: 10px;
+}
+/* === END: Fixed Social Icons CSS === */
+
 /* Animations */
-@keyframes spin {
+@keyframes spinHologram { /* Correct name definition */
     0% { transform: rotateY(0deg); }
     100% { transform: rotateY(360deg); }
 }
-
 @keyframes pulse {
     0% { opacity: 0.5; }
     50% { opacity: 1; }
     100% { opacity: 0.5; }
 }
-
 @keyframes scan {
     0% { transform: translateY(0); }
-    100% { transform: translateY(540px); }
+    100% { transform: translateY(540px); } /* Adjust distance if needed */
 }
 
-/* Responsive design - FIXED: Made selectors more specific */
+/* Responsive design */
 @media (max-width: 1200px) {
-    .hologram .ascii-art {
-        font-size: 12px;
-    }
+    .hologram .ascii-art { font-size: 12px; }
 }
-
 @media (max-width: 992px) {
-    .hologram {
-        width: 350px;
-        height: 250px;
-    }
-
-    .hologram-container {
-        margin-bottom: -70px;
-    }
+    .hologram { width: 350px; height: 250px; }
+    .hologram-container { margin-bottom: -70px; }
 }
-
 @media (max-width: 768px) {
-    #page-content-wrapper {
-        padding: 30px 0 10px 0;
-    }
-
-    .contact-form-wrapper {
-        width: 95%;
-    }
-
-    .hologram .ascii-art {
-        font-size: 10px;
-    }
-
-    .hologram-container {
-        margin-bottom: -40px;
-    }
+    #page-content-wrapper { padding: 30px 0 10px 0; }
+    .contact-form-wrapper { width: 95%; }
+    .hologram .ascii-art { font-size: 10px; }
+    .hologram-container { margin-bottom: -40px; }
+    /* Consider responsive adjustments for fixed icons if needed */
 }
-
-/* Extra small screens */
 @media (max-width: 480px) {
-    .hologram {
-        width: 280px;
-        height: 200px;
-    }
-
-    .hologram .ascii-art {
-        font-size: 8px;
-    }
-
-    .contact-content {
-        padding: 15px;
-        padding-top: 30px;
-    }
-
-    .contact-form-wrapper {
-        height: 690px;
-    }
-
-    .hologram-container {
-        margin-bottom: -30px;
-    }
+    .hologram { width: 280px; height: 200px; }
+    .hologram .ascii-art { font-size: 8px; }
+    .contact-content { padding: 15px; padding-top: 30px; }
+    .contact-form-wrapper { height: auto; /* Changed from fixed height */ }
+    .hologram-container { margin-bottom: -30px; }
+    /* Example responsive adjustments for fixed icons */
+    .social-fixed-left, .social-fixed-right { padding: 5px; bottom: 5px; }
+    .social-fixed-left { left: 5px; }
+    .social-fixed-right { right: 5px; }
+    .social-icon-link { width: 150px; height: 150px; margin-bottom: 8px; } /* Example smaller size */
+    #discord-icon-img { top: 10px; left: 20px; } /* Scaled offsets */
+    .text-link-base { font-size: 0.7em; }
+    #x-text-link { right: 9px; } /* Scaled offsets */
+    #discord-text-link { left: 7px; } /* Scaled offsets */
 }

@@ -1,6 +1,6 @@
 {
   "storage": {
-    "description": "Central storage and logistics hub for Moon Crater Camp. Contains essential supplies, equipment, and resource reserves to support station operations and long-term habitation.",
+    "description": "Central storage and logistics hub for Moon Crater Camp. Contains essential supplies, equipment, and resource reserves to support outpost operations and long-term habitation.",
     "color": "#800080",
     "highlightColor": "#800080"
   },
@@ -15,22 +15,22 @@
     "highlightColor": "#ffff00"
   },
   "sickbay": {
-    "description": "Medical facility equipped for routine check-ups, emergency care, and treatment of station personnel. Includes advanced diagnostic tools and isolation units for containing contagions.",
+    "description": "Medical facility equipped for routine check-ups, emergency care, and treatment of outpost personnel. Includes advanced diagnostic tools and isolation units for containing contagions.",
     "color": "#00c3fe",
     "highlightColor": "#00c3fe"
   },
   "bunkhouse": {
-    "description": "Residential sector providing living quarters for station crew and visiting personnel. Designed for comfort and privacy within the compact and functional station layout.",
+    "description": "Residential sector providing living quarters for outpost crew and visiting personnel. Designed for comfort and privacy within the compact and functional outpost layout.",
     "color": "#00ff00",
     "highlightColor": "#00ff00"
   },
   "canteen": {
-    "description": "Communal dining and recreation area where station personnel can relax, socialize, and enjoy meals. Serves as a central gathering point to foster community and morale.",
+    "description": "Communal dining and recreation area where oustpost personnel can relax, socialize, and enjoy meals. Serves as a central gathering point to foster community and morale.",
     "color": "#a9a9a9",
     "highlightColor": "#a9a9a9"
   },
   "gravity-generator": {
-    "description": "Houses the station's gravity generation technology, maintaining Earth-like gravity within the habitable sections of Moon Crater Camp. Essential for long-term health and operational efficiency.",
+    "description": "Houses the outpost's gravity generation technology, maintaining Earth-like gravity within the habitable sections of Moon Crater Camp. Essential for long-term health and operational efficiency.",
     "color": "#ffffff",
     "highlightColor": "#ffffff"
   }

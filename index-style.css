@@ -10,18 +10,15 @@
     position: relative;
     overflow: hidden;
 }
-
 #page-content-wrapper {
     position: relative;
     width: 100%;
-    /* Adjusted height to account for navbar */
-    height: calc(100vh - 60px); /* Assuming navbar is 60px, adjust if needed */
+    height: calc(100vh - 60px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden; /* Changed from auto to hidden to prevent scrollbars if content overflows slightly */
+    overflow: hidden;
 }
-
 .homepage-content {
     padding: 0;
     color: #c0ffc0;
@@ -32,14 +29,11 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    /* height: calc(100vh - 260px); REMOVED THIS LINE - let content flow within parent */
-    position: relative; /* Kept relative positioning */
+    position: relative;
 }
-
 .homepage-content h1 {
     color: #00ff00;
 }
-
 #ascii-art-container {
     position: absolute;
     z-index: 100;
@@ -50,15 +44,12 @@
     overflow-x: visible;
     overflow-y: hidden;
     max-height: 50vh;
-
-    /* Initial position (for larger screens - will be overridden) */
     top: 5vh;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
     max-width: none;
 }
-
 #ascii-art-container svg {
     display: block;
     margin: 0 auto;
@@ -66,7 +57,6 @@
     height: auto;
     transform-origin: center top;
 }
-
 #movable-text-container {
     position: absolute;
     width: 90%;
@@ -79,7 +69,6 @@
     overflow: hidden;
     text-align: left;
 }
-
 #movable-text-container .text-content {
     padding: 15px;
     font-family: 'Electrolize', monospace;
@@ -89,146 +78,157 @@
     white-space: pre-wrap;
     text-align: center;
 }
-
 #movable-text-container .text-content p {
     margin: 0 0 0.5em 0;
 }
-
 #movable-text-container .text-content p:has(.neon-link),
 #movable-text-container .text-content p:has(mark),
 #movable-text-container .text-content p:has(.tech-highlight) {
     margin: 0 0 1.2em 0;
     line-height: 1.2;
 }
-
 #movable-text-container .neon-link,
 #movable-text-container mark,
 #movable-text-container .tech-highlight {
     display: inline-block;
     padding: 2px 0;
 }
-
 #movable-text-container .example-link {
     color: #00ff00;
     text-decoration: none;
     transition: color 0.3s ease;
 }
-
 #movable-text-container .example-link:hover {
     color: #c0ffc0;
     text-decoration: underline;
 }
-
 #movable-text-container .tech-highlight {
     background-color: rgba(0, 255, 0, 0.15);
     padding: 2px 5px;
     border-radius: 3px;
     font-weight: bold;
 }
-
 #movable-text-container mark {
     background-color: rgba(0, 255, 0, 0.5);
     color: inherit;
 }
-
 #movable-text-container .neon-link {
     color: #00ff00;
     text-decoration: none;
     text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
     transition: text-shadow 0.3s ease, color 0.3s ease;
 }
-
 #movable-text-container .neon-link:hover {
     color: #c0ffc0;
     text-shadow: 0 0 7px #c0ffc0, 0 0 14px #c0ffc0, 0 0 21px #c0ffc0;
 }
 
-/* DELETED ALL cyberpunk-animations-stack-container and related styles */
-/* DELETED #bravo styles */
-/* DELETED #alpha styles */
+/* === START: Fixed Social Icons CSS === */
+.social-fixed-left {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    z-index: 1000;
+    width: auto;
+    padding: 15px;
+    box-sizing: border-box;
+}
+.social-fixed-right {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    left: auto;
+    z-index: 1000;
+    width: auto;
+    padding: 15px;
+    box-sizing: border-box;
+}
+.social-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.social-icon-link {
+    display: block;
+    line-height: 0;
+    margin-bottom: 11px;
+    position: relative;
+     width: 225px;
+     height: 225px;
+}
+.social-icon {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#discord-icon-img {
+     top: 15px;
+     left: 30px;
+}
+.text-link-base {
+    display: block;
+    color: #0f0;
+    text-decoration: none;
+    font-size: 0.825em;
+    text-align: center;
+    padding: 4px;
+    position: relative;
+    transition: color 0.2s;
+    width: 100%;
+}
+.text-link-base:hover {
+    color: #8f8;
+}
+#x-text-link {
+    right: 10px;
+}
+#discord-text-link {
+     left: 10px;
+}
+/* === END: Fixed Social Icons CSS === */
 
 /* Media Queries for #ascii-art-container */
-
-/* Extra Large Screens (4K) - UNCHANGED */
 @media (min-width: 1921px) {
-     #ascii-art-container {
-        top: -7vh;
-        left: 51%;
-         transform: translateX(-50%) scale(1.3);
-    }
+     #ascii-art-container { top: -7vh; left: 51%; transform: translateX(-50%) scale(1.3); }
 }
-
-/* 1080p Screens - UNCHANGED */
 @media (min-width: 1601px) and (max-width: 1920px) {
-  #ascii-art-container {
-	  top: 1vh;
-      left: 51%;
-      transform: translateX(-50%) scale(1.5);
-    }
+  #ascii-art-container { top: 1vh; left: 51%; transform: translateX(-50%) scale(1.5); }
 }
-
-/* Large Screens (e.g., Desktops) - ADJUSTED */
 @media (min-width: 1201px) and (max-width: 1600px) {
-    #ascii-art-container {
-        top: 1vh;  /*  Slightly adjusted to be closer to 1080p */
-        left: 51%;  /*  Kept consistent */
-        transform: translateX(-50%) scale(1.4); /* Interpolated between 1.5 and 1.3 */
-    }
+    #ascii-art-container { top: 1vh; left: 51%; transform: translateX(-50%) scale(1.4); }
 }
-
-/* Medium Screens (e.g., Tablets) - ADJUSTED */
 @media (min-width: 769px) and (max-width: 1200px) {
-    #ascii-art-container {
-        top: 2vh;  /*  Adjusted upward slightly */
-        left: 50%;  /* Centered */
-        transform: translateX(-50%) scale(1.2); /* Interpolated */
-    }
+    #ascii-art-container { top: 2vh; left: 50%; transform: translateX(-50%) scale(1.2); }
 }
-
-/* Small Screens (e.g., Phones) - ADJUSTED */
 @media (max-width: 768px) {
-    #ascii-art-container {
-        top: 3vh;  /* Adjusted upward */
-        left: 50%;  /* Centered */
-        transform: translateX(-50%) scale(1.0); /* Increased slightly */
-        width: 95%; /* Kept */
-    }
+    #ascii-art-container { top: 3vh; left: 50%; transform: translateX(-50%) scale(1.0); width: 95%; }
+    /* Consider responsive adjustments for fixed icons if needed */
 }
-
-/* Extra Small Screens - ADJUSTED */
 @media (max-width: 480px) {
-    #ascii-art-container {
-        top: 5vh;   /* Adjusted upward */
-        left: 50%;   /* Centered */
-		transform: translateX(-50%) scale(0.9);  /* Increased slightly */
-    }
+    #ascii-art-container { top: 5vh; left: 50%; transform: translateX(-50%) scale(0.9); }
+    /* Example responsive adjustments for fixed icons */
+    .social-fixed-left, .social-fixed-right { padding: 5px; bottom: 5px; }
+    .social-fixed-left { left: 5px; }
+    .social-fixed-right { right: 5px; }
+    .social-icon-link { width: 150px; height: 150px; margin-bottom: 8px; }
+    #discord-icon-img { top: 10px; left: 20px; }
+    .text-link-base { font-size: 0.7em; }
+    #x-text-link { right: 7px; }
+    #discord-text-link { left: 7px; }
 }
 
 /* Height-based Media Queries */
-
-/* 1080p Height - UNCHANGED */
 @media (max-height: 1080px) {
-    #ascii-art-container {
-        top: -15vh;
-        transform: translateX(-50%) scale(0.9);
-        left: 46%;
-    }
+    #ascii-art-container { top: -15vh; transform: translateX(-50%) scale(0.9); left: 46%; }
 }
-
-/* 900px Height - ADJUSTED */
 @media (max-height: 900px) {
-    #ascii-art-container {
-        top: -8vh; /* Adjusted proportionally */
-        left: 50%;
-        transform: translateX(-50%) scale(1.1);
-    }
+    #ascii-art-container { top: -8vh; left: 50%; transform: translateX(-50%) scale(1.1); }
 }
-
-/* 750px Height - ADJUSTED */
 @media (max-height: 750px) {
-    #ascii-art-container {
-        top: 0vh; /* Adjusted proportionally */
-        left: 50%;
-        transform: translateX(-50%) scale(1.2);
-    }
+    #ascii-art-container { top: 0vh; left: 50%; transform: translateX(-50%) scale(1.2); }
 }
