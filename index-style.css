@@ -127,7 +127,7 @@
 .social-fixed-left {
     position: fixed;
     bottom: 15px;
-    left: 15px;
+    left: 5px;
     z-index: 1000;
     width: auto;
     padding: 15px;
