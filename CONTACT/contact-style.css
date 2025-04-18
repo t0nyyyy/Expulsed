@@ -1,3 +1,4 @@
+/* --- START OF contact-style.css --- */
 .contact-body {
     background-color: #111111;
     color: #008800;
@@ -74,9 +75,7 @@ html, body {
     height: 300px;
     position: relative;
     transform-style: preserve-3d;
-    /* --- FIX: Correct animation name used here --- */
     animation: spinHologram 35s linear infinite;
-    /* -------------------------------------------- */
     margin-left: -3vw;
     margin-top: 17px;
 }
@@ -222,8 +221,8 @@ textarea.futuristic-input {
     box-shadow: 0 0 15px rgba(0, 255, 102, 0.5);
 }
 
-/* === START: Fixed Social Icons CSS === */
-.social-fixed-left {
+/* === START: Fixed Social Icons CSS (Only Left) === */
+.social-fixed-left { /* Styles for the remaining X icon */
     position: fixed;
     bottom: 15px;
     left: 5px;
@@ -232,23 +231,16 @@ textarea.futuristic-input {
     padding: 15px;
     box-sizing: border-box;
 }
-.social-fixed-right {
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    left: auto;
-    z-index: 1000;
-    width: auto;
-    padding: 15px;
-    box-sizing: border-box;
-}
-.social-item {
+
+/* Removed .social-fixed-right rule */
+
+.social-item { /* General style applies to the item in .social-fixed-left */
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
 }
-.social-icon-link {
+.social-icon-link { /* General style applies to the link in .social-fixed-left */
     display: block;
     line-height: 0;
     margin-bottom: 11px;
@@ -256,7 +248,7 @@ textarea.futuristic-input {
      width: 225px;
      height: 225px;
 }
-.social-icon {
+.social-icon { /* General style applies to the icon in .social-fixed-left */
     width: 100%;
     height: 100%;
     display: block;
@@ -265,11 +257,10 @@ textarea.futuristic-input {
     top: 0;
     left: 0;
 }
-#discord-icon-img {
-     top: 15px;
-     left: 30px;
-}
-.text-link-base {
+
+/* Removed #discord-icon-img rule */
+
+.text-link-base { /* General style applies to the text link in .social-fixed-left */
     display: block;
     color: #0f0;
     text-decoration: none;
@@ -283,16 +274,16 @@ textarea.futuristic-input {
 .text-link-base:hover {
     color: #8f8;
 }
-#x-text-link {
+#x-text-link { /* Specific offset for X text link */
     right: 10px;
 }
-#discord-text-link {
-     left: 10px;
-}
+
+/* Removed #discord-text-link rule */
+
 /* === END: Fixed Social Icons CSS === */
 
 /* Animations */
-@keyframes spinHologram { /* Correct name definition */
+@keyframes spinHologram {
     0% { transform: rotateY(0deg); }
     100% { transform: rotateY(360deg); }
 }
@@ -319,21 +310,33 @@ textarea.futuristic-input {
     .contact-form-wrapper { width: 95%; }
     .hologram .ascii-art { font-size: 10px; }
     .hologram-container { margin-bottom: -40px; }
-    /* Consider responsive adjustments for fixed icons if needed */
+    /* Removed responsive rules specifically for .social-fixed-right */
 }
 @media (max-width: 480px) {
     .hologram { width: 280px; height: 200px; }
     .hologram .ascii-art { font-size: 8px; }
     .contact-content { padding: 15px; padding-top: 30px; }
-    .contact-form-wrapper { height: auto; /* Changed from fixed height */ }
+    .contact-form-wrapper { height: auto; }
     .hologram-container { margin-bottom: -30px; }
-    /* Example responsive adjustments for fixed icons */
-    .social-fixed-left, .social-fixed-right { padding: 5px; bottom: 5px; }
-    .social-fixed-left { left: 5px; }
-    .social-fixed-right { right: 5px; }
-    .social-icon-link { width: 150px; height: 150px; margin-bottom: 8px; } /* Example smaller size */
-    #discord-icon-img { top: 10px; left: 20px; } /* Scaled offsets */
-    .text-link-base { font-size: 0.7em; }
-    #x-text-link { right: 9px; } /* Scaled offsets */
-    #discord-text-link { left: 7px; } /* Scaled offsets */
+
+    /* Keep responsive adjustments ONLY for the remaining LEFT icon */
+    .social-fixed-left {
+        padding: 5px;
+        bottom: 5px;
+        left: 5px;
+    }
+    /* Apply responsive adjustments to elements within .social-fixed-left */
+    .social-fixed-left .social-icon-link {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 8px;
+    }
+    .social-fixed-left .text-link-base {
+        font-size: 0.7em;
+    }
+    .social-fixed-left #x-text-link {
+        right: 9px; /* Scaled offsets */
+    }
+    /* Removed responsive rules for elements that were inside .social-fixed-right */
 }
+/* --- END OF contact-style.css --- */
