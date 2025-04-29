@@ -226,7 +226,7 @@
 
 /* Height-based media queries */
 @media (max-height: 1080px) {
-    #ascii-art-container { top: -15vh; transform: translateX(-50%) scale(0.9); }
+    #ascii-art-container { top: -15vh; transform: translateX(-50%) scale(0.9); left: 46%; } 
 }
 @media (max-height: 900px) {
     #ascii-art-container { top: -8vh; transform: translateX(-50%) scale(1.1); }

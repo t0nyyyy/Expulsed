@@ -1,26 +1,226 @@
 [
-    {
-      "term": "BUNKHOUSE 1",
-      "definition": "A basic living quarters, often in a shared space, designated as Bunkhouse 1."
-    },
-    {
-      "term": "BUNKHOUSE 2",
-      "definition": "Similar to Bunkhouse 1, but this specific bunkhouse is designated as Bunkhouse 2 and might have slightly different features or location."
-    },
-    {
-      "term": "CYBERSPACE",
-      "definition": "A digital realm or virtual reality, often depicted in cyberpunk settings as a vast network of interconnected computers and data."
-    },
-    {
-      "term": "NEON CITY",
-      "definition": "A city characterized by bright, flashing neon lights, often associated with futuristic and cyberpunk aesthetics."
-    },
-    {
-      "term": "DROID",
-      "definition": "Short for 'android', a robot with a human-like form, often used for various tasks in futuristic settings."
-    },
-    {
-      "term": "MECH",
-      "definition": "A large, piloted robot, typically used for combat or heavy labor, often depicted in science fiction."
-    }
-  ]
+  {
+    "term": "Andromeda’s Tears",
+    "definition": "A visually stunning cocktail blending various liquors to capture the galaxy's beauty and mystery. The recipe uses vodka as a clean base, blue Curacao for deep space colour, elderflower liqueur for floral sweetness, and lemon juice for balance. Sparkling water adds fizz, and optional edible glitter creates a cosmic shimmer. This drink balances sweetness and tartness, embodying the Andromeda Galaxy's essence."
+  },
+  {
+    "term": "AstroGlider",
+    "definition": "A high-spec backpack equipping station personnel for zero-G. Integrated retractable thrusters handle navigation, while a magnetic dock secures users for EVA operations. With an HUD, expandable cargo space, and built-in sensors, it's vital for security, logistics, and maintenance. Its sleek form ensures manoeuvrability in tight spaces – a leap forward in personal space mobility."
+  },
+  {
+    "term": "AstroPods",
+    "definition": "Compact, portable earbuds built for lunar conditions, equipped with a built-in receiver for local radio stations. These sleek devices let workers tune into broadcasts from the Moon and neighbouring stations. Lightweight yet rugged, AstroPods are essential for miners seeking a brief reprieve from their exhausting reality, offering a soundtrack to their struggles and a connection to life beyond the regolith."
+  },
+  {
+    "term": "Bogdan’s Rest",
+    "definition": "A tax-free haven orbiting Mars' L2 Lagrange point, home to over a million residents. Officially Отдых Богдана (“God’s gift” in Slavic), it’s a chaotic refuge for miners, traders, and fugitives. This torus-shaped station has eight spokes radiating from the Yadro Central hub (docking/logistics). The spokes house The Warrens (working-class container homes) and support the rotating habitation ring providing Earth-like gravity. Zone Alpha and Zone Bravo, at opposite ends, manage life support and utilities, maintaining station balance. The lawless Freeport district thrives separately. Independent of corporate control, its registry is ML2-GOD-BR."
+  },
+  {
+    "term": "Bunkhouse",
+    "definition": "A cramped room designed to accommodate forty weary workers. The air is thick with the scent of sweat and regolith, mingling with the faint aroma of slop that lingered in the corners."
+  },
+  {
+    "term": "Carbon Spoke",
+    "definition": "A high-tech weapons shop specializing in advanced carbon fibre and meta-alloy firearms, CQB gear, and sophisticated equipment. The compact layout includes a main showroom and a backroom for repairs, storage, and discreet services. Operations are streamlined by automated setups like robotic repair arms, AI inventory management, and weapon-testing droids. Carbon Spoke serves a diverse clientele needing lightweight, durable weapons, non-lethal options, or rare, augmented items, making it a key source for reliable, innovative armaments."
+  },
+  {
+    "term": "Cielo de Drogas (Sky of Drugs)",
+    "definition": "A movie franchise following a crew of smugglers as they navigate the treacherous underworld of space narcotics, where loyalty is as fleeting as a shooting star."
+  },
+  {
+    "term": "Clockwork",
+    "definition": "A potent synthetic cannabinoid marketed as a legal marijuana alternative. Sold in vibrant wrappers, its effects—ranging from euphoria to intense anxiety and paranoia—can be unpredictable and far stronger than natural cannabis. The name hints at its ability to distort time perception, potentially leaving users feeling like their minds are precision gears in a chemical haze."
+  },
+  {
+    "term": "COSMO TO COSMO LM",
+    "definition": "An interplanetary radio network broadcasting from a cloaked station near Mars. Its flagship show, “Quasar Queries” with Bart Quasar, delves into fringe science, unexplained phenomena, and cosmic conspiracies. Employing LM (Laser Modulation) for secure Martian caller communication and powerful microwaves for system-wide reach, it's a lifeline for isolated listeners. Known for late-night broadcasts fostering intimate caller interactions across vast distances, its minimal effects and Quasar's voice defined a unique style influencing space colonists and fringe researchers."
+  },
+  {
+    "term": "Cosmic Country",
+    "definition": "Yeehaw meets the Milky Way! This unique genre blends the heartfelt storytelling of traditional country music with the vast, lonely expanse of space. Popular songs explore themes of lost love, broken spaceships, and the isolation of lunar life, all set against a backdrop of twangy guitars and synth-infused melodies. Cosmic Country hits right for those moments when you need a good cry under the stars or want to reminisce about better days while navigating the unforgiving nature of life on the Moon."
+  },
+  {
+    "term": "Cosmic Rest Day",
+    "definition": "Every fortnight, lunar miners are granted a much-anticipated reprieve: Cosmic Rest Day. This day off is a time for workers to shake off the regolith of their gruelling shifts and indulge in well-deserved leisure. As the lunar sun cycle turns, miners celebrate their temporary break from the monotony of ice mining and the uncompromising realities of life."
+  },
+  {
+    "term": "Crater Camp",
+    "definition": "A bleak, overcrowded complex of barracks where workers eke out their existence between grinding shifts, their dreams of prosperity as frozen as the landscape outside."
+  },
+  {
+    "term": "Crater Cruiser",
+    "definition": "This rugged, functional vehicle ferries workers across the treacherous lunar terrain. Its worn seats and rattling frame serve as a constant reminder of the brutal existence on the Moon."
+  },
+  {
+    "term": "Eclipse",
+    "definition": "A Bogdan’s Rest-exclusive brand crafting parkas that fuse rugged utility with rebellious style. Made from repurposed materials (like old space suits) and innovative fabrics, they boast dark, shimmering designs with pulsing neon accents reflecting the station's twilight mood. Functional with hidden pockets and modern cuts, they subtly nod to the station’s eight-spoked torus design. More than clothing, Eclipse parkas signify identity, embodying the station's independent, defiant spirit and setting trends on Bogdan's Rest."
+  },
+  {
+    "term": "EL-X Corporation",
+    "definition": "A dominant force in space infrastructure and technology, owning all major space stations in Earth’s orbit and solidifying its control over orbital operations. The corporation is renowned for providing advanced artificial intelligence systems that ensure technological superiority across various sectors. EL-X plays a pivotal role in aerospace, designing and manufacturing spacecraft that facilitate interplanetary travel. Their telecommunications division maintains an extensive network of communication satellites and systems, enabling seamless global and interplanetary communications. Additionally, the corporation is heavily involved in infrastructure development, both on Earth and other celestial bodies, as well as advanced tunnelling technologies crucial for subterranean projects. With its wide-ranging influence and technological prowess, EL-X stands as a formidable entity in the corporate landscape, shaping the future of human expansion into space."
+  },
+  {
+    "term": "E-LX Horizon",
+    "definition": "This lumbering transport vessel is the bane of every miner’s existence. Nicknamed “The Slow Bus,” it’s the lunar equivalent of a cattle car, ferrying miners between Earth and the Moon multiple times a day. Its purely functional design lacks any comfort or aesthetic appeal—a mobile prison cell underscoring the miners’ expendable status."
+  },
+  {
+    "term": "E-LX Hyperbaric Chambers",
+    "definition": "High-spec sleeping pods that accelerate healing and recovery. Crafted from next-generation composite materials, these sleek, cylindrical chambers offer a spacious and comfortable environment. Each pod incorporates a sophisticated gravity simulation mechanism that perfectly replicates Earth-like conditions, helping the body readjust and strengthen after prolonged exposure to lunar microgravity."
+  },
+  {
+    "term": "Empyrean",
+    "definition": "A marvel of human engineering floating above Venus’s hellish surface. Empyrean takes advantage of Venus’s natural 90% Earth-like gravity, making dedicated artificial gravity unnecessary. Shielded by acid-resistant materials, this city in the clouds is a network of interconnected, balloon-like habitats filled with a precise mixture of breathable air and hydrogen, supplying both living space and buoyancy."
+  },
+  {
+    "term": "G-CORE (Gyroscopic Compensation for Optimized Ride Experience)",
+    "definition": "A sophisticated inertial compensation mechanism in spacecraft seating. It uses miniaturised, high-speed gyroscopes spinning opposite the craft's acceleration to counteract G-forces. The setup includes electromagnetic field generators, adaptive algorithms, and a fluid suspension bed, calibrated to each occupant's mass. G-CORE significantly reduces physical stress during high-acceleration flight, offering a safer, more comfortable journey without vessel-wide artificial gravity."
+  },
+  {
+    "term": "Galactic Grog",
+    "definition": "The unofficial alcoholic drink of choice for miners and misfits on the Moon, Galactic Grog is a potent concoction brewed in the shadows of Crater Camp. Made from whatever ingredients can be scavenged—think reconstituted fruit juice, stolen sugar packets, and the occasional wild yeast—this illicit beverage packs a punch that can knock even the most hardened miner off their feet."
+  },
+  {
+    "term": "Galactic Sports Network (GSN)",
+    "definition": "Broadcasting from the far reaches of the universe and rebroadcasted from relay stations, GSN is the premier radio station for all things sports. Covering everything from zero-gravity fighting leagues to asteroid racing, this station keeps listeners informed about the latest events across various planets and moons. With expert commentary, in-depth analysis, and live updates on games happening in real-time, GSN is the go-to source for sports enthusiasts."
+  },
+  {
+    "term": "Gravity Adjustment Pods (GAPs)",
+    "definition": "Claustrophobic chambers found in Crater Camp’s sickbay, helping miners recover from the brutal cocktail of microgravity effects, work-related injuries, and lunar sickness. These cramped, sweat-scented pods are a necessary evil, alleviating vertigo, nausea, and bone density loss. Miners with fractured limbs, radiation burns, and space-induced anaemia lie side-by-side in these coffin-like contraptions, their bodies slowly readjusting to Earth-like gravity as mended bones knit and blood cells regenerate."
+  },
+  {
+    "term": "GRAVITAS",
+    "definition": "An advanced pharmaceutical cocktail formulated to mitigate extreme G-forces during high-stress space travel. The kit (pills and syringe) contains a vasoactive compound (prevents G-LOC), an erythropoietin analogue (boosts oxygen), nanites (reinforce capillaries, protect neurons), and anti-emetics (combat nausea). Effective but with side effects like visual floaters and temporary vision impairment, it's a demanding necessity for surviving extreme gravitational forces, unsuitable for frequent use."
+  },
+  {
+    "term": "Green Devil",
+    "definition": "A mysterious strain of herb rumoured to be cultivated in hidden lunar gardens, offering a calming respite from the bitter truths of mining life."
+  },
+  {
+    "term": "Harvest Hub",
+    "definition": "A sprawling industrial complex where Lunar Ice Harvesters are parked, maintained, and dispatched. Its constant hum of activity is a testament to the relentless pursuit of ice in the lunar wasteland."
+  },
+  {
+    "term": "HoloVision",
+    "definition": "Experience your favourite shows like never before with lifelike projections that make you feel part of the action! Available in various sizes, from pocket-sized personal units to room-filling spectacles. Premium models offer unparalleled clarity and immersion, while economy versions still deliver a taste of holographic wonder."
+  },
+  {
+    "term": "Ice Extraction Interface (IEI)",
+    "definition": "A sophisticated interface that efficiently removes accumulated ice mined by lunar harvesters during their charging cycle. This compact yet potent unit is integrated into the charging station, triggering automatically when a harvester docks."
+  },
+  {
+    "term": "INTERPLANETARY EXPRESS (IPX)",
+    "definition": "A leading name in space transportation, recognized for reliability and efficiency. IPX runs a vast network connecting major celestial bodies and stations throughout the inner solar system. Services range from budget \"space-bus\" routes to luxury cruisers. They pioneered rotating habitation rings for artificial gravity on long hauls. Their \"Cosmic Miles\" loyalty program offers trips to exotic locations. With over 500 spacecraft serving 50+ destinations, IPX makes the solar system increasingly accessible."
+  },
+  {
+    "term": "Janus Gate Interplanetary Transit Hub (ML1-ZEL-X)",
+    "definition": "A massive station at the Earth-Mars L1 Lagrange point, the primary hub for interplanetary travel. Commonly called “The Gate” or “The Gateway” by civilians, and “Point Zero” by military. Jointly owned and operated by ZEZ0S and EL-X, reflected in its registry designation ML1-ZEL-X Station (Mars L1 + ZEZ0S/EL-X)."
+  },
+  {
+    "term": "KUBE",
+    "definition": "A unique sanctuary in The Warrens, built from 1,000 repurposed shipping containers welded into a perfect 10x10x10 cube. Inside, a cultivated ecosystem thrives with hydroponic algae tanks, vertical gardens, and soil pockets. Popular for reconnecting with nature, meditating, or finding peace amid station chaos. Spider Plants, Snake Plants, Peace Lilies, and Aloe Vera flourish, offering a touch of Earth in the metal expanse."
+  },
+  {
+    "term": "LabourLink Card",
+    "definition": "A digital tether binding workers to the corporation, tracking their meagre earnings and serving as a constant reminder of their indentured status."
+  },
+  {
+    "term": "Luna Latina",
+    "definition": "The vibrant heartbeat of the lunar community, where Latin music and cultural rhythms resonate across the vastness of space! Broadcasting from the Moon’s surface, they bring a unique blend of sounds and stories that celebrate the rich tapestry of Spanish-speaking heritage."
+  },
+  {
+    "term": "Lunar Ice Harvester",
+    "definition": "Hulking, mechanical beasts that roam the lunar surface, their massive treads and drilling apparatus built to extract precious ice from the Moon’s unforgiving crust."
+  },
+  {
+    "term": "Moon Beam Retreat",
+    "definition": "Nestled within a protective bubble on the Moon, the Moon Beam Retreat is the ultimate luxury hotel for those seeking an escape from the grind of lunar life. With panoramic views of the star-studded sky and Earth hanging in the distance, this opulent oasis offers guests unparalleled comfort. Each suite boasts sophisticated tech, including gravity control mechanisms that mimic the comforts of home, plush furnishings, and top-tier amenities. However, beneath its glamorous facade lies an air of secrecy and exclusivity; only the elite can afford to stay, and rumours swirl about hidden deals and clandestine meetings within its walls."
+  },
+  {
+    "term": "Moonlight Jams",
+    "definition": "A lunar radio station that’s out of this world—literally! Known for its soothing mix of binaural beats and space-themed easy listening. Warning: may cause spontaneous zero-gravity dancing and an overwhelming desire to leave behind your current life."
+  },
+  {
+    "term": "Night Sweet",
+    "definition": "A sweet treat infused with calming properties, ideal for winding down after a long work day."
+  },
+  {
+    "term": "OFFICE OF SPECIAL INVESTIGATIONS (OSI)",
+    "definition": "A clandestine intelligence agency on Bogdan’s Rest. OSI agents are known for ruthless efficiency and far-reaching influence. They maintain order via high-tech surveillance, deep-cover ops, and psychological manipulation. Feared and respected, their methods are effective and formidable. Their remit covers counterintelligence, criminal investigations, and corporate espionage. Operatives use sophisticated disguise tech to blend in. Rumours link OSI to disappearances and memory wipes. Their motto, “Eyes of the Eagle,” feels sinister in Bogdan’s Rest’s confines. Their hidden HQ supposedly houses interrogation rooms and a vast resident database."
+  },
+  {
+    "term": "Polar Prospector",
+    "definition": "The grim title bestowed upon the brave or desperate souls who venture into the lunar wasteland to mine ice, their lives balanced precariously between the promise of riches and the reality of gruelling labour."
+  },
+  {
+    "term": "Polar Prospector Suit (PPS)",
+    "definition": "A high-tech cocoon of survival, this suit stands as the last line of defence against the Moon’s lethal environment. Its scuffed exterior bears witness to close calls and narrow escapes."
+  },
+  {
+    "term": "PUFF",
+    "definition": "A fast-acting inhalant delivering instant euphoria and sensory enhancement, popular in the underground party scene. Used via slick, reusable inhalers, PUFF brings a rush of warmth, vivid senses (brighter colours, sharper sounds), and profound weightlessness, amplified in low-G environments for a dreamlike state. Overuse risks respiratory issues like “Puff Lung” (chronic cough, reduced lung capacity). The name reflects its delivery method and the fleeting, airy high, leaving users adrift in bliss."
+  },
+  {
+    "term": "Redoubt 7",
+    "definition": "Hidden deep beneath the lunar surface, Redoubt 7 served as a fortified bunker for the Slavic special forces. Now, Carlos has repurposed it as his secret stash spot. This clandestine facility is a maze of reinforced steel and dimly lit corridors, echoing with whispers of past operations and guarded secrets. Inside, the walls are lined with lockers holding contraband, weapons, and supplies that Carlos has accumulated over the years."
+  },
+  {
+    "term": "Scarlet Command Card",
+    "definition": "A high-security keycard exclusively used by special forces on the Moon. This card grants access to restricted areas and operations, its vibrant red hue signalling authority and urgency within the ranks of elite personnel."
+  },
+  {
+    "term": "Selene Gateway Spaceport",
+    "definition": "A gargantuan lunar transportation hub serving as the primary point of entry and departure for all traffic on the Moon. This sprawling complex of gleaming domes and functional structures contains massive hangar bays alongside a maze of terminals processing an endless stream of miners, corporate drones, and the occasional tourist."
+  },
+  {
+    "term": "Solaris Sentinel",
+    "definition": "A spacecraft produced by E-LX Corp, boasting sophisticated propulsion including VASIMR (ionizing gas into plasma) and Nuclear Electric Propulsion (NEP - nuclear reactors powering ion engines). Its bimodal configuration combines Nuclear Thermal Propulsion (NTP) for high thrust with a Wave Rotor Topping Cycle for enhanced performance. Engineered for safety and comfort, it includes an advanced inertial compensation mechanism and manganese-infused gold armour for rigidity, heat resistance, and defence against threats like rail guns. A symbol of top-tier engineering, the Solaris Sentinel redefines interplanetary travel possibilities."
+  },
+  {
+    "term": "SonicBuds",
+    "definition": "Compact, dust-resistant earbuds built for Mars, equipped with a built-in receiver for local Martian radio. These streamlined devices let colonists tune into broadcasts from Mars and orbiting stations. With radiation shielding and pressure-adaptive components, SonicBuds are essential Martian gear. They offer a soundtrack to terraforming challenges and a link to growing Martian culture, providing comfort amid the harsh red landscape."
+  },
+  {
+    "term": "Spectre Suit",
+    "definition": "A high-spec variant of the Polar Prospector Suit (PPS) issued to special forces. This lightweight armour features upgraded life support and mirror-like plating that deflects lasers, helping the wearer blend seamlessly into their surroundings. Engineered for stealth and agility, it offers superior protection while enabling covert operations in the harsh lunar environment."
+  },
+  {
+    "term": "StarBorg",
+    "definition": "A Spacecore band acclaimed for electrifying shows in Bogdan’s Rest’s weightless venues, especially Zero Point, where they pioneered zero-G mosh pits. Their music evokes cosmic creation and destruction, mixing heavy beats with expansive sounds mirroring star formation, supernovas, and black holes. Fronted by Star, whose resonant voice carries celestial weight, crafting haunting melodies on a strapped-on synth piano. Borg adds DJ/turntable wizardry (scratching, layers, samples) from a compact neck-worn deck, floating mid-air. Their immersive performances made StarBorg underground icons, their music a testament to the universe's awe and terror."
+  },
+  {
+    "term": "Star Dust",
+    "definition": "A popular choice among miners, this powder is said to enhance focus and stamina, making it perfect for long shifts or a fun night out."
+  },
+  {
+    "term": "The Meltdown",
+    "definition": "A notorious Warrens bar merging a decommissioned airlock with a mock reactor core. Entry via a pressurised door leads to a circular room bathed in pulsing green light. Seating uses salvaged station parts. Bartenders in hazmat suits serve glowing cocktails (like the “Core Sample” series in repurposed O2 tanks) through hatches. Steam vents, warning klaxons for potent drinks, and “emergency shutdown” shot buttons enhance the vibe. The Meltdown offers a claustrophobic yet thrilling experience, embodying the Warrens' resourceful spirit."
+  },
+  {
+    "term": "The Warrens",
+    "definition": "Named for rabbit warrens, this dense residential sector in a station spoke is a chaotic web of repurposed cargo container homes stacked haphazardly. Known for improvised hydroponics on every surface, it shows resilience and ingenuity. Beyond cramped quarters, The Warrens buzzes with life: narrow alleys host small stalls, hole-in-the-wall bars, and low-gravity rave pits."
+  },
+  {
+    "term": "Two-Year Free Labour Agreement",
+    "definition": "A Faustian bargain disguised as an opportunity, this mandatory contract binds workers to years of unpaid toil, dangling the carrot of future earnings just out of reach."
+  },
+  {
+    "term": "WorkSphere",
+    "definition": "A digital shackle masquerading as a convenience. More than just a payment tracker, it’s a relentless indicator of a worker's perpetual debt and diminishing worth. It also serves as a taskmaster, integrating various work functions while displaying quotas, schedules, and omnipresent corporate oversight. The unit also functions as a personal cryptocurrency wallet, handling workers’ digital currency transactions, further embedding them into the corporate economic ecosystem and limiting their financial autonomy."
+  },
+  {
+    "term": "Zero Point",
+    "definition": "A clandestine nightclub in a forgotten hangar where the station’s arm meets the main ring. Repurposed from cargo bays near the hub, it's a secret nightlife haven. It has its own gravity generator (lighter than main habitats but allowing movement). Its centerpiece is the Zero-Gravity Mosh Pit: a platform extending beyond the spoke, encased in transparent nano-glass, where near-zero G lets dancers float, seemingly on the universe's edge. Music blends heavy bass and ethereal synths for a primal yet futuristic soundscape. Holographic nebulae and stars project otherworldly light, while views of Mars and passing hub debris add ambience. Zero Point fuses raw energy and cosmic wonder, an escape where inhabitants lose themselves in the void."
+  },
+  {
+    "term": "ZERO-GRAVITY FIGHTING LEAGUE (ZGFL)",
+    "definition": "A no-holds-barred combat circuit (est. 2100) staged in derelict station sectors with disabled gravity generators for chaotic zero-G arenas. Five-round fights see combatants use mag-boots, nets, and propulsion packs amid sparking debris and frozen waste. Broadcast via pirated laser relays (bypassing censorship), the raw, often lethal matches are a grim touchstone for off-world labourers, fueled by betting pools trading O2 vouchers and black-market augments. The league's credo: “No gravity, no rules.” Rumours persist of match-fixing by syndicates manipulating airflow. Condemned by Earth remnants, the league thrives as a brutal ballet of desperation, embodying humanity's often self-destructive grit."
+  },
+  {
+    "term": "ZERO-G RECON UNIT (ZGRU)",
+    "definition": "An elite special forces division specializing in zero-gravity combat, ship boarding, and covert ops in microgravity. Motto: “In the Void, We Strike.” Evolved from the Eclipse Raiders (a black ops unit funded by a shadowy corporate consortium for deniable missions). Known for precision and adaptability, ZGRU excels in high-risk missions (boarding, station assaults, hostage retrieval). Tactics include stealth, zero-G ambushes, and SAR in hostile conditions. Their ruthless efficiency makes them a key asset in military/corporate conflicts, though operations often remain classified."
+  },
+  {
+    "term": "ZEZ0S Corporation",
+    "definition": "A titan of interplanetary commerce and infrastructure, ZEZ0S is a dominant economic force. Co-owning stations with EL-X around Mars and beyond, it specializes in logistics and import/export. ZEZ0S commands a vast transport hub network spanning human colonization. Known for immense warehouses, it's the backbone of the interplanetary supply chain, ensuring seamless goods/resource movement. Its logistical mastery makes it an indispensable architect of space colonization, shaping humanity's expansion. With a formidable fleet and cutting-edge facilities, ZEZ0S facilitates commerce (Earth, Mars, etc.) and wields immense economic/political influence on the space frontier. A cornerstone of the space economy, symbolizing power, efficiency, and ambition."
+  }
+]
