@@ -5,33 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glossary</title>
     <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
-    <!-- Corrected Paths (prefixed with ../) -->
     <link rel="stylesheet" href="../nprogress.css">
     <link rel="stylesheet" href="../loading.css">
     <link rel="stylesheet" href="../navbar.css">
-    <!-- Path within GLOSSARY/ is fine -->
     <link rel="stylesheet" href="glossary-style.css">
-    <!-- Path using ../ is fine -->
     <link rel="stylesheet" href="../backgrounds/space-background.css">
-    <!-- Corrected Paths (prefixed with ../) -->
     <link rel="stylesheet" href="../LOCKPAD/lockpad.css">
     <link rel="stylesheet" href="../brightness-global.css">
-
-    <!-- Corrected Favicon Paths (prefixed with ../) -->
     <link rel="icon" href="../favicon/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
-    <!-- Corrected Manifest Path (prefixed with ../) -->
     <link rel="manifest" href="../site.webmanifest">
 </head>
 <body class="glossary-body">
     <div id="loading-screen">
         <div class="loading-message">Loading Glossary...</div>
     </div>
-
-    <!-- Navbar with Corrected Links (prefixed with ../ or relative) -->
     <nav class="navbar">
         <div class="navbar-container">
             <div></div>
@@ -39,7 +30,6 @@
                 <ul class="navbar-menu">
                     <li class="navbar-item"><a href="../index.html" class="navbar-link">HOME</a></li>
                     <li class="navbar-item"><a href="../BOOK/book-series.html" class="navbar-link">BOOKS</a></li>
-                    <!-- Link to self, can just be the filename -->
                     <li class="navbar-item"><a href="glossary.html" class="navbar-link">GLOSSARY</a></li>
                     <li class="navbar-item dropdown">
                         <a href="#" class="navbar-link dropdown-toggle">LOCATIONS</a>
@@ -58,11 +48,8 @@
             </div>
         </div>
     </nav>
-
-    <!-- Page content wrapper - unchanged -->
     <div id="page-content-wrapper">
         <div class="glossary-main-content">
-            <!-- SVG Content - unchanged -->
             <div class="svg-container">
                 <svg width="1200" height="700" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg">
                   <defs>
@@ -120,16 +107,11 @@
                         SYSTEM STATUS: OPERATIONAL
                   </text>
                 </svg>
-
                 <div class="terminal-content-container">
                     <p id="welcome-message">Loading Glossary...</p>
                     <div id="terminal-output"></div>
-                    <div id="screensaver-container" style="display: none;"></div>
                 </div>
-
             </div>
-
-            <!-- Search container - unchanged -->
             <div id="search-container">
                 <input type="text" id="search-input" placeholder="Search glossary...">
                 <div id="search-buttons">
@@ -138,28 +120,17 @@
                       <button id="button-2-placeholder">ABOUT</button>
                       <button id="reset-button">RESET</button>
                   </div>
-                  <div class="button-row">
-                      <button id="screensaver1-button">SCREENSAVER 1</button>
-                      <button id="screensaver-button">SCREENSAVER 2</button>
-                      <button id="screensaver3-button">SCREENSAVER 3</button>
-                  </div>
               </div>
             </div>
         </div>
     </div>
-
-    <!-- External script - unchanged -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
-    <!-- Corrected Script Paths (prefixed with ../ or relative) -->
     <script src="../loading.js"></script>
     <script src="../navbar.js"></script>
-    <!-- Script path within GLOSSARY/ is fine -->
     <script src="glossary-script.js"></script>
-    <!-- Script path using ../ is fine -->
     <script src="../backgrounds/space-background.js"></script>
     <script>
         window.onload = () => {
-             // This error check remains useful but should succeed now
              if (typeof setPageReady === 'function') {
                  setPageReady();
              } else {
@@ -167,8 +138,6 @@
              }
         };
     </script>
-    <!-- Corrected Script Path (prefixed with ../) -->
     <script src="../LOCKPAD/gatekeeper.js"></script>
-
 </body>
 </html>

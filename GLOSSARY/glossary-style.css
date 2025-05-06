@@ -29,17 +29,19 @@ body {
     justify-content: center;
 }
 
+/* --- Container Height --- */
 .terminal-content-container {
     position: absolute;
     top: 17%;
     left: 10.5%;
     width: 75%;
-    height: 70%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* --- Terminal Output --- */
 #terminal-output {
     width: 100%;
     flex-grow: 1;
@@ -93,7 +95,7 @@ body {
 
 @keyframes blink-caret {
   from, to { border-color: transparent }
-  50% { border-color: #00ffff; } /* Kept original cyan */
+  50% { border-color: #00ffff; }
 }
 
 .glossary-entry {
@@ -127,7 +129,7 @@ body {
 
 .glossary-title {
     font-size: 1.4em;
-    color: #00ff00; /* KEPT Original Bright Green */
+    color: #00ff00;
     text-shadow: 0 0 10px #00AA00;
     text-align: center;
     margin-bottom: 10px;
@@ -157,10 +159,8 @@ body {
     transition: color 0.2s ease, text-shadow 0.2s ease;
 }
 
-#screensaver-container {
-    width: 100%;
-    height: 100%;
-}
+/* Screensaver container CSS rule removed */
+
 
 #search-container {
     display: flex;
@@ -183,7 +183,7 @@ body {
 
 #search-input {
     background-color: #000;
-    color: #00ff00; /* Kept original bright text input */
+    color: #00ff00;
     border: 2px solid #008800;
     padding: 8px;
     font-family: 'Courier New', monospace;
@@ -237,17 +237,11 @@ body {
     box-shadow: none;
 }
 
-/*
-.navbar-link {
-    REMOVED THIS RULE BLOCK
-}
-*/
-
 .about-message {
     margin-top: 2vw;
     text-align: center;
     white-space: pre-wrap;
-    color: #00ff00; /* Kept original */
+    color: #00ff00;
     font-family: 'Courier New', monospace;
     font-size: 1em;
     line-height: 1.2;
@@ -256,6 +250,6 @@ body {
 .no-results {
     margin-top: 2vw;
     text-align: center;
-    color: #ff4444; /* Kept original */
+    color: #ff4444;
     font-style: italic;
 }
