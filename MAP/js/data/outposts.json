@@ -1,60 +1,27 @@
 {
-    "Mercury": [
-        {"name": "Mercury Outpost 1", "type": "Outpost", "desc": "Generic outpost on Mercury", "position": {"theta": 0, "phi": 1.57}, "callsign": "TEMP-MERC-OUT-01"},
-        {"name": "Mercury Outpost 2", "type": "Outpost", "desc": "Generic outpost on Mercury", "position": {"theta": 3.14, "phi": 0.78}, "callsign": "TEMP-MERC-OUT-02"}
-    ],
-    "Venus": [
-        {"name": "Venus Outpost 1", "type": "Outpost", "desc": "Generic outpost on Venus", "position": {"theta": 0.5, "phi": 1.2}, "callsign": "TEMP-VEN-OUT-01"},
-        {"name": "Venus Outpost 2", "type": "Outpost", "desc": "Generic outpost on Venus", "position": {"theta": 2.5, "phi": 0.9}, "callsign": "TEMP-VEN-OUT-02"}
-    ],
-    "Earth": [
-        {"name": "Earth Outpost 1", "type": "Outpost", "desc": "Generic outpost on Earth", "position": {"theta": 0, "phi": 1.57}, "callsign": "TEMP-EARTH-OUT-01"},
-        {"name": "Earth Outpost 2", "type": "Outpost", "desc": "Generic outpost on Earth", "position": {"theta": 1.57, "phi": 0.78}, "callsign": "TEMP-EARTH-OUT-02"}
-    ],
-    "Mars": [
-        {"name": "Mars Outpost 1", "type": "Outpost", "desc": "Generic outpost on Mars", "position": {"theta": 0, "phi": 1.5}, "callsign": "TEMP-MARS-OUT-01"},
-        {"name": "Mars Outpost 2", "type": "Outpost", "desc": "Generic outpost on Mars", "position": {"theta": 2, "phi": 1}, "callsign": "TEMP-MARS-OUT-02"}
-    ],
-    "Jupiter": [
-        {"name": "Jupiter Outpost 1", "type": "Outpost", "desc": "Generic outpost on Jupiter", "position": {"theta": 1, "phi": 1.3}, "callsign": "TEMP-JUP-OUT-01"},
-        {"name": "Jupiter Outpost 2", "type": "Outpost", "desc": "Generic outpost on Jupiter", "position": {"theta": 3, "phi": 0.6}, "callsign": "TEMP-JUP-OUT-02"}
-    ],
-    "Saturn": [
-        {"name": "Saturn Outpost 1", "type": "Outpost", "desc": "Generic outpost on Saturn", "position": {"theta": 0.8, "phi": 1.4}, "callsign": "TEMP-SAT-OUT-01"},
-        {"name": "Saturn Outpost 2", "type": "Outpost", "desc": "Generic outpost on Saturn", "position": {"theta": 2.8, "phi": 0.8}, "callsign": "TEMP-SAT-OUT-02"}
-    ],
-    "Uranus": [
-        {"name": "Uranus Outpost 1", "type": "Outpost", "desc": "Generic outpost on Uranus", "position": {"theta": 1.2, "phi": 1.1}, "callsign": "TEMP-URA-OUT-01"},
-        {"name": "Uranus Outpost 2", "type": "Outpost", "desc": "Generic outpost on Uranus", "position": {"theta": 3.5, "phi": 0.7}, "callsign": "TEMP-URA-OUT-02"}
-    ],
-    "Neptune": [
-        {"name": "Neptune Outpost 1", "type": "Outpost", "desc": "Generic outpost on Neptune", "position": {"theta": 0.3, "phi": 1.6}, "callsign": "TEMP-NEP-OUT-01"},
-        {"name": "Neptune Outpost 2", "type": "Outpost", "desc": "Generic outpost on Neptune", "position": {"theta": 2.7, "phi": 0.5}, "callsign": "TEMP-NEP-OUT-02"}
-    ],
     "Moons": {
         "Earth's Moon": [
-            {"name": "Earth's Moon Outpost 1", "type": "Moon Outpost", "desc": "Generic outpost on Earth's Moon", "position": {"theta": 0, "phi": 1.57}, "callsign": "TEMP-EARTHMOON-OUT-01"},
-            {"name": "Earth's Moon Outpost 2", "type": "Moon Outpost", "desc": "Generic outpost on Earth's Moon", "position": {"theta": 1.57, "phi": 0.78}, "callsign": "TEMP-EARTHMOON-OUT-02"},
-            {"name": "Earth's Moon Outpost 3", "type": "Moon Outpost", "desc": "Generic outpost on Earth's Moon", "position": {"theta": 3.14, "phi": 1.2}, "callsign": "TEMP-EARTHMOON-OUT-03"},
-            {"name": "Earth's Moon Outpost 4", "type": "Moon Outpost", "desc": "Generic outpost on Earth's Moon", "position": {"theta": 4.71, "phi": 0.9}, "callsign": "TEMP-EARTHMOON-OUT-04"}
-        ],
-        "Phobos": [
-            {"name": "Phobos Outpost 1", "type": "Moon Outpost", "desc": "Generic outpost on Phobos", "position": {"theta": 0, "phi": 1.5}, "callsign": "TEMP-PHOBOS-OUT-01"}
-        ],
-        "Deimos": [
-            {"name": "Deimos Outpost 1", "type": "Moon Outpost", "desc": "Generic outpost on Deimos", "position": {"theta": 2, "phi": 1}, "callsign": "TEMP-DEIMOS-OUT-01"}
-        ],
-        "Europa": [
-            {"name": "Europa Outpost 1", "type": "Moon Outpost", "desc": "Generic outpost on Europa", "position": {"theta": 1, "phi": 1.3}, "callsign": "TEMP-EUROPA-OUT-01"}
-        ],
-        "Ganymede": [
-            {"name": "Ganymede Outpost 1", "type": "Moon Outpost", "desc": "Generic outpost on Ganymede", "position": {"theta": 3, "phi": 0.6}, "callsign": "TEMP-GANYMEDE-OUT-01"}
-        ],
-        "Callisto": [
-            {"name": "Callisto Outpost 1", "type": "Moon Outpost", "desc": "Generic outpost on Callisto", "position": {"theta": 0.8, "phi": 1.4}, "callsign": "TEMP-CALLISTO-OUT-01"}
-        ],
-        "Titan": [
-            {"name": "Titan Outpost 1", "type": "Moon Outpost", "desc": "Generic outpost on Titan", "position": {"theta": 2.8, "phi": 0.8}, "callsign": "TEMP-TITAN-OUT-01"}
+            {
+                "name": "Crater Camp",
+                "type": "Moon Outpost",
+                "desc": "A bleak, overcrowded complex of barracks where workers eke out their existence between grinding shifts, their dreams of prosperity as frozen as the landscape outside.",
+                "position": {"theta": 1.5708, "phi": 1.5708},
+                "callsign": "CRATER-CAMP-NP"
+            },
+            {
+                "name": "Moon Beam Retreat",
+                "type": "Moon Outpost",
+                "desc": "Nestled within a protective bubble on the Moon, the Moon Beam Retreat is the ultimate luxury hotel for those seeking an escape from the harsh realities of lunar life. With panoramic views of the star-studded sky and the Earth hanging in the distance, this opulent oasis offers guests unparalleled comfort.",
+                "position": {"theta": 0.785, "phi": 0.8854},
+                "callsign": "MOONBEAM-RETREAT"
+            },
+            {
+                "name": "Selene Gateway Spaceport",
+                "type": "Moon Outpost",
+                "desc": "A gargantuan lunar transportation hub that serves as the primary point of entry and departure for all traffic on the Moon. This sprawling complex of gleaming domes and utilitarian structures contains massive hangar bays with a maze of terminals that process an endless stream of miners, corporate drones, and the occasional tourist.",
+                "position": {"theta": 0, "phi": 1.5708},
+                "callsign": "SELENE-GATEWAY"
+            }
         ]
     }
 }

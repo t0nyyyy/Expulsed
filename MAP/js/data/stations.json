@@ -8,12 +8,36 @@
         { "name": "Venus Station 2", "type": "Station", "position": "13, -2, 0", "desc": "Weather station", "callsign": "TEMP-VEN-STAT-02" }
     ],
     "Earth": [
-        { "name": "Earth Station 1", "type": "Station", "position": "20, 0, 0", "desc": "Orbital hub", "callsign": "TEMP-EARTH-STAT-01" },
-        { "name": "Earth Station 2", "type": "Station", "position": "18, 2, 0", "desc": "Research hub", "callsign": "TEMP-EARTH-STAT-02" }
+        {
+            "name": "StarBastion",
+            "type": "Station",
+            "position": "Earth-Sun L1 Lagrange point",
+            "desc": "A cutting-edge space station anchored at the Earth-Sun L1 Lagrange point, serving as EL-X Corporation’s linchpin for orbital supremacy. Dubbed “The Bastion” by civilians for its impregnable presence and “XCore” by EL-X insiders for its pivotal operational role, StarBastion is the nerve center for the corporation’s space infrastructure, AI-driven systems, and interplanetary telecommunications network.",
+            "callsign": "EL1-EL-X"
+        },
+        {
+            "name": "Atlantis Gateway",
+            "type": "Station",
+            "position": "Earth-Sun L2 Lagrange point",
+            "desc": "Atlantis Gateway, stationed at the Earth-Sun L2 Lagrange point, is ZEZ0S Corporation’s beacon for interplanetary logistics. Automated cargo fleets glide through its cavernous docks, guided by AI that orchestrates the flow of goods from Earth to Mars and beyond.",
+            "callsign": "EL2-ZEZ0S"
+        }
     ],
     "Mars": [
-        { "name": "Mars Station 1", "type": "Station", "position": "25, 0, 0", "desc": "Colony support", "callsign": "TEMP-MARS-STAT-01" },
-        { "name": "Mars Station 2", "type": "Station", "position": "23, -2, 0", "desc": "Mining rig", "callsign": "TEMP-MARS-STAT-02" }
+        { 
+            "name": "Janus Gate Interplanetary Transit Hub", 
+            "type": "Station", 
+            "position": "25, 0, 0", 
+            "desc": "A massive station at the Earth-Mars L1 Lagrange point, the primary hub for interplanetary travel. Commonly called “The Gate” or “The Gateway” by civilians, and “Point Zero” by military. Jointly owned and operated by ZEZ0S and EL-X, reflected in its registry designation ML1-ZEL-X Station (Mars L1 + ZEZ0S/EL-X).", 
+            "callsign": "ML1-ZEL-X" 
+        },
+        { 
+            "name": "Bogdan's Rest", 
+            "type": "Station", 
+            "position": "23, -2, 0", 
+            "desc": "A tax-free haven orbiting Mars' L2 Lagrange point, home to over a million residents. Officially Отдых Богдана (“God’s gift” in Slavic), it’s a chaotic refuge for miners, traders, and fugitives.", 
+            "callsign": "ML2-GOD-BR" 
+        }
     ],
     "Jupiter": [
         { "name": "Jupiter Station 1", "type": "Station", "position": "32, 0, 0", "desc": "Gas extraction", "callsign": "TEMP-JUP-STAT-01" },

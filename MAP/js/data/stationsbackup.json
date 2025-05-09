@@ -1,0 +1,34 @@
+{
+    "Mercury": [
+        { "name": "Mercury Station 1", "type": "Station", "position": "10, 0, 0", "desc": "Mining base", "callsign": "TEMP-MERC-STAT-01" },
+        { "name": "Mercury Station 2", "type": "Station", "position": "8, 2, 0", "desc": "Research hub", "callsign": "TEMP-MERC-STAT-02" }
+    ],
+    "Venus": [
+        { "name": "Venus Station 1", "type": "Station", "position": "15, 0, 0", "desc": "Volcanic study", "callsign": "TEMP-VEN-STAT-01" },
+        { "name": "Venus Station 2", "type": "Station", "position": "13, -2, 0", "desc": "Weather station", "callsign": "TEMP-VEN-STAT-02" }
+    ],
+    "Earth": [
+        { "name": "Earth Station 1", "type": "Station", "position": "20, 0, 0", "desc": "Orbital hub", "callsign": "TEMP-EARTH-STAT-01" },
+        { "name": "Earth Station 2", "type": "Station", "position": "18, 2, 0", "desc": "Research hub", "callsign": "TEMP-EARTH-STAT-02" }
+    ],
+    "Mars": [
+        { "name": "Mars Station 1", "type": "Station", "position": "25, 0, 0", "desc": "Colony support", "callsign": "TEMP-MARS-STAT-01" },
+        { "name": "Mars Station 2", "type": "Station", "position": "23, -2, 0", "desc": "Mining rig", "callsign": "TEMP-MARS-STAT-02" }
+    ],
+    "Jupiter": [
+        { "name": "Jupiter Station 1", "type": "Station", "position": "32, 0, 0", "desc": "Gas extraction", "callsign": "TEMP-JUP-STAT-01" },
+        { "name": "Jupiter Station 2", "type": "Station", "position": "30, -2, 0", "desc": "Observation post", "callsign": "TEMP-JUP-STAT-02" }
+    ],
+    "Saturn": [
+        { "name": "Saturn Station 1", "type": "Station", "position": "40, 0, 0", "desc": "Ring study", "callsign": "TEMP-SAT-STAT-01" },
+        { "name": "Saturn Station 2", "type": "Station", "position": "38, -2, 0", "desc": "Fuel depot", "callsign": "TEMP-SAT-STAT-02" }
+    ],
+    "Uranus": [
+        { "name": "Uranus Station 1", "type": "Station", "position": "47, 0, 0", "desc": "Ice research", "callsign": "TEMP-URA-STAT-01" },
+        { "name": "Uranus Station 2", "type": "Station", "position": "45, -2, 0", "desc": "Signal hub", "callsign": "TEMP-URA-STAT-02" }
+    ],
+    "Neptune": [
+        { "name": "Neptune Station 1", "type": "Station", "position": "55, 0, 0", "desc": "Deep space monitor", "callsign": "TEMP-NEP-STAT-01" },
+        { "name": "Neptune Station 2", "type": "Station", "position": "53, -2, 0", "desc": "Wind analysis", "callsign": "TEMP-NEP-STAT-02" }
+    ]
+}

@@ -5,17 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Expulsed Book Series">
         <title>Expulsed Book Series</title>
-        <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Electrolize&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="brightness-global.css">
         <link rel="stylesheet" href="navbar.css">
-        <link rel="stylesheet" href="index-style.css"> <!-- Link to the updated CSS -->
+        <link rel="stylesheet" href="index-style.css">
         <link rel="stylesheet" href="backgrounds/moonbackground.css">
         <link rel="stylesheet" href="nprogress.css">
         <link rel="stylesheet" href="loading.css">
         <link rel="stylesheet" href="LOCKPAD/lockpad.css">
 
-        <!-- Favicon Links -->
         <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
         <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
         <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
@@ -24,7 +23,6 @@
         <link rel="manifest" href="site.webmanifest">
 
         <style>
-          /* Initial hiding style for Gatekeeper */
           body.gatekeeper-hide-initial #page-content-wrapper,
           body.gatekeeper-hide-initial > header,
           body.gatekeeper-hide-initial > nav.navbar,
@@ -78,22 +76,16 @@
     </header>
 
     <main id="page-content-wrapper">
-          <div class="homepage-content">
+        <div class="homepage-content">
             <section id="ascii-art-container">
-                <!-- Assuming your SVG logo loading script targets this -->
                 <img src="placeholder.png" alt="Space Station Logo" id="logo-placeholder">
             </section>
-            <section id="movable-text-container">
-                <div class="text-content">
-                    <p>Book series info</p>
-                    <p>remove screnensaver from glossary</p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                </div>
-            </section>
+            
+            <div id="series-blurb-text">
+                <p id="blurb-p1" style="visibility: hidden;">In a solar system carved up by untouchable conglomerates, Pepe’s just a young dreamer stuck with a name he didn’t ask for. Armed with nothing more than reckless hope, he taunts the cosmos—a lone flicker against the galaxy’s cold, titan glare.<span class="line-break-after"></span> <span class="tech-highlight keyword">Young, naive, impulsive, a soul kissed by fortune one moment and kicked by it the next</span>, Pepe is chasing a way out of Earth’s automated stagnation. His first stop: a grimy lunar outpost, where miners toil upon regolith claimed by capital-focused overlords who don’t give a damn.</p>
+                <p id="blurb-p2" style="visibility: hidden;">From lawless havens where outcasts shape their own rules to the cold grip of corporate power, <mark class="keyword">Expulsed is a raw, grounded sci-fi saga</mark> that asks, what’s a nobody got to do to make it in a universe that doesn’t care? Thrust into a saga that cuts deep, blending heart, humour, and a fierce warning about the world we’re building—one misstep at a time. <a href="BOOK/book-series.html" class="neon-link keyword">Explore the series</a>.</p>
+            </div>
+
         </div>
     </main>
     <div class="social-fixed-left">
@@ -105,7 +97,7 @@
             Follow me on X
           </a>
         </div>
-
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
     <script src="navbar.js"></script>

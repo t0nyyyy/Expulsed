@@ -12,6 +12,10 @@
     "definition": "Compact, portable earbuds built for lunar conditions, equipped with a built-in receiver for local radio stations. These sleek devices let workers tune into broadcasts from the Moon and neighbouring stations. Lightweight yet rugged, AstroPods are essential for miners seeking a brief reprieve from their exhausting reality, offering a soundtrack to their struggles and a connection to life beyond the regolith."
   },
   {
+    "term": "Atlantis Gateway (EL2-ZEZ0S)",
+    "definition": "At the Earth-Sun L2 Lagrange point lies Atlantis Gateway, a beacon of ZEZ0S Corporation’s ambition to weave the threads of interplanetary logistics. Here, automated cargo fleets dance through cavernous docks, guided by AI that maps the flow of goods from Earth to Mars and beyond. Its infrastructure supports a relentless trade ecosystem, positioning Atlantis Gateway as the architectural backbone of ZEZ0S’ economic hegemony in the solar system’s expanding frontier. Solely under ZEZ0S’ banner, its registry—EL2-ZEZ0S Station (Earth L2 + ZEZ0S)—proclaims its dominion."
+  },
+  {
     "term": "Bogdan’s Rest",
     "definition": "A tax-free haven orbiting Mars' L2 Lagrange point, home to over a million residents. Officially Отдых Богдана (“God’s gift” in Slavic), it’s a chaotic refuge for miners, traders, and fugitives. This torus-shaped station has eight spokes radiating from the Yadro Central hub (docking/logistics). The spokes house The Warrens (working-class container homes) and support the rotating habitation ring providing Earth-like gravity. Zone Alpha and Zone Bravo, at opposite ends, manage life support and utilities, maintaining station balance. The lawless Freeport district thrives separately. Independent of corporate control, its registry is ML2-GOD-BR."
   },
@@ -113,7 +117,7 @@
   },
   {
     "term": "Janus Gate Interplanetary Transit Hub (ML1-ZEL-X)",
-    "definition": "A massive station at the Earth-Mars L1 Lagrange point, the primary hub for interplanetary travel. Commonly called “The Gate” or “The Gateway” by civilians, and “Point Zero” by military. Jointly owned and operated by ZEZ0S and EL-X, reflected in its registry designation ML1-ZEL-X Station (Mars L1 + ZEZ0S/EL-X)."
+    "definition": "A formidable station at the Earth-Mars L1 Lagrange point, the primary hub for interplanetary travel. Commonly called “The Gate” or “The Gateway” by civilians, and “Point Zero” by military. Jointly owned and operated by ZEZ0S and EL-X, reflected in its registry designation ML1-ZEL-X Station (Mars L1 + ZEZ0S/EL-X)."
   },
   {
     "term": "KUBE",
@@ -129,7 +133,7 @@
   },
   {
     "term": "Lunar Ice Harvester",
-    "definition": "Hulking, mechanical beasts that roam the lunar surface, their massive treads and drilling apparatus built to extract precious ice from the Moon’s unforgiving crust."
+    "definition": "Hulking, mechanical beasts designed for lunar ice extraction. They roam the lunar surface on huge treads built for traversing its terrain, while their integrated drilling apparatus bores into the Moon’s unforgiving crust to gather precious ice."
   },
   {
     "term": "Moon Beam Retreat",
@@ -182,6 +186,10 @@
   {
     "term": "Spectre Suit",
     "definition": "A high-spec variant of the Polar Prospector Suit (PPS) issued to special forces. This lightweight armour features upgraded life support and mirror-like plating that deflects lasers, helping the wearer blend seamlessly into their surroundings. Engineered for stealth and agility, it offers superior protection while enabling covert operations in the harsh lunar environment."
+  },
+  {
+    "term": "StarBastion Orbital Command Hub (EL1-EL-X)",
+    "definition": "A cutting-edge space station anchored at the Earth-Sun L1 Lagrange point, serving as EL-X Corporation’s linchpin for orbital supremacy. Dubbed “The Bastion” by civilians for its impregnable presence and “SkyCore” by EL-X insiders for its pivotal operational role, StarBastion is the nerve center for the corporation’s space infrastructure, AI-driven systems, and interplanetary telecommunications network. Wholly owned and operated by EL-X, its registry designation EL1-EL-X Station (Earth L1 + EL-X) reflects its strategic position and corporate dominance. The station drives advanced spacecraft production, orbital traffic management, and pioneering research, cementing EL-X’s command over humanity’s cosmic ambitions."
   },
   {
     "term": "StarBorg",

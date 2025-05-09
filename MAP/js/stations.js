@@ -1,3 +1,5 @@
+// --- START OF FILE stations.js ---
+
 const stationMaterial = new THREE.MeshBasicMaterial({ color: 0x006600, wireframe: true });
 
 function createStation1() {
@@ -204,18 +206,18 @@ window.setupStations = async function() {
             station10.rotation.y = Math.PI / 2;
             station10Pivot.position.x = planet.distance;
             planet.pivot.add(station10Pivot);
-            station10.userData = { ...stationsData[planetName][0], name: "Mars Station 10" };
+            station10.userData = { ...stationsData[planetName][0] }; // Ensure names are consistent or updated if stationsData changes
             stations.push({ pivot: station10Pivot, speed: 0 });
             window.allStations[planetName].push({ mesh: station10 });
 
-            const station1 = createStation13();
+            const station1 = createStation13(); // Was createStation1() but Mars uses Station 13 design in your original file for the second station
             const station1Pivot = new THREE.Object3D();
             station1Pivot.add(station1);
             station1.position.x = lagrangeOffset;
             station1.rotation.y = -Math.PI / 2;
             station1Pivot.position.x = planet.distance;
             planet.pivot.add(station1Pivot);
-            station1.userData = { ...stationsData[planetName][1], name: "Mars Station 1" };
+            station1.userData = { ...stationsData[planetName][1] }; // Ensure names are consistent
             stations.push({ pivot: station1Pivot, speed: 0 });
             window.allStations[planetName].push({ mesh: station1 });
         } else if (planetName === 'Earth') {
@@ -228,7 +230,7 @@ window.setupStations = async function() {
             station4.position.x = -lagrangeOffset;
             station4Pivot.position.x = planet.distance;
             planet.pivot.add(station4Pivot);
-            station4.userData = { ...stationsData[planetName][0], name: "Earth Station 4" };
+            station4.userData = { ...stationsData[planetName][0], }; // Ensure names are consistent
             stations.push({ pivot: station4Pivot, speed: 0 });
             window.allStations[planetName].push({ mesh: station4 });
 
@@ -238,7 +240,7 @@ window.setupStations = async function() {
             station9.position.x = lagrangeOffset;
             station9Pivot.position.x = planet.distance;
             planet.pivot.add(station9Pivot);
-            station9.userData = { ...stationsData[planetName][1], name: "Earth Station 9" };
+            station9.userData = { ...stationsData[planetName][1],}; // Ensure names are consistent
             stations.push({ pivot: station9Pivot, speed: 0 });
             window.allStations[planetName].push({ mesh: station9 });
         } else {
@@ -251,38 +253,66 @@ window.setupStations = async function() {
                     const station = stationCreators[stationIdx - 1]();
                     const stationPivot = new THREE.Object3D();
                     stationPivot.add(station);
-                    // Adjust distance for Saturn Station 2 (i === 1)
-                    let distance = baseDistance + i * 0.5;
+                    
+                    let distance = baseDistance + i * 0.5; // Default offset calculation
+
+                    // START OF MODIFICATION for Jupiter and Saturn distances
                     if (planetName === 'Saturn' && i === 1) {
-                        distance = baseDistance + 1.0; // Increase offset for Saturn Station 2
+                        distance = baseDistance + 1.0; // Existing Saturn Station 2 adjustment
+                    } else if (planetName === 'Jupiter') {
+                        if (i === 0) { // Jupiter Station 1 (station creator index 6-1=5, i.e., createStation6)
+                            distance = baseDistance + 1.75; // Move it further out to avoid moons
+                        } else if (i === 1) { // Jupiter Station 2 (station creator index 11-1=10, i.e., createStation11)
+                            distance = baseDistance + 2.75; // Move it even further out
+                        }
                     }
+                    // END OF MODIFICATION
+
                     station.position.x = distance;
                     stationPivot.rotation.y = (i * Math.PI) / assignedStations.length;
-                    // Apply gyration to Venus (stationIdx 3 and 7) and Saturn (stationIdx 8 and 12)
+                    
                     if (stationIdx === 3 || stationIdx === 7 || stationIdx === 8 || stationIdx === 12) {
                         stationPivot.userData.gyrate = true;
                     }
-                    // Scale down Mercury stations to half size
+                    
                     if (planetName === 'Mercury') {
                         station.scale.set(0.5, 0.5, 0.5);
                     }
-                    // Lower Uranus Station 2 (first station, i = 0) to avoid moon collision
-                    if (planetName === 'Uranus' && i === 0) {
-                        station.position.y = -0.5; // Lower the station by 0.5 units
+                    
+                    if (planetName === 'Uranus' && i === 0) { // Uranus Station 1 (creator index 2-1=1, createStation2)
+                        station.position.y = -0.5; 
                     }
+                    
                     planet.mesh.add(stationPivot);
-                    station.userData = { 
-                        name: stationsData[planetName][i].name,
-                        type: stationsData[planetName][i].type,
-                        position: stationsData[planetName][i].position,
-                        desc: stationsData[planetName][i].desc,
-                        callsign: stationsData[planetName][i].callsign // Add callsign
-                    };
+                    // Ensure stationsData[planetName] and stationsData[planetName][i] exist before accessing properties
+                    if (stationsData[planetName] && stationsData[planetName][i]) {
+                        station.userData = { 
+                            name: stationsData[planetName][i].name,
+                            type: stationsData[planetName][i].type,
+                            position: stationsData[planetName][i].position, // This might be legacy, actual position is calculated
+                            desc: stationsData[planetName][i].desc,
+                            callsign: stationsData[planetName][i].callsign
+                        };
+                    } else {
+                        // Fallback if data is missing, though ideally stations.json should be complete
+                        station.userData = {
+                            name: `${planetName} Station ${stationIdx}`,
+                            type: "Station",
+                            desc: "Description unavailable.",
+                            callsign: "N/A"
+                        };
+                        console.warn(`Missing station data for ${planetName}, station index ${i} (creator ${stationIdx})`);
+                    }
+                    
                     stations.push({ pivot: stationPivot, speed: 0.015 });
                     window.allStations[planetName].push({ mesh: station });
                 });
             }
         }
-        planet.mesh.userData.stations = stations;
+        // This line was outside the planet.forEach in your original, but seems like it should be associated per-planet
+        // If it's meant to be global, its placement here is fine. If per-planet, it's also fine.
+        // Assuming it's meant to associate the 'stations' array (local to this planet's iteration) with the planet mesh:
+        planet.mesh.userData.stations = stations; 
     });
 };
+// --- END OF FILE stations.js ---
