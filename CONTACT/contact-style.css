@@ -76,8 +76,9 @@ html, body {
     position: relative;
     transform-style: preserve-3d;
     animation: spinHologram 35s linear infinite;
-    margin-left: -3vw;
-    margin-top: 17px;
+    will-change: transform;
+    margin-left: -1vw; 
+    margin-top: 17px; 
 }
 .hologram .ascii-art {
     color: #008800;
@@ -284,8 +285,12 @@ textarea.futuristic-input {
 
 /* Animations */
 @keyframes spinHologram {
-    0% { transform: rotateY(0deg); }
-    100% { transform: rotateY(360deg); }
+    0% {
+        transform: translateY(17px) translateX(-1vw) rotateY(0deg);
+    }
+    100% {
+        transform: translateY(17px) translateX(-1vw) rotateY(360deg);
+    }
 }
 @keyframes pulse {
     0% { opacity: 0.5; }
