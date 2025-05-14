@@ -1,3 +1,4 @@
+// index-script.js
 document.addEventListener('DOMContentLoaded', () => {
     function loadSvgArt() {
         fetch('logo.svg')
@@ -16,105 +17,172 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let keywordHoverListeners = [];
     function activateKeywordPulse() {
-        keywordHoverListeners.forEach(item => item.element.removeEventListener(item.type, item.listener)); 
+        keywordHoverListeners.forEach(item => item.element.removeEventListener(item.type, item.listener));
         keywordHoverListeners = [];
-        
-        const container = document.getElementById('series-blurb-text') || document; 
+        const container = document.getElementById('series-blurb-text') || document;
         const allKeywords = container.querySelectorAll('.keyword');
-
-        allKeywords.forEach(kw => {
+        allKeywords.forEach((kw) => {
             const mouseoverListener = () => kw.classList.add('active-pulse');
             const mouseoutListener = () => kw.classList.remove('active-pulse');
-            kw.addEventListener('mouseover', mouseoverListener); 
+            kw.addEventListener('mouseover', mouseoverListener);
             kw.addEventListener('mouseout', mouseoutListener);
             keywordHoverListeners.push({element: kw, type: 'mouseover', listener: mouseoverListener});
             keywordHoverListeners.push({element: kw, type: 'mouseout', listener: mouseoutListener});
         });
     }
 
-    let typeTimeoutBlurb;
-    function typeOutBlurb(element, fullHtmlContent, speed = 40, addCursor = true) {
-        return new Promise((resolve) => {
-            if (!element) {
-                resolve();
-                return;
-            }
-            
-            element.dataset.fullHtml = fullHtmlContent; // Store the full HTML
-            const originalHtml = element.dataset.fullHtml;
+    let activeTimers = [];
+    const MATRIX_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!?§$%&/()[]{}=+*~#'-_.:,;";
 
-            element.innerHTML = ''; 
-            element.style.visibility = 'visible';
+    function clearActiveTimers() {
+        activeTimers.forEach(timerId => clearTimeout(timerId));
+        activeTimers.forEach(timerId => clearInterval(timerId));
+        activeTimers = [];
+    }
 
-            let i = 0;
-            let currentText = '';
-            let cursorSpan = null;
+    async function applyMatrixEffectToElement(element, fullHtmlContent) {
+        if (!element) {
+            console.error("applyMatrixEffectToElement: Element is null. Cannot apply effect.");
+            return;
+        }
 
-            if (addCursor) {
-                cursorSpan = document.createElement('span');
-                cursorSpan.className = 'typing-cursor';
-            }
+        element.innerHTML = '';
+        let wordSpansToAnimate = [];
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = fullHtmlContent;
 
-            function typeCharacter() {
-                if (i < originalHtml.length) {
-                    if (originalHtml[i] === '<') {
-                        let tagEnd = originalHtml.indexOf('>', i);
-                        if (tagEnd !== -1) {
-                            currentText += originalHtml.substring(i, tagEnd + 1);
-                            i = tagEnd; 
-                        } else { // Should not happen in well-formed HTML
-                            currentText += originalHtml[i];
-                        }
+        function processNode(node, parentElementToAppendTo) {
+            if (node.nodeType === Node.TEXT_NODE) {
+                const wordsAndSpaces = node.textContent.split(/(\s+)/);
+                wordsAndSpaces.forEach(textPart => {
+                    if (textPart.trim() === '') {
+                        parentElementToAppendTo.appendChild(document.createTextNode(textPart));
                     } else {
-                        currentText += originalHtml[i];
+                        const span = document.createElement('span');
+                        span.className = 'word-span matrix-initial-scramble';
+                        span.dataset.originalWord = textPart;
+                        let initialScramble = "";
+                        for (let k = 0; k < textPart.length; k++) {
+                            initialScramble += MATRIX_CHARS.charAt(Math.floor(Math.random() * MATRIX_CHARS.length));
+                        }
+                        span.textContent = initialScramble;
+                        parentElementToAppendTo.appendChild(span);
+                        wordSpansToAnimate.push(span);
                     }
-                    
-                    element.innerHTML = currentText + (addCursor && cursorSpan ? cursorSpan.outerHTML : '');
-                    
-                    i++;
-                    typeTimeoutBlurb = setTimeout(typeCharacter, speed);
-                } else {
-                    if (addCursor && cursorSpan && element.lastChild === cursorSpan) {
-                         // It might have been removed if innerHTML was set without it
-                    }
-                    element.innerHTML = originalHtml; // Ensure final state is perfect
-                    resolve();
-                }
+                });
+            } else if (node.nodeType === Node.ELEMENT_NODE) {
+                const clonedElement = node.cloneNode(false);
+                parentElementToAppendTo.appendChild(clonedElement);
+                Array.from(node.childNodes).forEach(childNode => processNode(childNode, clonedElement));
             }
-            typeCharacter();
+        }
+
+        Array.from(tempDiv.childNodes).forEach(childNode => processNode(childNode, element));
+
+        if (wordSpansToAnimate.length === 0 && fullHtmlContent.trim() !== '') {
+            console.warn(`WARNING: No word spans generated for ${element.id}, although fullHtmlContent was not empty. Check HTML parsing. Content:`, fullHtmlContent);
+        }
+
+        wordSpansToAnimate.forEach(span => {
+            let parent = span.parentElement;
+            while (parent && parent !== element) {
+                if (parent.tagName === 'MARK' || parent.classList.contains('neon-link') || parent.classList.contains('tech-highlight')) {
+                    if (!parent.classList.contains('content-scrambling')) {
+                        parent.classList.add('content-scrambling');
+                    }
+                    break; 
+                }
+                parent = parent.parentElement;
+            }
         });
+
+        const scrambleIterations = 4;
+        const scrambleCharInterval = 30;
+        const wordRevealDelay = 35;
+
+        for (let i = 0; i < wordSpansToAnimate.length; i++) {
+            const span = wordSpansToAnimate[i];
+            const originalWord = span.dataset.originalWord;
+            const wordLen = originalWord.length;
+            let currentIteration = 0;
+
+            const intervalId = setInterval(() => {
+                if (currentIteration >= scrambleIterations) {
+                    clearInterval(intervalId);
+                    span.textContent = originalWord;
+                    span.style.color = '';
+                    span.classList.remove('matrix-initial-scramble');
+
+                    let styledParent = span.parentElement;
+                    while(styledParent && styledParent !== element) {
+                        if (styledParent.classList.contains('content-scrambling')) {
+                            break; 
+                        }
+                        styledParent = styledParent.parentElement;
+                    }
+
+                    if (styledParent && styledParent !== element && styledParent.classList.contains('content-scrambling')) {
+                        const siblingWordSpans = Array.from(styledParent.querySelectorAll('.word-span'));
+                        const allSiblingsUnscrambled = siblingWordSpans.every(s => !s.classList.contains('matrix-initial-scramble'));
+                        
+                        if (allSiblingsUnscrambled) {
+                            styledParent.classList.remove('content-scrambling');
+                        }
+                    }
+                } else {
+                    let randomWord = "";
+                    for (let j = 0; j < wordLen; j++) {
+                        let charCandidate;
+                        do {
+                            charCandidate = MATRIX_CHARS.charAt(Math.floor(Math.random() * MATRIX_CHARS.length));
+                        } while (charCandidate === ' ');
+                        randomWord += charCandidate;
+                    }
+                    span.textContent = randomWord;
+                    currentIteration++;
+                }
+            }, scrambleCharInterval);
+            activeTimers.push(intervalId);
+
+            await new Promise(resolve => {
+                const timeoutId = setTimeout(resolve, wordRevealDelay);
+                activeTimers.push(timeoutId);
+            });
+        }
     }
 
-    async function initBlurbTypewriter() {
-        const blurbP1 = document.getElementById('blurb-p1');
-        const blurbP2 = document.getElementById('blurb-p2');
+    async function initBlurbEffect() {
+        clearActiveTimers();
+        const blurbElement = document.getElementById('blurb-p1');
+        let fullHtml = '';
 
-        let fullHtmlP1 = '';
-        let fullHtmlP2 = '';
+        if (blurbElement) {
+            if (typeof blurbElement.dataset.fullHtml === 'undefined' || blurbElement.dataset.fullHtml === "") {
+                blurbElement.dataset.fullHtml = blurbElement.innerHTML;
+            }
+            fullHtml = blurbElement.dataset.fullHtml;
+        } else {
+            console.error("initBlurbEffect: blurb-p1 element not found!");
+            return;
+        }
 
-        if (blurbP1) fullHtmlP1 = blurbP1.innerHTML;
-        if (blurbP2) fullHtmlP2 = blurbP2.innerHTML;
-        
-        if (blurbP1) {
-            blurbP1.innerHTML = ''; // Clear for typing
-            await typeOutBlurb(blurbP1, fullHtmlP1, 5); // Adjust speed (ms per char)
+        if (fullHtml && fullHtml.trim() !== '') {
+            blurbElement.style.visibility = 'visible';
+            await applyMatrixEffectToElement(blurbElement, fullHtml);
+        } else {
+            console.warn("Skipping Matrix effect for blurb-p1 due to empty content.");
         }
-        if (blurbP2) {
-            blurbP2.innerHTML = ''; // Clear for typing
-            await typeOutBlurb(blurbP2, fullHtmlP2, 10); 
-        }
-        
-        activateKeywordPulse(); 
+        activateKeywordPulse();
     }
-    
+
     const body = document.body;
     if (body.classList.contains('gatekeeper-hide-initial')) {
         const observer = new MutationObserver((mutationsList, observerInstance) => {
-            for(const mutation of mutationsList) {
+            for (const mutation of mutationsList) {
                 if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
                     if (!body.classList.contains('gatekeeper-hide-initial')) {
-                        setTimeout(initBlurbTypewriter, 200); 
-                        observerInstance.disconnect(); 
+                        setTimeout(initBlurbEffect, 200);
+                        observerInstance.disconnect();
                         return;
                     }
                 }
@@ -122,6 +190,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         observer.observe(body, { attributes: true });
     } else {
-        setTimeout(initBlurbTypewriter, 500); 
+        setTimeout(initBlurbEffect, 500);
     }
 });

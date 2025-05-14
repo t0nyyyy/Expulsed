@@ -1,3 +1,5 @@
+/* index-style.css */
+
 .index-body {
     background-color: #000;
     color: #99ff99;
@@ -6,104 +8,138 @@
     padding: 0;
     text-align: center;
     position: relative;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 #page-content-wrapper {
     position: relative;
     width: 100%;
-    min-height: calc(100vh - 60px); 
+    min-height: calc(100vh - 60px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: visible; 
+    overflow: visible;
 }
 .homepage-content {
     padding: 0;
     color: #c0ffc0;
     position: relative;
-    z-index: 2; 
+    z-index: 2;
     width: 100%;
-    max-width: 1200px; 
-    margin: 0 auto; 
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
 }
-.homepage-content h1 { 
+.homepage-content h1 {
     color: #00ff00;
 }
-
 #ascii-art-container {
     position: absolute;
     z-index: 100;
-    top: -12vh;            
+    top: -12vh;
     left: 50%;
-    transform: translateX(calc(-56.5% - 0px)); 
-    width: 100%;          
-    max-width: 100%;      
+    transform: translateX(calc(-56.5% - 0px));
+    width: 100%;
+    max-width: 100%;
     max-height: 50vh;
-    user-select: none; 
-    -webkit-user-select: none; 
-    -moz-user-select: none;    
-    -ms-user-select: none;     
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
-
 #ascii-art-container svg {
     display: block;
-    width: 100%;          
-    height: auto;         
-    transform-origin: center top; 
+    width: 100%;
+    height: auto;
+    transform-origin: center top;
 }
-
 #series-blurb-text {
-    position: relative; 
-    margin-top: 25vh;   
-    width: 120%;        
-    max-width: 1200px;  
-    padding: 10px 15px; 
+    position: relative;
+    margin-top: 25vh;
+    width: 120%;
+    max-width: 1200px;
+    padding: 10px 15px;
     box-sizing: border-box;
-    z-index: 5;         
-    text-align: center; 
-    margin-left: auto;  
-    margin-right: auto; 
-    user-select: none; 
-    -webkit-user-select: none; 
-    -moz-user-select: none;    
-    -ms-user-select: none;     
+    z-index: 5;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
-
 #series-blurb-text p {
     font-family: 'Space Grotesk', sans-serif;
-    color: #99ff99; 
-    font-size: 1.5em;    
-    line-height: 1.8;    
-    margin-bottom: 1.2em; 
+    color: #99ff99;
+    font-size: 1.5em;
+    line-height: 1.8;
+    margin-bottom: 1.2em;
 }
-
-/* CSS FOR THE INTRA-PARAGRAPH LINE BREAK */
 #series-blurb-text p .line-break-after {
-    display: block;    /* Forces content after it to a new line */
-    content: "";       /* Ensures the element takes up space */
-    margin-top: 1.2em; /* Creates vertical space, matching p margin-bottom. Adjust if needed. */
+    display: block;
+    content: "";
+    margin-top: 1.2em;
 }
-/* END OF CSS FOR LINE BREAK */
 
-.typing-cursor {
+/* Styling for individual word spans created by JS */
+.word-span {
     display: inline-block;
-    background-color: #00ff00;
-    width: 10px; 
-    height: 1.1em; 
-    animation: blink-cursor 0.7s infinite;
-    margin-left: 3px;
-    vertical-align: text-bottom; 
-    position: relative; 
-    top: -0.1em; 
+    vertical-align: baseline; /* Helps with consistent text alignment */
 }
 
-@keyframes blink-cursor {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+/* This class is applied to word-spans when they are actively scrambling */
+.matrix-initial-scramble {
+    color: #33ff33 !important; /* The color of the scrambling characters */
+    /* The following ensure the span itself doesn't have conflicting styles */
+    background: transparent !important;
+    text-shadow: none !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    text-decoration: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    opacity: 1 !important;
+    filter: none !important;
+    outline: none !important;
+    transition: none !important;
+    box-sizing: border-box !important;
 }
+
+/* --- NEW STYLES FOR PARENT ELEMENTS WHEN THEIR CONTENT IS SCRAMBLING --- */
+/* This class will be added by JavaScript to parent elements like mark, a, .tech-highlight */
+
+#series-blurb-text mark.content-scrambling {
+    background-color: transparent !important; /* Hide original background */
+    color: transparent !important; /* Hide original text color (e.g., black) */
+    /* Keep padding to maintain layout, or set to 0 if preferred: */
+    /* padding: 0 !important; */ 
+    box-shadow: none !important; /* Just in case */
+    transition: none !important; /* Prevent transition to this state */
+}
+
+#series-blurb-text a.neon-link.content-scrambling {
+    color: transparent !important; /* Hide original link text color */
+    text-shadow: none !important; /* Hide neon glow */
+    font-weight: normal !important; /* Temporarily remove bold */
+    /* The link itself is still clickable, just visually muted */
+    transition: none !important; /* Prevent transition to this state */
+}
+
+#series-blurb-text .tech-highlight.content-scrambling {
+    background-color: transparent !important; /* Hide original background */
+    /* Keep padding and border-radius to maintain block shape, or neutralize: */
+    /* padding: 0 !important; */
+    /* border-radius: 0 !important; */
+    font-weight: normal !important; /* Temporarily remove bold if it has it */
+    box-shadow: none !important; /* Just in case */
+    transition: none !important; /* Prevent transition to this state */
+}
+/* --- END OF NEW PARENT STYLES --- */
+
 
 #series-blurb-text .keyword.active-pulse {
     animation: subtle-pulse-animation 1.5s infinite alternate ease-in-out;
@@ -112,91 +148,98 @@
     0% { filter: brightness(100%) drop-shadow(0 0 0px rgba(0,255,0,0)); }
     100% { filter: brightness(130%) drop-shadow(0 0 3px rgba(80,255,80,0.5)); }
 }
-#series-blurb-text a.neon-link {
-    color: #00ff00; text-decoration: none;
+#series-blurb-text a.neon-link { /* Original style, restored when .content-scrambling is removed */
+    color: #00ff00;
+    text-decoration: none;
     text-shadow: 0 0 4px #00ff00, 0 0 8px #00ff00;
-    font-weight: bold; transition: color 0.3s ease, text-shadow 0.3s ease; 
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 #series-blurb-text a.neon-link:hover {
-    color: #c0ffc0; text-shadow: 0 0 6px #c0ffc0, 0 0 12px #c0ffc0;
+    color: #c0ffc0;
+    text-shadow: 0 0 6px #c0ffc0, 0 0 12px #c0ffc0;
 }
-#series-blurb-text .tech-highlight {
-    background-color: rgba(0, 255, 0, 0.18); padding: 2px 4px;
-    border-radius: 3px; font-weight: bold; display: inline-block; 
+#series-blurb-text .tech-highlight { /* Original style, restored when .content-scrambling is removed */
+    background-color: rgba(0, 255, 0, 0.18);
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: bold;
+    display: inline-block;
 }
-#series-blurb-text mark { 
-    background-color: rgba(0, 255, 0, 0.55); color: #000; padding: 1px 3px;
+#series-blurb-text mark { /* Original style, restored when .content-scrambling is removed */
+    background-color: rgba(0, 255, 0, 0.55);
+    color: #000;
+    padding: 1px 3px;
 }
 
-.social-fixed-left { 
-    position: fixed; bottom: 15px; left: 5px; z-index: 1000; width: auto;
-    padding: 15px; box-sizing: border-box;
+/* ... rest of your social and media query styles ... */
+.social-fixed-left {
+    position: fixed;
+    bottom: 15px;
+    left: 5px;
+    z-index: 1000;
+    width: auto;
+    padding: 15px;
+    box-sizing: border-box;
 }
-.social-item { 
-    display: flex; flex-direction: column; align-items: center; position: relative;
+.social-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
 }
-.social-icon-link { 
-    display: block; line-height: 0; margin-bottom: 11px; position: relative;
-     width: 225px; height: 225px; 
+.social-icon-link {
+    display: block;
+    line-height: 0;
+    margin-bottom: 11px;
+    position: relative;
+    width: 225px;
+    height: 225px;
 }
-.social-icon { 
-    width: 100%; height: 100%; display: block; object-fit: contain; 
-    position: absolute; top: 0; left: 0;
+.social-icon {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
-.text-link-base { 
-    display: block; color: #0f0; text-decoration: none; font-size: 0.825em; 
-    text-align: center; padding: 4px; position: relative; transition: color 0.2s;
+.text-link-base {
+    display: block;
+    color: #0f0;
+    text-decoration: none;
+    font-size: 0.825em;
+    text-align: center;
+    padding: 4px;
+    position: relative;
+    transition: color 0.2s;
     width: 100%;
 }
-.text-link-base:hover { color: #8f8; }
-#x-text-link { right: 10px; }
+.text-link-base:hover {
+    color: #8f8;
+}
+#x-text-link {
+    right: 10px;
+}
 
 @media (max-width: 768px) {
-    #series-blurb-text {
-        margin-top: 25vh; 
-        width: 95%;       
-    }
-    #series-blurb-text p { 
-        font-size: 1.3em; 
-    }
-    .social-fixed-left {
-        padding: 5px; bottom: 5px; left: 5px;
-    }
-    .social-fixed-left .social-icon-link {
-        width: 150px; height: 150px; margin-bottom: 8px;
-    }
-    .social-fixed-left .text-link-base {
-        font-size: 0.7em;
-    }
-    .social-fixed-left #x-text-link {
-        right: 7px; 
-    }
+    #series-blurb-text { margin-top: 25vh; width: 95%; }
+    #series-blurb-text p { font-size: 1.3em; }
+    .social-fixed-left { padding: 5px; bottom: 5px; left: 5px; }
+    .social-fixed-left .social-icon-link { width: 150px; height: 150px; margin-bottom: 8px; }
+    .social-fixed-left .text-link-base { font-size: 0.7em; }
+    .social-fixed-left #x-text-link { right: 7px; }
 }
 @media (max-width: 480px) {
-    #series-blurb-text {
-        margin-top: 22vh; 
-    }
-    #series-blurb-text p { 
-        font-size: 1.15em;
-    }
+    #series-blurb-text { margin-top: 22vh; }
+    #series-blurb-text p { font-size: 1.15em; }
 }
 @media (max-height: 750px) {
-     #series-blurb-text {
-        margin-top: 20vh; 
-     }
+     #series-blurb-text { margin-top: 20vh; }
 }
-
 @media (min-width: 1921px) {
-    #ascii-art-container {
-        top: -8vh; 
-    }
-    #series-blurb-text {
-        margin-top: 20vh;      
-        max-width: 1400px; 
-        transform: translateX(-65px);
-    }
-    #series-blurb-text p {
-        font-size: 1.8em;                         
-        line-height: 1.9; 
-    }
+    #ascii-art-container { top: -8vh; }
+    #series-blurb-text { margin-top: 20vh; max-width: 1400px; transform: translateX(-65px); }
+    #series-blurb-text p { font-size: 1.8em; line-height: 1.9; }
 }

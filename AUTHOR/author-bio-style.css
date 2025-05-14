@@ -1,0 +1,183 @@
+/* author-bio-style.css - Styles specific to the Author Bio page */
+
+/* --- Global/Reset additions --- */
+html, body {
+    overflow-x: hidden;
+}
+
+.author-bio-body {
+    background-color: #332222;
+    color: #ffaaff;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+}
+
+#page-content-wrapper {
+    position: relative; 
+    z-index: 1; 
+    width: 100%;
+    min-height: calc(100vh - 60px); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 0px; 
+    box-sizing: border-box;
+}
+
+/* Container for the title and bio text, similar to homepage-content */
+#author-bio-text-container {
+    color: #c0ffc0;
+    position: relative;
+    z-index: 2; 
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#author-page-title {
+    color: #00ff00; 
+    font-family: 'Electrolize', monospace;
+    text-align: center;
+    font-size: 2.5em; 
+    margin-bottom: 30px; 
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+}
+
+/* Styling for the author bio text block */
+#author-bio-text {
+    position: relative; 
+    width: 100%; 
+    padding: 10px 15px; 
+    box-sizing: border-box;
+    text-align: center; 
+    margin-left: auto;  
+    margin-right: auto; 
+    user-select: none; 
+    -webkit-user-select: none; 
+    -moz-user-select: none;    
+    -ms-user-select: none;     
+}
+
+#author-bio-text p {
+    font-family: 'Space Grotesk', sans-serif; 
+    color: #99ff99; 
+    font-size: 1.5em;    
+    line-height: 1.8;    
+    margin-bottom: 1.2em; 
+    text-align: center; 
+}
+
+#author-bio-text p:last-child {
+    margin-bottom: 0;
+}
+
+#author-bio-text .line-break-after {
+    display: block;    
+    content: "";       
+    margin-top: 1.2em; 
+}
+
+/* For Focus Blur Effect - FASTER TRANSITIONS */
+.word-span { 
+    display: inline-block;
+    opacity: 0; 
+    filter: blur(8px); 
+    transition: opacity 0.3s ease-out, filter 0.4s ease-out; /* FASTER */
+    will-change: opacity, filter; 
+}
+
+.word-span.visible {
+    opacity: 1;
+    filter: blur(0px);
+}
+
+/* --- STYLES FOR HIGHLIGHTED WORDS AND KEYWORDS --- */
+
+#author-bio-text .keyword {
+    cursor: default;
+}
+
+#author-bio-text .keyword.active-pulse {
+    animation: subtle-pulse-animation 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes subtle-pulse-animation {
+    0% { 
+        filter: brightness(100%) drop-shadow(0 0 0px rgba(0,255,0,0)); 
+    }
+    100% { 
+        filter: brightness(130%) drop-shadow(0 0 3px rgba(80,255,80,0.5)); 
+    }
+}
+
+#author-bio-text .tech-highlight {
+    background-color: rgba(0, 255, 0, 0.18); 
+    padding: 2px 4px;
+    border-radius: 3px; 
+    font-weight: bold; 
+    display: inline-block;
+    opacity: 0;
+    filter: blur(5px); 
+    transition: opacity 0.3s ease-out 0.05s, filter 0.4s ease-out 0.05s; /* FASTER, reduced internal delay */
+    will-change: opacity, filter;
+}
+
+#author-bio-text mark { 
+    background-color: rgba(0, 255, 0, 0.55); 
+    color: #000000; 
+    padding: 1px 3px;
+    opacity: 0;
+    filter: blur(5px); 
+    transition: opacity 0.3s ease-out 0.05s, filter 0.4s ease-out 0.05s; /* FASTER, reduced internal delay */
+    will-change: opacity, filter;
+}
+
+#author-bio-text .tech-highlight.highlight-visible,
+#author-bio-text mark.highlight-visible {
+    opacity: 1;
+    filter: blur(0px);
+}
+/* --- END OF STYLES FOR HIGHLIGHTED WORDS --- */
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #author-page-title {
+        font-size: 2em;
+    }
+    #author-bio-text p { 
+        font-size: 1.3em; 
+    }
+     #author-bio-text-container {
+        max-width: 95%; 
+        padding: 15px;
+    }
+}
+@media (max-width: 480px) {
+    #author-page-title {
+        font-size: 1.8em;
+    }
+    #author-bio-text p { 
+        font-size: 1.15em;
+    }
+}
+
+/* For 4K+ screens, similar to index.html */
+@media (min-width: 1921px) {
+    #author-bio-text-container {
+        max-width: 1400px; 
+    }
+    #author-page-title {
+        font-size: 3em; 
+    }
+    #author-bio-text p {
+        font-size: 1.8em;                         
+        line-height: 1.9; 
+    }
+}

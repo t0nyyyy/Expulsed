@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author Bio - Expulsed Book Series</title>
+    <!-- Added Space Grotesk font -->
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../nprogress.css">
+    <link rel="stylesheet" href="../loading.css">
+    <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="author-bio-style.css">
+    <link rel="stylesheet" href="../backgrounds/cosmic-backdrop2.css">
+    <link rel="stylesheet" href="../LOCKPAD/lockpad.css">
+    <link rel="stylesheet" href="../brightness-global.css">
+
+    <link rel="icon" href="../favicon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <!-- Optional: Gatekeeper initial hide style if you use it on this page -->
+    <style>
+      body.gatekeeper-hide-initial #page-content-wrapper,
+      body.gatekeeper-hide-initial > header, /* if you move nav into header */
+      body.gatekeeper-hide-initial > nav.navbar, /* if nav is direct child of body */
+      body.gatekeeper-hide-initial > .space-background /* target the background div */
+      {
+        visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;
+      }
+    </style>
+</head>
+<!-- Add gatekeeper-hide-initial if you want the gatekeeper to control initial visibility -->
+<body class="author-bio-body gatekeeper-hide-initial">
+    <div class="space-background">
+        <div class="star-field"></div>
+    </div>
+
+    <div id="loading-screen">
+        <div class="loading-message">Loading Author Profile...</div>
+    </div>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div></div>
+            <div class="navbar-menu-wrapper">
+                <ul class="navbar-menu">
+                    <li class="navbar-item"><a href="../index.html" class="navbar-link">HOME</a></li>
+                    <!-- Updated link assuming you renamed author-bio.html to author.html -->
+                    <li class="navbar-item"><a href="author.html" class="navbar-link">AUTHOR</a></li>
+                    <li class="navbar-item"><a href="../BOOKS/book-series.html" class="navbar-link">BOOKS</a></li>
+                    <li class="navbar-item"><a href="../GLOSSARY/glossary.html" class="navbar-link">GLOSSARY</a></li>
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link dropdown-toggle">LOCATIONS</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="../MAP/map.html">System Map</a></li>
+                            <li class="dropdown-item"><a href="../MOON/moon-camp.html">Crater Camp</a></li>
+                            <li class="dropdown-item"><a href="../BOGDAN/bogdan.html">Bogdan's Rest</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item"><a href="../CONTACT/contact.html" class="navbar-link">CONTACT</a></li>
+                </ul>
+            </div>
+            <div class="brightness-slider-container">
+                <label for="brightnessSlider" class="brightness-label">Brightness:</label>
+                <input type="range" id="brightnessSlider" min="50" max="200" value="100" step="10">
+            </div>
+        </div>
+    </nav>
+
+    <main id="page-content-wrapper">
+        <!-- Removed placeholder h1 and p -->
+        <div id="author-bio-text-container"> <!-- New container similar to homepage -->
+            <h1 id="author-page-title" style="visibility: hidden;">ABOUT THE AUTHOR</h1> <!-- Title for the page -->
+            <div id="author-bio-text">
+                <p id="author-p1" style="visibility: hidden;">D.B. Humber’s been building stories since he was a kid stacking Legos, now crafting <mark class="keyword">sci-fi that feels as real as tomorrow</mark>. Years as a video editor honed his knack for cinematic narratives, his eye for pacing fuelling tales of plausible futures.<span class="line-break-after"></span> A brief stint in <span class="tech-highlight keyword">the mob (Royal Navy)</span> as a communications operator left him with a soft spot for the tech that powers his what-ifs. When the world paused pre-pandemic, he traded his love of piloting Orcas in Elite Dangerous, started writing, and hasn’t looked back.</p>
+                <p id="author-p2" style="visibility: hidden;"><span class="tech-highlight keyword">An everyman with a futurist’s eye</span>, he’s co-written sci-fi shorts, but <mark class="keyword">novels are where his heart lies</mark>. Warm, a touch sarcastic, and always welcoming, D.B. Humber opens his universe to you, one star at a time.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simplex-noise@2.4.0/simplex-noise.js"></script>
+
+    <script src="../navbar.js"></script>
+    <script src="author-bio-script.js"></script>
+    <script src="../backgrounds/cosmic-backdrop2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+    <script src="../loading.js"></script>
+    <script>
+        window.onload = () => {
+            setPageReady(); // From loading.js
+        };
+    </script>
+    <script src="../LOCKPAD/gatekeeper.js"></script>
+
+</body>
+</html>
