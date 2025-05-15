@@ -83,64 +83,36 @@
     margin-top: 1.2em;
 }
 
-/* Styling for individual word spans created by JS */
+/* Focus-Blur Effect Styles */
 .word-span {
     display: inline-block;
-    vertical-align: baseline; /* Helps with consistent text alignment */
+    vertical-align: baseline;
+    opacity: 0;
+    filter: blur(8px);
+    transition: opacity 0.3s ease-out, filter 0.4s ease-out;
+    will-change: opacity, filter;
 }
 
-/* This class is applied to word-spans when they are actively scrambling */
-.matrix-initial-scramble {
-    color: #33ff33 !important; /* The color of the scrambling characters */
-    /* The following ensure the span itself doesn't have conflicting styles */
-    background: transparent !important;
-    text-shadow: none !important;
-    font-weight: normal !important;
-    font-style: normal !important;
-    text-decoration: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    border: none !important;
-    border-radius: 0 !important;
-    opacity: 1 !important;
-    filter: none !important;
-    outline: none !important;
-    transition: none !important;
-    box-sizing: border-box !important;
+.word-span.visible {
+    opacity: 1;
+    filter: blur(0px);
 }
 
-/* --- NEW STYLES FOR PARENT ELEMENTS WHEN THEIR CONTENT IS SCRAMBLING --- */
-/* This class will be added by JavaScript to parent elements like mark, a, .tech-highlight */
-
-#series-blurb-text mark.content-scrambling {
-    background-color: transparent !important; /* Hide original background */
-    color: transparent !important; /* Hide original text color (e.g., black) */
-    /* Keep padding to maintain layout, or set to 0 if preferred: */
-    /* padding: 0 !important; */ 
-    box-shadow: none !important; /* Just in case */
-    transition: none !important; /* Prevent transition to this state */
+#series-blurb-text .tech-highlight,
+#series-blurb-text mark {
+    opacity: 0;
+    filter: blur(5px);
+    transition: opacity 0.3s ease-out 0.05s, filter 0.4s ease-out 0.05s;
+    will-change: opacity, filter;
 }
 
-#series-blurb-text a.neon-link.content-scrambling {
-    color: transparent !important; /* Hide original link text color */
-    text-shadow: none !important; /* Hide neon glow */
-    font-weight: normal !important; /* Temporarily remove bold */
-    /* The link itself is still clickable, just visually muted */
-    transition: none !important; /* Prevent transition to this state */
+#series-blurb-text .tech-highlight.highlight-visible,
+#series-blurb-text mark.highlight-visible {
+    opacity: 1;
+    filter: blur(0px);
 }
 
-#series-blurb-text .tech-highlight.content-scrambling {
-    background-color: transparent !important; /* Hide original background */
-    /* Keep padding and border-radius to maintain block shape, or neutralize: */
-    /* padding: 0 !important; */
-    /* border-radius: 0 !important; */
-    font-weight: normal !important; /* Temporarily remove bold if it has it */
-    box-shadow: none !important; /* Just in case */
-    transition: none !important; /* Prevent transition to this state */
-}
-/* --- END OF NEW PARENT STYLES --- */
-
-
+/* Keyword Pulse Animation */
 #series-blurb-text .keyword.active-pulse {
     animation: subtle-pulse-animation 1.5s infinite alternate ease-in-out;
 }
@@ -148,7 +120,9 @@
     0% { filter: brightness(100%) drop-shadow(0 0 0px rgba(0,255,0,0)); }
     100% { filter: brightness(130%) drop-shadow(0 0 3px rgba(80,255,80,0.5)); }
 }
-#series-blurb-text a.neon-link { /* Original style, restored when .content-scrambling is removed */
+
+/* Original Element Styles (for when fully visible) */
+#series-blurb-text a.neon-link {
     color: #00ff00;
     text-decoration: none;
     text-shadow: 0 0 4px #00ff00, 0 0 8px #00ff00;
@@ -159,20 +133,20 @@
     color: #c0ffc0;
     text-shadow: 0 0 6px #c0ffc0, 0 0 12px #c0ffc0;
 }
-#series-blurb-text .tech-highlight { /* Original style, restored when .content-scrambling is removed */
+#series-blurb-text .tech-highlight {
     background-color: rgba(0, 255, 0, 0.18);
     padding: 2px 4px;
     border-radius: 3px;
     font-weight: bold;
     display: inline-block;
 }
-#series-blurb-text mark { /* Original style, restored when .content-scrambling is removed */
+#series-blurb-text mark {
     background-color: rgba(0, 255, 0, 0.55);
     color: #000;
     padding: 1px 3px;
 }
 
-/* ... rest of your social and media query styles ... */
+/* Social Media Links */
 .social-fixed-left {
     position: fixed;
     bottom: 15px;
@@ -223,6 +197,7 @@
     right: 10px;
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
     #series-blurb-text { margin-top: 25vh; width: 95%; }
     #series-blurb-text p { font-size: 1.3em; }
