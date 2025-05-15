@@ -1,6 +1,3 @@
-/* author-bio-style.css - Styles specific to the Author Bio page */
-
-/* --- Global/Reset additions --- */
 html, body {
     overflow-x: hidden;
 }
@@ -26,7 +23,6 @@ html, body {
     box-sizing: border-box;
 }
 
-/* Container for the title and bio text, similar to homepage-content */
 #author-bio-text-container {
     color: #c0ffc0;
     position: relative;
@@ -36,20 +32,20 @@ html, body {
     margin: 0 auto; 
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; 
     padding: 20px;
+    box-sizing: border-box;
 }
 
 #author-page-title {
-    color: #00ff00; 
+    color: #008800; 
     font-family: 'Electrolize', monospace;
     text-align: center;
     font-size: 2.5em; 
     margin-bottom: 30px; 
-    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+    text-shadow: 0 0 5px #88ff0063, 0 0 10px #008800;
 }
 
-/* Styling for the author bio text block */
 #author-bio-text {
     position: relative; 
     width: 100%; 
@@ -83,12 +79,11 @@ html, body {
     margin-top: 1.2em; 
 }
 
-/* For Focus Blur Effect - FASTER TRANSITIONS */
 .word-span { 
     display: inline-block;
     opacity: 0; 
     filter: blur(8px); 
-    transition: opacity 0.3s ease-out, filter 0.4s ease-out; /* FASTER */
+    transition: opacity 0.3s ease-out, filter 0.4s ease-out; 
     will-change: opacity, filter; 
 }
 
@@ -96,8 +91,6 @@ html, body {
     opacity: 1;
     filter: blur(0px);
 }
-
-/* --- STYLES FOR HIGHLIGHTED WORDS AND KEYWORDS --- */
 
 #author-bio-text .keyword {
     cursor: default;
@@ -124,7 +117,7 @@ html, body {
     display: inline-block;
     opacity: 0;
     filter: blur(5px); 
-    transition: opacity 0.3s ease-out 0.05s, filter 0.4s ease-out 0.05s; /* FASTER, reduced internal delay */
+    transition: opacity 0.3s ease-out 0.05s, filter 0.4s ease-out 0.05s; 
     will-change: opacity, filter;
 }
 
@@ -134,7 +127,7 @@ html, body {
     padding: 1px 3px;
     opacity: 0;
     filter: blur(5px); 
-    transition: opacity 0.3s ease-out 0.05s, filter 0.4s ease-out 0.05s; /* FASTER, reduced internal delay */
+    transition: opacity 0.3s ease-out 0.05s, filter 0.4s ease-out 0.05s; 
     will-change: opacity, filter;
 }
 
@@ -143,7 +136,47 @@ html, body {
     opacity: 1;
     filter: blur(0px);
 }
-/* --- END OF STYLES FOR HIGHLIGHTED WORDS --- */
+
+/* --- SIGNATURE STYLES --- */
+#author-signature-wrapper {
+    transition: opacity 0.5s ease-in-out; 
+    width: 100%; 
+    margin: 60px auto 20px auto; 
+    display: flex;
+    justify-content: flex-end; 
+    padding-right: 20px; 
+    box-sizing: border-box;
+}
+
+#author-signature-svg {
+    width: 100%;
+    max-width: 350px; 
+    height: auto; 
+    display: block; 
+}
+
+.signature-segment {
+    stroke: #008800; 
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0; /* Initially transparent */
+    transition-property: stroke-dashoffset, opacity; /* Animate opacity too */
+    transition-duration: 1s; /* Duration for each segment to draw AND fade in */
+    transition-timing-function: ease-in-out;
+}
+
+.delay-0s { transition-delay: 0s; }
+.delay-1s { transition-delay: 1s; }
+.delay-2s { transition-delay: 2s; }
+.delay-3s { transition-delay: 3s; }
+.delay-4s { transition-delay: 4s; }
+.delay-5s { transition-delay: 5s; }
+.delay-6s { transition-delay: 6s; }
+.delay-7s { transition-delay: 7s; }
+.delay-8s { transition-delay: 8s; } 
+/* --- END OF SIGNATURE STYLES --- */
 
 
 /* Responsive adjustments */
@@ -158,6 +191,13 @@ html, body {
         max-width: 95%; 
         padding: 15px;
     }
+    #author-signature-wrapper {
+        margin-top: 40px; 
+        padding-right: 10px;
+    }
+    #author-signature-svg {
+        max-width: 300px; 
+    }
 }
 @media (max-width: 480px) {
     #author-page-title {
@@ -166,9 +206,15 @@ html, body {
     #author-bio-text p { 
         font-size: 1.15em;
     }
+    #author-signature-wrapper {
+        margin-top: 30px;
+        padding-right: 5px;
+    }
+    #author-signature-svg {
+        max-width: 250px; 
+    }
 }
 
-/* For 4K+ screens, similar to index.html */
 @media (min-width: 1921px) {
     #author-bio-text-container {
         max-width: 1400px; 
@@ -179,5 +225,8 @@ html, body {
     #author-bio-text p {
         font-size: 1.8em;                         
         line-height: 1.9; 
+    }
+    #author-signature-svg {
+        max-width: 400px; 
     }
 }

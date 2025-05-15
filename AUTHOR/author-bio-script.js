@@ -1,8 +1,6 @@
 // author-bio-script.js - JavaScript for the AUTHOR BIO page
 
 document.addEventListener('DOMContentLoaded', () => {
-    // console.log("Author Bio: Script loaded (v_faster_h1_fix).");
-
     const authorP1 = document.getElementById('author-p1');
     const authorP2 = document.getElementById('author-p2');
     const authorTitle = document.getElementById('author-page-title');
@@ -11,11 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let activeTimers = [];
     let keywordHoverListenersAuthor = [];
 
-    const FASTER_TRANSITION_DURATION = 400; // ms, matches the 0.4s filter transition in CSS
-    const FASTER_WORD_STAGGER = 30; // ms, delay between each word appearing
-    const FASTER_INITIAL_PARA_DELAY = 150; // ms, delay before first paragraph word if title exists
-    const FASTER_INITIAL_TITLE_DELAY = 50; // ms, delay before first title word
+    const FASTER_TRANSITION_DURATION = 400; // ms, matches CSS transition
+    const FASTER_WORD_STAGGER = 30;         // ms, delay between each word
+    const FASTER_INITIAL_PARA_DELAY = 150;  // ms, delay before first paragraph
+    const FASTER_INITIAL_TITLE_DELAY = 50;  // ms, delay before title
 
+    // Delays for signature animation
+    const SCRIPT_SIGNATURE_APPEAR_DELAY = 0;    // ms, after text finishes
+    const SCRIPT_SIGNATURE_DRAW_START_DELAY = 50; // ms, after wrapper starts fading
 
     function clearActiveTimers() {
         activeTimers.forEach(timerId => clearTimeout(timerId));
@@ -82,15 +83,12 @@ document.addEventListener('DOMContentLoaded', () => {
     async function applyFocusBlurEffectToBio() {
         clearActiveTimers();
         let animationCompletionPromises = [];
-        // console.log("Author Bio: Applying FASTER focus blur effect...");
-
         let currentOverallDelay = FASTER_INITIAL_TITLE_DELAY;
 
         if (authorTitle) {
             if (typeof authorTitle.dataset.originalFullHtml === 'undefined') {
                  authorTitle.dataset.originalFullHtml = authorTitle.innerHTML;
             }
-            // Get raw text, strip potential html, trim, then split by multiple spaces
             const titleTextContent = authorTitle.dataset.originalFullHtml.replace(/<[^>]+>/g, "").trim();
             authorTitle.innerHTML = ''; 
             
@@ -102,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 titleSpan.textContent = word;
                 authorTitle.appendChild(titleSpan);
 
-                if (idx < titleWords.length - 1) { // Add space if not the last word
+                if (idx < titleWords.length - 1) {
                     authorTitle.appendChild(document.createTextNode(" "));
                 }
                 
@@ -113,12 +111,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     }, currentOverallDelay));
                 });
                 animationCompletionPromises.push(titlePromise);
-                currentOverallDelay += FASTER_WORD_STAGGER; // Stagger for next word in title
+                currentOverallDelay += FASTER_WORD_STAGGER;
             });
             authorTitle.style.visibility = 'visible';
         }
         
-        // Add a small delay after title before paragraphs start
         currentOverallDelay += FASTER_INITIAL_PARA_DELAY; 
         
         paragraphsForEffect.forEach(p => { if(p) p.style.visibility = 'visible'; });
@@ -126,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const processedHighlightParents = new Set();
 
-        allWordSpans.forEach((span, index) => { // index here is per-paragraph, not global
+        allWordSpans.forEach((span, index) => {
             const wordPromise = new Promise(resolve => {
                 const delay = currentOverallDelay + index * FASTER_WORD_STAGGER; 
                 activeTimers.push(setTimeout(() => {
@@ -144,9 +141,44 @@ document.addEventListener('DOMContentLoaded', () => {
             animationCompletionPromises.push(wordPromise);
         });
 
-        await Promise.all(animationCompletionPromises);
-        // console.log("Author Bio: Focus blur effect complete. Activating keyword pulse.");
-        activateKeywordPulseAuthor();
+        Promise.all(animationCompletionPromises).then(() => {
+            activateKeywordPulseAuthor();
+            activeTimers.push(setTimeout(() => {
+                const signatureWrapper = document.getElementById('author-signature-wrapper');
+                if (signatureWrapper) {
+                    signatureWrapper.style.visibility = 'visible';
+                    signatureWrapper.style.opacity = '1';
+                    activeTimers.push(setTimeout(initAndAnimateSignatureDrawing, SCRIPT_SIGNATURE_DRAW_START_DELAY));
+                }
+            }, SCRIPT_SIGNATURE_APPEAR_DELAY));
+        });
+    }
+
+    function initAndAnimateSignatureDrawing() {
+        const segments = document.querySelectorAll('#author-signature-svg .signature-segment');
+        if (segments.length === 0) return;
+
+        segments.forEach((segment) => {
+            segment.style.transition = 'none'; 
+            const length = segment.getTotalLength();
+
+            if (length === 0) {
+                segment.style.strokeDasharray = "none";
+                segment.style.strokeDashoffset = "0";
+                segment.style.opacity = "1";
+                return; 
+            }
+
+            segment.style.strokeDasharray = length + ' ' + length;
+            segment.style.strokeDashoffset = length;
+            segment.getBoundingClientRect(); 
+            segment.style.transition = ''; 
+
+            activeTimers.push(setTimeout(() => {
+                segment.style.strokeDashoffset = '0';
+                segment.style.opacity = '1';
+            }, 20)); 
+        });
     }
 
     const body = document.body;
@@ -155,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
             for (const mutation of mutationsList) {
                 if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
                     if (!body.classList.contains('gatekeeper-hide-initial')) {
-                        setTimeout(applyFocusBlurEffectToBio, 200);
+                        setTimeout(applyFocusBlurEffectToBio, 200); 
                         observerInstance.disconnect();
                         return;
                     }
@@ -164,6 +196,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         observer.observe(body, { attributes: true });
     } else {
-        setTimeout(applyFocusBlurEffectToBio, 500);
+        setTimeout(applyFocusBlurEffectToBio, 500); 
     }
 });

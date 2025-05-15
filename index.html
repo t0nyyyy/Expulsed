@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="brightness-global.css">
         <link rel="stylesheet" href="navbar.css">
         <link rel="stylesheet" href="index-style.css">
-        <link rel="stylesheet" href="backgrounds/moonbackground.css">
+        <link rel="stylesheet" href="backgrounds/cosmic-backdrop2.css">
         <link rel="stylesheet" href="nprogress.css">
         <link rel="stylesheet" href="loading.css">
         <link rel="stylesheet" href="LOCKPAD/lockpad.css">
@@ -26,7 +26,8 @@
           body.gatekeeper-hide-initial #page-content-wrapper,
           body.gatekeeper-hide-initial > header,
           body.gatekeeper-hide-initial > nav.navbar,
-          body.gatekeeper-hide-initial > canvas,
+          body.gatekeeper-hide-initial > .space-background, /* ADDED: Target for cosmic-backdrop */
+          body.gatekeeper-hide-initial > canvas, /* Kept in case other scripts use it, but cosmic-backdrop uses .space-background */
           body.gatekeeper-hide-initial > #loading-screen
           {
             visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;
@@ -34,6 +35,11 @@
         </style>
     </head>
 <body class="index-body gatekeeper-hide-initial">
+
+    <!-- ADDED: Div structure for cosmic-backdrop2.js -->
+    <div class="space-background">
+        <div class="star-field"></div>
+    </div>
 
     <div id="loading-screen">
         <div class="loading-message">Loading Transmission...</div>
@@ -79,6 +85,8 @@
     <main id="page-content-wrapper">
         <div class="homepage-content">
             <section id="ascii-art-container">
+                <!-- NOTE: You still have a 404 error for "placeholder.png". 
+                     Ensure this image exists or update/remove this img tag if logo.svg is the intended content. -->
                 <img src="placeholder.png" alt="Space Station Logo" id="logo-placeholder">
             </section>
             
@@ -108,7 +116,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
     <script src="navbar.js"></script>
     <script src="index-script.js"></script>
-    <script src="backgrounds/moonbackground.js"></script>
+    <script src="backgrounds/cosmic-backdrop2.js"></script>
     <script src="loading.js"></script>
     <script>
         window.onload = () => { setPageReady(); };
